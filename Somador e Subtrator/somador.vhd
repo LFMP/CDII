@@ -1,0 +1,23 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+
+ENTITY somador IS
+	PORT(e: IN BIT_VECTOR(2 DOWNTO 0);
+			s: OUT BIT_VECTOR(1 DOWNTO 0));
+END somador;
+
+ARCHITECTURE som OF somador IS
+
+BEGIN
+	S <= "00" WHEN e = "000" ELSE
+		 "10" WHEN e = "010" ELSE
+		 "10" WHEN e = "100" ELSE
+	  	 "01" WHEN e = "110" ELSE
+		 "10" WHEN e = "001" ELSE
+		 "01" WHEN e = "011" ELSE
+		 "01" WHEN e = "101" ELSE
+		 "11";
+
+END som;
