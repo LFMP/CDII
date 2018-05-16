@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA1BIT
-Wed May 16 08:48:20 2018
+Wed May 16 08:55:45 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Wed May 16 08:48:20 2018        ;
+; Analysis & Synthesis Status ; Successful - Wed May 16 08:55:45 2018        ;
 ; Quartus II Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name               ; ULA1BIT                                      ;
 ; Top-level Entity Name       ; ULA1BIT                                      ;
@@ -149,12 +149,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed May 16 08:48:19 2018
+    Info: Processing started: Wed May 16 08:55:44 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA1BIT -c ULA1BIT
 Info: Found 2 design units, including 1 entities, in source file /ula1bit.vhd
     Info: Found design unit 1: ULA1BIT-logica1
     Info: Found entity 1: ULA1BIT
-Info: Found 19 design units, including 9 entities, in source file /components.vhd
+Info: Found 20 design units, including 9 entities, in source file /components.vhd
     Info: Found design unit 1: not_1-logica1
     Info: Found design unit 2: and_1-logica1
     Info: Found design unit 3: nand_1-logica1
@@ -165,6 +165,7 @@ Info: Found 19 design units, including 9 entities, in source file /components.vh
     Info: Found design unit 8: somador-som
     Info: Found design unit 9: subtrator-subt
     Info: Found design unit 10: logic
+    Info: Found design unit 11: arithmetic
     Info: Found entity 1: not_1
     Info: Found entity 2: and_1
     Info: Found entity 3: nand_1
@@ -185,8 +186,8 @@ Info: Implemented 3 device resources after synthesis - the final resource count 
     Info: Implemented 1 output pins
     Info: Implemented 1 macrocells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 204 megabytes
-    Info: Processing ended: Wed May 16 08:48:20 2018
+    Info: Peak virtual memory: 205 megabytes
+    Info: Processing ended: Wed May 16 08:55:45 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

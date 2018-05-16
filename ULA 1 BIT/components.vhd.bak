@@ -124,5 +124,39 @@ PACKAGE logic IS
 		PORT(x,y: IN BIT;
 			Z: OUT BIT);
 	END COMPONENT;
+	
+		COMPONENT nand_1 IS
+		PORT(x,y: IN BIT;
+			Z: OUT BIT);
+	END COMPONENT;
+	
+		COMPONENT or_1 IS
+		PORT(x,y: IN BIT;
+			Z: OUT BIT);
+	END COMPONENT;
+	
+		COMPONENT nor_1 IS
+		PORT(x,y: IN BIT;
+			Z: OUT BIT);
+	END COMPONENT;
+	
+		COMPONENT xor_1 IS
+		PORT(x,y: IN BIT;
+			Z: OUT BIT);
+	END COMPONENT;
+	
+		COMPONENT xnor_1 IS
+		PORT(x,y: IN BIT;
+			Z: OUT BIT);
+	END COMPONENT;
 
 END logic;
+
+PACKAGE arithmetic IS
+
+		COMPONENT somador IS
+		PORT(e: IN BIT_VECTOR(2 DOWNTO 0);
+			s: OUT BIT_VECTOR(1 DOWNTO 0));
+		END COMPONENT;
+
+END arithmetic;

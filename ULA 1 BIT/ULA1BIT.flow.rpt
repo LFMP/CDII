@@ -1,5 +1,5 @@
 Flow report for ULA1BIT
-Wed May 16 08:48:25 2018
+Wed May 16 08:55:50 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Wed May 16 08:48:25 2018        ;
+; Flow Status             ; Successful - Wed May 16 08:55:50 2018        ;
 ; Quartus II Version      ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name           ; ULA1BIT                                      ;
 ; Top-level Entity Name   ; ULA1BIT                                      ;
@@ -56,7 +56,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/16/2018 08:48:19 ;
+; Start date & time ; 05/16/2018 08:55:44 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ULA1BIT             ;
 +-------------------+---------------------+
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +------------------------------------+-------------------------------+---------------+-------------+----------------------+
 ; Assignment Name                    ; Value                         ; Default Value ; Entity Name ; Section Id           ;
 +------------------------------------+-------------------------------+---------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID              ; 8796753437718.152647129901724 ; --            ; --          ; --                   ;
+; COMPILER_SIGNATURE_ID              ; 8796753437718.152647174400912 ; --            ; --          ; --                   ;
 ; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL    ; LeonardoSpectrum              ; <None>        ; --          ; --                   ;
 ; EDA_INPUT_DATA_FORMAT              ; Edif                          ; --            ; --          ; eda_design_synthesis ;
 ; EDA_LMF_FILE                       ; mentor.lmf                    ; --            ; --          ; eda_design_synthesis ;
@@ -87,12 +87,12 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:01     ; 1.0                     ; 204 MB              ; 00:00:01                           ;
+; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 205 MB              ; 00:00:01                           ;
 ; Fitter                  ; 00:00:00     ; 1.0                     ; 144 MB              ; 00:00:00                           ;
-; Assembler               ; 00:00:01     ; 1.0                     ; 159 MB              ; 00:00:00                           ;
+; Assembler               ; 00:00:00     ; 1.0                     ; 159 MB              ; 00:00:00                           ;
 ; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 130 MB              ; 00:00:00                           ;
-; EDA Netlist Writer      ; 00:00:00     ; 1.0                     ; 140 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:02     ; --                      ; --                  ; 00:00:01                           ;
+; EDA Netlist Writer      ; 00:00:01     ; 1.0                     ; 140 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:03     ; --                      ; --                  ; 00:00:01                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

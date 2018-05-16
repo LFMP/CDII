@@ -151,3 +151,17 @@ PACKAGE logic IS
 	END COMPONENT;
 
 END logic;
+
+PACKAGE arithmetic IS
+
+		COMPONENT somador IS
+		PORT(e: IN BIT_VECTOR(2 DOWNTO 0);
+			s: OUT BIT_VECTOR(1 DOWNTO 0));
+		END COMPONENT;
+		
+		COMPONENT subtrator IS
+			PORT(e: IN BIT_VECTOR(2 DOWNTO 0);
+				s: OUT BIT_VECTOR(1 DOWNTO 0));
+		END COMPONENT;
+
+END arithmetic;
