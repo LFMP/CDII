@@ -1,0 +1,5 @@
+|ULA1BIT
+x => ~NO_FANOUT~
+z <= <GND>
+
+
