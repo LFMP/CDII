@@ -113,6 +113,26 @@ BEGIN
 	END PROCESS;
 END subt;
 
+ENTITY decodificador4x1 IS
+	PORT(in1, in2, in3, in4: IN BIT;
+		sel: IN BIT_VECTOR(1 DOWNTO 0);
+		dataout: OUT BIT);
+END decodificador4x1;
+
+ARCHITECTURE mux OF decodificador4x1 IS
+BEGIN
+		PROCESS(sel, in1, in2, in3, in4)
+			BEGIN
+				CASE sel IS
+					WHEN "00" => dataout <= in1;
+					WHEN "01" => dataout <= in2;
+					WHEN "10" => dataout <= in3;
+					WHEN "11" => dataout <= in4;
+					WHEN others => dataout <= '0';
+				END CASE;
+			END PROCESS;
+END mux;
+
 PACKAGE logic IS
 
 	COMPONENT not_1 IS
@@ -165,3 +185,11 @@ PACKAGE arithmetic IS
 		END COMPONENT;
 
 END arithmetic;
+
+PACKAGE decodificador IS
+	COMPONENT decod IS
+		PORT(in1, in2, in3, in4: IN BIT;
+			sel: IN BIT_VECTOR(1 DOWNTO 0);
+			dataout: OUT BIT);
+	END COMPONENT;
+END decodificador;
