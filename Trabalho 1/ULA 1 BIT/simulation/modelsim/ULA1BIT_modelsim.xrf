@@ -1,7 +1,7 @@
 vendor_name = ModelSim
-source_file = 1, F:/CDII/ULA 1 BIT/ULA1BIT.vhd
-source_file = 1, F:/CDII/ULA 1 BIT/components.vhd
-source_file = 1, F:/CDII/ULA 1 BIT/db/ULA1BIT.cbx.xml
+source_file = 1, E:/CDII/Trabalho 1/ULA 1 BIT/ULA1BIT.vhd
+source_file = 1, E:/CDII/Trabalho 1/ULA 1 BIT/components.vhd
+source_file = 1, E:/CDII/Trabalho 1/ULA 1 BIT/db/ULA1BIT.cbx.xml
 source_file = 1, c:/altera/91sp2/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/altera/91sp2/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/altera/91sp2/quartus/libraries/vhdl/ieee/timing_b.vhd

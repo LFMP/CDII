@@ -1,79 +1,47 @@
-ENTITY not_2 IS
-	PORT(x: IN BIT;
-		z: OUT BIT);
-END not_2;
+ENTITY compon IS
+	PORT(x,y,in1, in2, in3, in4: IN BIT;
+		e: IN BIT_VECTOR(2 DOWNTO 0);
+		sel: IN BIT_VECTOR(1 DOWNTO 0);
+		z,dataout: OUT BIT;
+		s: OUT BIT_VECTOR(1 DOWNTO 0));
+END compon;
 
-ARCHITECTURE logica1 OF not_2 IS
+ARCHITECTURE not_1 OF compon IS
 	BEGIN
 	z <= NOT X;
-END logica1;
+END not_1;
 
-ENTITY and_2 IS
-	PORT(x,y: IN BIT;
-		z: OUT BIT);
-END and_2;
-
-ARCHITECTURE logica1 OF and_2 IS
+ARCHITECTURE and_1 OF compon IS
 	BEGIN
 	z <= x AND y;
-END logica1;
+END and_1;
 
-ENTITY nand_2 IS
-	PORT(x,y: IN BIT;
-		z: OUT BIT);
-END nand_2;
-
-ARCHITECTURE logica1 OF nand_2 IS
+ARCHITECTURE nand_1 OF compon IS
 	BEGIN
 	z <= NOT(x AND y);
-END logica1;
+END nand_1;
 
-ENTITY or_2 IS
-	PORT(x,y: IN BIT;
-		z: OUT BIT);
-END or_2;
-
-ARCHITECTURE logica1 OF or_2 IS
+ARCHITECTURE or_1 OF compon IS
 	BEGIN
 	z <= x OR y;
-END logica1;
+END or_1;
 
-ENTITY nor_2 IS
-	PORT(x,y: IN BIT;
-		z: OUT BIT);
-END nor_2;
-
-ARCHITECTURE logica1 OF nor_2 IS
+ARCHITECTURE nor_1 OF compon IS
 	BEGIN
 	z <= NOT(x OR y);
-END logica1;
+END nor_1;
 
-ENTITY xor_2 IS
-	PORT(x,y: IN BIT;
-		z: OUT BIT);
-END xor_2;
-
-ARCHITECTURE logica1 OF xor_2 IS
+ARCHITECTURE xor_1 OF compon IS
 	BEGIN
 	z <= x XOR y;
-END logica1;
+END xor_1;
 
-ENTITY xnor_2 IS
-	PORT(x,y: IN BIT;
-		z: OUT BIT);
-END xnor_2;
-
-ARCHITECTURE logica1 OF xnor_2 IS
+ARCHITECTURE xnor_1 OF compon IS
 	BEGIN
 	z <= NOT(x XOR y);
-END logica1;
+END xnor_1;
 
-ENTITY somador2 IS
-	PORT(e: IN BIT_VECTOR(2 DOWNTO 0);
-			s: OUT BIT_VECTOR(1 DOWNTO 0));
-END somador2;
-
-ARCHITECTURE som OF somador2 IS
+ARCHITECTURE som OF compon IS
 
 BEGIN
 	S <= "00" WHEN e = "000" ELSE
@@ -87,12 +55,7 @@ BEGIN
 
 END som;
 
-ENTITY subtrator2 IS
-	PORT(e: IN BIT_VECTOR(2 DOWNTO 0);
-			s: OUT BIT_VECTOR(1 DOWNTO 0));
-END subtrator2;
-
-ARCHITECTURE subt OF subtrator2 IS
+ARCHITECTURE subt OF compon IS
 
 BEGIN
 	PROCESS(e)
@@ -110,13 +73,7 @@ BEGIN
 	END PROCESS;
 END subt;
 
-ENTITY decod4x1 IS
-	PORT(in1, in2, in3, in4: IN BIT;
-		sel: IN BIT_VECTOR(1 DOWNTO 0);
-		dataout: OUT BIT);
-END decod4x1;
-
-ARCHITECTURE mux OF decod4x1 IS
+ARCHITECTURE mux OF compon IS
 BEGIN
 		PROCESS(sel, in1, in2, in3, in4)
 			BEGIN
@@ -132,37 +89,37 @@ END mux;
 
 PACKAGE logic1 IS
 
-	COMPONENT not_2 IS
+	COMPONENT not_1 IS
 		PORT(x: IN BIT;
 			Z: OUT BIT);
 	END COMPONENT;
 	
-	COMPONENT and_2 IS
+	COMPONENT and_1 IS
 		PORT(x,y: IN BIT;
 			Z: OUT BIT);
 	END COMPONENT;
 	
-		COMPONENT nand_2 IS
+		COMPONENT nand_1 IS
 		PORT(x,y: IN BIT;
 			Z: OUT BIT);
 	END COMPONENT;
 	
-		COMPONENT or_2 IS
+		COMPONENT or_1 IS
 		PORT(x,y: IN BIT;
 			Z: OUT BIT);
 	END COMPONENT;
 	
-		COMPONENT nor_2 IS
+		COMPONENT nor_1 IS
 		PORT(x,y: IN BIT;
 			Z: OUT BIT);
 	END COMPONENT;
 	
-		COMPONENT xor_2 IS
+		COMPONENT xor_1 IS
 		PORT(x,y: IN BIT;
 			Z: OUT BIT);
 	END COMPONENT;
 	
-		COMPONENT xnor_2 IS
+		COMPONENT xnor_1 IS
 		PORT(x,y: IN BIT;
 			Z: OUT BIT);
 	END COMPONENT;
@@ -171,12 +128,12 @@ END logic1;
 
 PACKAGE arithmetic2 IS
 
-		COMPONENT somador2 IS
+		COMPONENT somador IS
 		PORT(e: IN BIT_VECTOR(2 DOWNTO 0);
 			s: OUT BIT_VECTOR(1 DOWNTO 0));
 		END COMPONENT;
 		
-		COMPONENT subtrator2 IS
+		COMPONENT subtrator IS
 			PORT(e: IN BIT_VECTOR(2 DOWNTO 0);
 				s: OUT BIT_VECTOR(1 DOWNTO 0));
 		END COMPONENT;
