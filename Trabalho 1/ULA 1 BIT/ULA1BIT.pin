@@ -67,17 +67,17 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 GND+                         : 1         :        :                   :         :           :                
 GND+                         : 2         :        :                   :         :           :                
 VCC                          : 3         : power  :                   :         :           :                
-y                            : 4         : input  : TTL               :         :           : N              
-RESERVED                     : 5         :        :                   :         :           :                
-RESERVED                     : 6         :        :                   :         :           :                
+ope[1]                       : 4         : input  : TTL               :         :           : N              
+ea                           : 5         : input  : TTL               :         :           : N              
+cin                          : 6         : input  : TTL               :         :           : N              
 TDI                          : 7         : input  : TTL               :         :           : N              
 RESERVED                     : 8         :        :                   :         :           :                
 RESERVED                     : 9         :        :                   :         :           :                
 GND                          : 10        : gnd    :                   :         :           :                
 RESERVED                     : 11        :        :                   :         :           :                
-z                            : 12        : output : TTL               :         :           : N              
+s                            : 12        : output : TTL               :         :           : N              
 TMS                          : 13        : input  : TTL               :         :           : N              
-RESERVED                     : 14        :        :                   :         :           :                
+eb                           : 14        : input  : TTL               :         :           : N              
 VCC                          : 15        : power  :                   :         :           :                
 RESERVED                     : 16        :        :                   :         :           :                
 RESERVED                     : 17        :        :                   :         :           :                
@@ -94,7 +94,7 @@ RESERVED                     : 27        :        :                   :         
 RESERVED                     : 28        :        :                   :         :           :                
 RESERVED                     : 29        :        :                   :         :           :                
 GND                          : 30        : gnd    :                   :         :           :                
-RESERVED                     : 31        :        :                   :         :           :                
+ope[3]                       : 31        : input  : TTL               :         :           : N              
 TCK                          : 32        : input  : TTL               :         :           : N              
 RESERVED                     : 33        :        :                   :         :           :                
 RESERVED                     : 34        :        :                   :         :           :                
@@ -103,8 +103,8 @@ RESERVED                     : 36        :        :                   :         
 RESERVED                     : 37        :        :                   :         :           :                
 TDO                          : 38        : output : TTL               :         :           : N              
 RESERVED                     : 39        :        :                   :         :           :                
-RESERVED                     : 40        :        :                   :         :           :                
-x                            : 41        : input  : TTL               :         :           : N              
+ope[2]                       : 40        : input  : TTL               :         :           : N              
+ope[0]                       : 41        : input  : TTL               :         :           : N              
 GND                          : 42        : gnd    :                   :         :           :                
 GND+                         : 43        :        :                   :         :           :                
 GND+                         : 44        :        :                   :         :           :                

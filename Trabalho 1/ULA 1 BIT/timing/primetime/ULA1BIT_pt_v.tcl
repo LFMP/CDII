@@ -16,7 +16,7 @@
 ## PROGRAM "Quartus II"
 ## VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition"
 
-## DATE "05/22/2018 08:51:08"
+## DATE "05/24/2018 09:36:00"
 
 ## 
 ## Device: Altera EPM7064SLI44-7 Package PLCC44
@@ -75,7 +75,7 @@ read_sdf ULA1BIT_v.sdo
 ## End individual pin commands definition ##
 
 ## Start Output pin capacitance definition ##
-set_load -pin_load 10 [get_ports { z } ]
+set_load -pin_load 10 [get_ports { s } ]
 ## End Output pin capacitance definition ##
 
 ## Start clock uncertainty definition ##

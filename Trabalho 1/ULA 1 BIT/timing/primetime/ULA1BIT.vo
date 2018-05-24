@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II"
 // VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition"
 
-// DATE "05/22/2018 08:51:08"
+// DATE "05/24/2018 09:35:59"
 
 // 
 // Device: Altera EPM7064SLI44-7 Package PLCC44
@@ -29,17 +29,26 @@
 `timescale 1 ps/ 1 ps
 
 module ULA1BIT (
-	x,
-	y,
-	z);
-input 	x;
-input 	y;
-output 	z;
+	ope,
+	ea,
+	eb,
+	cin,
+	s);
+input 	[3:0] ope;
+input 	ea;
+input 	eb;
+input 	cin;
+output 	s;
 
 // Design Ports Information
-// x	=>  Location: PIN_41
-// y	=>  Location: PIN_4
-// z	=>  Location: PIN_12
+// ope[0]	=>  Location: PIN_41
+// ope[1]	=>  Location: PIN_4
+// ope[2]	=>  Location: PIN_40
+// ope[3]	=>  Location: PIN_31
+// ea	=>  Location: PIN_5
+// eb	=>  Location: PIN_14
+// cin	=>  Location: PIN_6
+// s	=>  Location: PIN_12
 
 wire gnd;
 wire vcc;
@@ -84,45 +93,115 @@ max_mcell \~GND~0 (
 // synopsys translate_on
 
 // Location: PIN_41
-max_io \x~I (
+max_io \ope[0]~I (
 	.datain(gnd),
 	.oe(gnd),
 	.modesel(9'b101010001),
 	.dataout(),
-	.padio(x));
+	.padio(ope[0]));
 // synopsys translate_off
-// defparam \x~I .bus_hold = "false";
-// defparam \x~I .open_drain_output = "false";
-// defparam \x~I .operation_mode = "input";
-// defparam \x~I .weak_pull_up = "false";
+// defparam \ope[0]~I .bus_hold = "false";
+// defparam \ope[0]~I .open_drain_output = "false";
+// defparam \ope[0]~I .operation_mode = "input";
+// defparam \ope[0]~I .weak_pull_up = "false";
 // synopsys translate_on
 
 // Location: PIN_4
-max_io \y~I (
+max_io \ope[1]~I (
 	.datain(gnd),
 	.oe(gnd),
 	.modesel(9'b101010001),
 	.dataout(),
-	.padio(y));
+	.padio(ope[1]));
 // synopsys translate_off
-// defparam \y~I .bus_hold = "false";
-// defparam \y~I .open_drain_output = "false";
-// defparam \y~I .operation_mode = "input";
-// defparam \y~I .weak_pull_up = "false";
+// defparam \ope[1]~I .bus_hold = "false";
+// defparam \ope[1]~I .open_drain_output = "false";
+// defparam \ope[1]~I .operation_mode = "input";
+// defparam \ope[1]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_40
+max_io \ope[2]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.modesel(9'b101010001),
+	.dataout(),
+	.padio(ope[2]));
+// synopsys translate_off
+// defparam \ope[2]~I .bus_hold = "false";
+// defparam \ope[2]~I .open_drain_output = "false";
+// defparam \ope[2]~I .operation_mode = "input";
+// defparam \ope[2]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_31
+max_io \ope[3]~I (
+	.datain(gnd),
+	.oe(gnd),
+	.modesel(9'b101010001),
+	.dataout(),
+	.padio(ope[3]));
+// synopsys translate_off
+// defparam \ope[3]~I .bus_hold = "false";
+// defparam \ope[3]~I .open_drain_output = "false";
+// defparam \ope[3]~I .operation_mode = "input";
+// defparam \ope[3]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_5
+max_io \ea~I (
+	.datain(gnd),
+	.oe(gnd),
+	.modesel(9'b101010001),
+	.dataout(),
+	.padio(ea));
+// synopsys translate_off
+// defparam \ea~I .bus_hold = "false";
+// defparam \ea~I .open_drain_output = "false";
+// defparam \ea~I .operation_mode = "input";
+// defparam \ea~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_14
+max_io \eb~I (
+	.datain(gnd),
+	.oe(gnd),
+	.modesel(9'b101010001),
+	.dataout(),
+	.padio(eb));
+// synopsys translate_off
+// defparam \eb~I .bus_hold = "false";
+// defparam \eb~I .open_drain_output = "false";
+// defparam \eb~I .operation_mode = "input";
+// defparam \eb~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_6
+max_io \cin~I (
+	.datain(gnd),
+	.oe(gnd),
+	.modesel(9'b101010001),
+	.dataout(),
+	.padio(cin));
+// synopsys translate_off
+// defparam \cin~I .bus_hold = "false";
+// defparam \cin~I .open_drain_output = "false";
+// defparam \cin~I .operation_mode = "input";
+// defparam \cin~I .weak_pull_up = "false";
 // synopsys translate_on
 
 // Location: PIN_12
-max_io \z~I (
+max_io \s~I (
 	.datain(\~GND~0~dataout ),
 	.oe(vcc),
 	.modesel(9'b101010010),
 	.dataout(),
-	.padio(z));
+	.padio(s));
 // synopsys translate_off
-// defparam \z~I .bus_hold = "false";
-// defparam \z~I .open_drain_output = "false";
-// defparam \z~I .operation_mode = "output";
-// defparam \z~I .weak_pull_up = "false";
+// defparam \s~I .bus_hold = "false";
+// defparam \s~I .open_drain_output = "false";
+// defparam \s~I .operation_mode = "output";
+// defparam \s~I .weak_pull_up = "false";
 // synopsys translate_on
 
 endmodule

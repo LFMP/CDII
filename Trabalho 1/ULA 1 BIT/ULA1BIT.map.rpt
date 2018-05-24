@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA1BIT
-Tue May 22 08:50:59 2018
+Thu May 24 09:35:45 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -9,11 +9,10 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   1. Legal Notice
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis Messages
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis Messages
 
 
 
@@ -39,13 +38,13 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue May 22 08:50:59 2018        ;
+; Analysis & Synthesis Status ; Successful - Thu May 24 09:35:45 2018        ;
 ; Quartus II Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name               ; ULA1BIT                                      ;
 ; Top-level Entity Name       ; ULA1BIT                                      ;
 ; Family                      ; MAX7000S                                     ;
 ; Total macrocells            ; 1                                            ;
-; Total pins                  ; 3                                            ;
+; Total pins                  ; 8                                            ;
 +-----------------------------+----------------------------------------------+
 
 
@@ -111,23 +110,12 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+----------------+---------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 2      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
-
-
 +-----------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Source Files Read                                                                          ;
 +----------------------------------+-----------------+-----------------+------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path             ;
 +----------------------------------+-----------------+-----------------+------------------------------------------+
-; ULA1BIT.vhd                      ; yes             ; User VHDL File  ; E:/CDII/Trabalho 1/ULA 1 BIT/ULA1BIT.vhd ;
+; ULA1BIT.vhd                      ; yes             ; User VHDL File  ; F:/CDII/Trabalho 1/ULA 1 BIT/ULA1BIT.vhd ;
 +----------------------------------+-----------------+-----------------+------------------------------------------+
 
 
@@ -138,11 +126,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------+----------------------+
 ; Logic cells          ; 1                    ;
 ; Total registers      ; 0                    ;
-; I/O pins             ; 3                    ;
+; I/O pins             ; 8                    ;
 ; Maximum fan-out node ; ~GND~0               ;
 ; Maximum fan-out      ; 1                    ;
 ; Total fan-out        ; 1                    ;
-; Average fan-out      ; 0.25                 ;
+; Average fan-out      ; 0.11                 ;
 +----------------------+----------------------+
 
 
@@ -151,7 +139,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+------------+------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+------------+------+---------------------+--------------+
-; |ULA1BIT                   ; 1          ; 3    ; |ULA1BIT            ; work         ;
+; |ULA1BIT                   ; 1          ; 8    ; |ULA1BIT            ; work         ;
 +----------------------------+------------+------+---------------------+--------------+
 
 
@@ -161,7 +149,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue May 22 08:50:57 2018
+    Info: Processing started: Thu May 24 09:35:42 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA1BIT -c ULA1BIT
 Info: Found 2 design units, including 1 entities, in source file ula1bit.vhd
     Info: Found design unit 1: ULA1BIT-logica1
@@ -176,26 +164,31 @@ Info: Found 14 design units, including 1 entities, in source file components.vhd
     Info: Found design unit 7: compon-xnor_1
     Info: Found design unit 8: compon-som
     Info: Found design unit 9: compon-subt
-    Info: Found design unit 10: compon-mux
-    Info: Found design unit 11: logic1
-    Info: Found design unit 12: arithmetic2
-    Info: Found design unit 13: decodificador2
+    Info: Found design unit 10: compon-decod
+    Info: Found design unit 11: logica
+    Info: Found design unit 12: aritimetica
+    Info: Found design unit 13: decodificador
     Info: Found entity 1: compon
 Info: Elaborating entity "ULA1BIT" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at ULA1BIT.vhd(6): used implicit default value for signal "z" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ULA1BIT.vhd(7): used implicit default value for signal "s" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "z" is stuck at GND
-Warning: Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "x"
-    Warning (15610): No output dependent on input pin "y"
-Info: Implemented 4 device resources after synthesis - the final resource count might be different
-    Info: Implemented 2 input pins
+    Warning (13410): Pin "s" is stuck at GND
+Warning: Design contains 7 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ope[0]"
+    Warning (15610): No output dependent on input pin "ope[1]"
+    Warning (15610): No output dependent on input pin "ope[2]"
+    Warning (15610): No output dependent on input pin "ope[3]"
+    Warning (15610): No output dependent on input pin "ea"
+    Warning (15610): No output dependent on input pin "eb"
+    Warning (15610): No output dependent on input pin "cin"
+Info: Implemented 9 device resources after synthesis - the final resource count might be different
+    Info: Implemented 7 input pins
     Info: Implemented 1 output pins
     Info: Implemented 1 macrocells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 205 megabytes
-    Info: Processing ended: Tue May 22 08:50:59 2018
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 225 megabytes
+    Info: Processing ended: Thu May 24 09:35:45 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
 
 

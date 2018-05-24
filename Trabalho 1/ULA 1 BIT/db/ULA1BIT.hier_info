@@ -1,6 +1,11 @@
 |ULA1BIT
-x => ~NO_FANOUT~
-y => ~NO_FANOUT~
-z <= <GND>
+ope[0] => ~NO_FANOUT~
+ope[1] => ~NO_FANOUT~
+ope[2] => ~NO_FANOUT~
+ope[3] => ~NO_FANOUT~
+ea => ~NO_FANOUT~
+eb => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+s <= <GND>
 
 
