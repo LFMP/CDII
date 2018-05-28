@@ -1,7 +1,7 @@
 Quartus II
 Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 33
-2065
+3700
 OFF
 OFF
 OFF
@@ -16,7 +16,7 @@ VRSM_ON
 VHSM_ON
 mentor.lmf
 -- Start Library Paths --
-|cdii|ula 1 bit|
+
 -- End Library Paths --
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
@@ -32,7 +32,7 @@ ON
 # case_insensitive
 # source_file
 ula1bit.vhd
-5e2894643df16354ee14ed4283a3c781
+337d59a394f9366f6997ab24689acbfe
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -43,6 +43,10 @@ AUTO_RAM_RECOGNITION
 ON
 AUTO_ROM_RECOGNITION
 ON
+}
+# include_file {
+components.vhd
+8173479564bb4c82dc1deeebe7232e
 }
 # hierarchies {
 |

@@ -1,5 +1,5 @@
 Flow report for ULA1BIT
-Thu May 24 09:36:00 2018
+Sun May 27 22:55:55 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,16 +38,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-------------------------+----------------------------------------------+
-; Flow Status             ; Successful - Thu May 24 09:36:00 2018        ;
+; Flow Status             ; Flow Failed - Sun May 27 22:55:55 2018       ;
 ; Quartus II Version      ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name           ; ULA1BIT                                      ;
 ; Top-level Entity Name   ; ULA1BIT                                      ;
 ; Family                  ; MAX7000S                                     ;
-; Device                  ; EPM7064SLI44-7                               ;
-; Timing Models           ; Final                                        ;
-; Met timing requirements ; Yes                                          ;
-; Total macrocells        ; 1 / 64 ( 2 % )                               ;
-; Total pins              ; 12 / 36 ( 33 % )                             ;
+; Met timing requirements ; N/A                                          ;
 +-------------------------+----------------------------------------------+
 
 
@@ -56,68 +52,71 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/24/2018 09:35:42 ;
+; Start date & time ; 05/27/2018 22:55:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ULA1BIT             ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+------------------------------------+-------------------------------+---------------+-------------+----------------------+
-; Assignment Name                    ; Value                         ; Default Value ; Entity Name ; Section Id           ;
-+------------------------------------+-------------------------------+---------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID              ; 8796759699586.152716534203544 ; --            ; --          ; --                   ;
-; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL    ; LeonardoSpectrum              ; <None>        ; --          ; --                   ;
-; EDA_INPUT_DATA_FORMAT              ; Edif                          ; --            ; --          ; eda_design_synthesis ;
-; EDA_LMF_FILE                       ; mentor.lmf                    ; --            ; --          ; eda_design_synthesis ;
-; EDA_OUTPUT_DATA_FORMAT             ; Verilog Hdl                   ; --            ; --          ; eda_simulation       ;
-; EDA_OUTPUT_DATA_FORMAT             ; Verilog Hdl                   ; --            ; --          ; eda_timing_analysis  ;
-; EDA_SIMULATION_TOOL                ; ModelSim (Verilog)            ; <None>        ; --          ; --                   ;
-; EDA_TIME_SCALE                     ; 1 ps                          ; --            ; --          ; eda_simulation       ;
-; EDA_TIMING_ANALYSIS_TOOL           ; PrimeTime (Verilog)           ; <None>        ; --          ; --                   ;
-; MAX_CORE_JUNCTION_TEMP             ; 85                            ; --            ; --          ; --                   ;
-; MIN_CORE_JUNCTION_TEMP             ; 0                             ; --            ; --          ; --                   ;
-; SEARCH_PATH                        ; f:\cdii\ula 1 bit             ; --            ; --          ; --                   ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                           ; --            ; --          ; eda_blast_fpga       ;
-+------------------------------------+-------------------------------+---------------+-------------+----------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                      ;
++------------------------------------+------------------------------------------+---------------+----------------+----------------------+
+; Assignment Name                    ; Value                                    ; Default Value ; Entity Name    ; Section Id           ;
++------------------------------------+------------------------------------------+---------------+----------------+----------------------+
+; COMPILER_SIGNATURE_ID              ; 8796759699586.152747255404288            ; --            ; --             ; --                   ;
+; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL    ; LeonardoSpectrum                         ; <None>        ; --             ; --                   ;
+; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL    ; LeonardoSpectrum                         ; <None>        ; ULA1BIT.vhd    ; --                   ;
+; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL    ; LeonardoSpectrum                         ; <None>        ; components.vhd ; --                   ;
+; EDA_INPUT_DATA_FORMAT              ; Edif                                     ; --            ; --             ; eda_design_synthesis ;
+; EDA_INPUT_DATA_FORMAT              ; Edif                                     ; --            ; ULA1BIT.vhd    ; eda_design_synthesis ;
+; EDA_INPUT_DATA_FORMAT              ; Edif                                     ; --            ; components.vhd ; eda_design_synthesis ;
+; EDA_INPUT_GND_NAME                 ; Gnd                                      ; --            ; ULA1BIT.vhd    ; eda_design_synthesis ;
+; EDA_INPUT_GND_NAME                 ; Gnd                                      ; --            ; components.vhd ; eda_design_synthesis ;
+; EDA_INPUT_VCC_NAME                 ; Vcc                                      ; --            ; ULA1BIT.vhd    ; eda_design_synthesis ;
+; EDA_INPUT_VCC_NAME                 ; Vcc                                      ; --            ; components.vhd ; eda_design_synthesis ;
+; EDA_LMF_FILE                       ; mentor.lmf                               ; --            ; --             ; eda_design_synthesis ;
+; EDA_LMF_FILE                       ; mentor.lmf                               ; --            ; ULA1BIT.vhd    ; eda_design_synthesis ;
+; EDA_LMF_FILE                       ; mentor.lmf                               ; --            ; components.vhd ; eda_design_synthesis ;
+; EDA_OUTPUT_DATA_FORMAT             ; Verilog Hdl                              ; --            ; --             ; eda_simulation       ;
+; EDA_OUTPUT_DATA_FORMAT             ; Verilog Hdl                              ; --            ; --             ; eda_timing_analysis  ;
+; EDA_RUN_TOOL_AUTOMATICALLY         ; Off                                      ; --            ; ULA1BIT.vhd    ; eda_design_synthesis ;
+; EDA_RUN_TOOL_AUTOMATICALLY         ; Off                                      ; --            ; components.vhd ; eda_design_synthesis ;
+; EDA_SHOW_LMF_MAPPING_MESSAGES      ; Off                                      ; --            ; ULA1BIT.vhd    ; eda_design_synthesis ;
+; EDA_SHOW_LMF_MAPPING_MESSAGES      ; Off                                      ; --            ; components.vhd ; eda_design_synthesis ;
+; EDA_SIMULATION_TOOL                ; ModelSim (Verilog)                       ; <None>        ; --             ; --                   ;
+; EDA_TIME_SCALE                     ; 1 ps                                     ; --            ; --             ; eda_simulation       ;
+; EDA_TIMING_ANALYSIS_TOOL           ; PrimeTime (Verilog)                      ; <None>        ; --             ; --                   ;
+; FITTER_EFFORT                      ; Standard Fit                             ; Auto Fit      ; --             ; --                   ;
+; MISC_FILE                          ; F:/CDII/Trabalho 1/ULA 1 BIT/ULA1BIT.dpf ; --            ; --             ; --                   ;
+; OPTIMIZE_HOLD_TIMING               ; Off                                      ; --            ; --             ; --                   ;
+; SEARCH_PATH                        ; f:\cdii\trabalho 1\ula 1 bit             ; --            ; --             ; --                   ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                      ; --            ; --             ; eda_blast_fpga       ;
++------------------------------------+------------------------------------------+---------------+----------------+----------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                           ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:04     ; 1.0                     ; 225 MB              ; 00:00:02                           ;
-; Fitter                  ; 00:00:01     ; 1.0                     ; 168 MB              ; 00:00:00                           ;
-; Assembler               ; 00:00:01     ; 1.0                     ; 180 MB              ; 00:00:00                           ;
-; Classic Timing Analyzer ; 00:00:02     ; 1.0                     ; 151 MB              ; 00:00:00                           ;
-; EDA Netlist Writer      ; 00:00:02     ; 1.0                     ; 161 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:10     ; --                      ; --                  ; 00:00:03                           ;
-+-------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 228 MB              ; 00:00:02                           ;
+; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                          ;
-+-------------------------+------------------+---------------+------------+----------------+
-; Module Name             ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
-+-------------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis    ; DESKTOP-RNFOICH  ; Windows Vista ; 6.2        ; i686           ;
-; Fitter                  ; DESKTOP-RNFOICH  ; Windows Vista ; 6.2        ; i686           ;
-; Assembler               ; DESKTOP-RNFOICH  ; Windows Vista ; 6.2        ; i686           ;
-; Classic Timing Analyzer ; DESKTOP-RNFOICH  ; Windows Vista ; 6.2        ; i686           ;
-; EDA Netlist Writer      ; DESKTOP-RNFOICH  ; Windows Vista ; 6.2        ; i686           ;
-+-------------------------+------------------+---------------+------------+----------------+
++---------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                       ;
++----------------------+------------------+---------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
++----------------------+------------------+---------------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-RNFOICH  ; Windows Vista ; 6.2        ; i686           ;
++----------------------+------------------+---------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off ULA1BIT -c ULA1BIT
-quartus_fit --read_settings_files=off --write_settings_files=off ULA1BIT -c ULA1BIT
-quartus_asm --read_settings_files=off --write_settings_files=off ULA1BIT -c ULA1BIT
-quartus_tan --read_settings_files=off --write_settings_files=off ULA1BIT -c ULA1BIT
-quartus_eda --read_settings_files=off --write_settings_files=off ULA1BIT -c ULA1BIT
 
 
 

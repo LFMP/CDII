@@ -1,13 +1,13 @@
 ENTITY compon IS
 	PORT(
-		x,y,in1, in2, in3, in4: IN BIT;
-		e: IN BIT_VECTOR(2 DOWNTO 0);
-		sel: IN BIT_VECTOR(1 DOWNTO 0);
-		z,dataout: OUT BIT;
-		s: OUT BIT_VECTOR(1 DOWNTO 0)
+		x,y: IN BIT;
+		z: OUT BIT;
+		sel, e: IN BIT_VECTOR(2 DOWNTO 0);
+		dataout: OUT BIT_VECTOR(7 DOWNTO 0);
+		res, reso: OUT BIT_VECTOR(1 DOWNTO 0)
 	);
 END compon;
-
+---------------------------------------------------------------------
 ARCHITECTURE not_1 OF compon IS
 	BEGIN
 		PROCESS(x)
@@ -91,42 +91,53 @@ ARCHITECTURE xnor_1 OF compon IS
 			END IF;
 		END PROCESS;
 END xnor_1;
-
+---------------------------------------------------------------------
 ARCHITECTURE som OF compon IS
-
 BEGIN
-	S <= "00" WHEN e = "000" ELSE
-		 "10" WHEN e = "010" ELSE
-		 "10" WHEN e = "100" ELSE
-	  	 "01" WHEN e = "110" ELSE
-		 "10" WHEN e = "001" ELSE
-		 "01" WHEN e = "011" ELSE
-		 "01" WHEN e = "101" ELSE
-		 "11";
+	reso <= "00" WHEN e = "000" ELSE
+		"10" WHEN e = "010" ELSE
+		"10" WHEN e = "100" ELSE
+	  	"01" WHEN e = "110" ELSE
+		"10" WHEN e = "001" ELSE
+		"01" WHEN e = "011" ELSE
+		"01" WHEN e = "101" ELSE
+		"11";
 END som;
 
 ARCHITECTURE subt OF compon IS
-
 BEGIN
 	PROCESS(e)
 	BEGIN
 		CASE e IS
-			WHEN "000" => s <= "00";
-			WHEN "010" => s <= "11";
-			WHEN "100" => s <= "10";
-			WHEN "110" => s <= "00";
-			WHEN "001" => s <= "11";
-			WHEN "011" => s <= "01";
-			WHEN "101" => s <= "00";
-			WHEN "111" => s <= "11";
+			WHEN "000" => res <= "00";
+			WHEN "010" => res <= "11";
+			WHEN "100" => res <= "10";
+			WHEN "110" => res <= "00";
+			WHEN "001" => res <= "11";
+			WHEN "011" => res <= "01";
+			WHEN "101" => res <= "00";
+			WHEN "111" => res <= "11";
 		END CASE;
 	END PROCESS;
 END subt;
-
+---------------------------------------------------------------------
 ARCHITECTURE decod OF compon IS
 BEGIN
+	PROCESS(sel)
+	BEGIN
+		CASE(sel) IS
+			WHEN "000" => dataout <= "00000000";
+			WHEN "001" => dataout <= "00000010";
+			WHEN "010" => dataout <= "00000100";
+			WHEN "011" => dataout <= "00001000";
+			WHEN "100" => dataout <= "00010000";
+			WHEN "101" => dataout <= "00100000";
+			WHEN "110" => dataout <= "01000000";
+			WHEN "111" => dataout <= "10000000";
+		END CASE;
+	END PROCESS;
 END decod;
-
+---------------------------------------------------------------------
 PACKAGE logica IS
 
 	COMPONENT not_1 IS
@@ -179,7 +190,7 @@ PACKAGE logica IS
 	END COMPONENT;
 
 END logica;
-
+---------------------------------------------------------------------
 PACKAGE aritimetica IS
 
 	COMPONENT somador IS
@@ -197,13 +208,12 @@ PACKAGE aritimetica IS
 	END COMPONENT;
 
 END aritimetica;
-
+---------------------------------------------------------------------
 PACKAGE decodificador IS
 	COMPONENT decod IS
 		PORT(
-			in1, in2, in3, in4: IN BIT;
-			sel: IN BIT_VECTOR(1 DOWNTO 0);
-			dataout: OUT BIT
+			sel: IN BIT_VECTOR(2 DOWNTO 0);
+			dataout: OUT BIT_VECTOR(7 DOWNTO 0)
 		);
 	END COMPONENT;
 END decodificador;
