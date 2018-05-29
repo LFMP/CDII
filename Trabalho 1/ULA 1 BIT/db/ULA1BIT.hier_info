@@ -1,11 +1,4 @@
 |compon
-en[0] => ~NO_FANOUT~
-en[1] => ~NO_FANOUT~
-en[2] => ~NO_FANOUT~
-res[0] <= <GND>
-res[1] <= <GND>
-reso[0] <= <GND>
-reso[1] <= <GND>
 sel[0] => ~NO_FANOUT~
 sel[1] => ~NO_FANOUT~
 sel[2] => ~NO_FANOUT~
@@ -17,8 +10,6 @@ dataout[4] <= <GND>
 dataout[5] <= <GND>
 dataout[6] <= <GND>
 dataout[7] <= <GND>
-x => process_0.IN0
-y => process_0.IN1
 a => ~NO_FANOUT~
 b => ~NO_FANOUT~
 c => ~NO_FANOUT~
@@ -27,6 +18,13 @@ e => ~NO_FANOUT~
 f => ~NO_FANOUT~
 g => ~NO_FANOUT~
 h => ~NO_FANOUT~
+E0 => process_0.IN0
+E1 => process_0.IN1
+CIN => ~NO_FANOUT~
 z <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+SO <= <GND>
+SU <= <GND>
+COUTO <= <GND>
+COUTU <= <GND>
 
 

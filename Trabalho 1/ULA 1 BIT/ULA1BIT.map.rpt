@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA1BIT
-Tue May 29 16:43:27 2018
+Tue May 29 17:55:23 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,13 +38,13 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue May 29 16:43:27 2018        ;
+; Analysis & Synthesis Status ; Successful - Tue May 29 17:55:23 2018        ;
 ; Quartus II Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name               ; ULA1BIT                                      ;
 ; Top-level Entity Name       ; compon                                       ;
 ; Family                      ; MAX7000S                                     ;
 ; Total macrocells            ; 13                                           ;
-; Total pins                  ; 29                                           ;
+; Total pins                  ; 27                                           ;
 +-----------------------------+----------------------------------------------+
 
 
@@ -116,7 +116,7 @@ applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+-----------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path            ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------+
-; compon.vhd                       ; yes             ; User VHDL File  ; F:/CDII/TRABALHO 1/ULA 1 BIT/compon.vhd ;
+; compon.vhd                       ; yes             ; User VHDL File  ; F:/CDII/Trabalho 1/ULA 1 BIT/compon.vhd ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------+
 
 
@@ -127,11 +127,11 @@ applicable agreement for further details.
 +----------------------+----------------------+
 ; Logic cells          ; 13                   ;
 ; Total registers      ; 0                    ;
-; I/O pins             ; 29                   ;
+; I/O pins             ; 27                   ;
 ; Maximum fan-out node ; process_0~1          ;
 ; Maximum fan-out      ; 1                    ;
 ; Total fan-out        ; 15                   ;
-; Average fan-out      ; 0.36                 ;
+; Average fan-out      ; 0.38                 ;
 +----------------------+----------------------+
 
 
@@ -140,7 +140,7 @@ applicable agreement for further details.
 +----------------------------+------------+------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+------------+------+---------------------+--------------+
-; |compon                    ; 13         ; 29   ; |compon             ; work         ;
+; |compon                    ; 13         ; 27   ; |compon             ; work         ;
 +----------------------------+------------+------+---------------------+--------------+
 
 
@@ -150,36 +150,28 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue May 29 16:43:25 2018
+    Info: Processing started: Tue May 29 17:55:21 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA1BIT -c ULA1BIT
-Info: Found 18 design units, including 4 entities, in source file compon.vhd
+Info: Found 14 design units, including 1 entities, in source file compon.vhd
     Info: Found design unit 1: compon-som
     Info: Found design unit 2: compon-subt
     Info: Found design unit 3: aritimetica
     Info: Found design unit 4: compon-decod
     Info: Found design unit 5: decodificador
-    Info: Found design unit 6: compon-not_1
-    Info: Found design unit 7: compon-and_1
-    Info: Found design unit 8: compon-nand_1
-    Info: Found design unit 9: compon-or_1
-    Info: Found design unit 10: compon-or_2
-    Info: Found design unit 11: compon-nor_1
-    Info: Found design unit 12: compon-xor_1
-    Info: Found design unit 13: compon-xnor_1
-    Info: Found design unit 14: logica
+    Info: Found design unit 6: compon-and_1
+    Info: Found design unit 7: compon-nand_1
+    Info: Found design unit 8: compon-or_1
+    Info: Found design unit 9: compon-or_2
+    Info: Found design unit 10: compon-nor_1
+    Info: Found design unit 11: compon-xor_1
+    Info: Found design unit 12: compon-xnor_1
+    Info: Found design unit 13: logica
     Info: Found entity 1: compon
-    Info: Found entity 2: arithm
-    Info: Found entity 3: decodif
-    Info: Found entity 4: logic
 Info: Found 2 design units, including 1 entities, in source file ula1bit.vhd
     Info: Found design unit 1: ULA1BIT-des
     Info: Found entity 1: ULA1BIT
 Info: Elaborating entity "compon" for the top level hierarchy
 Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "res[0]" is stuck at GND
-    Warning (13410): Pin "res[1]" is stuck at GND
-    Warning (13410): Pin "reso[0]" is stuck at GND
-    Warning (13410): Pin "reso[1]" is stuck at GND
     Warning (13410): Pin "dataout[0]" is stuck at GND
     Warning (13410): Pin "dataout[1]" is stuck at GND
     Warning (13410): Pin "dataout[2]" is stuck at GND
@@ -188,10 +180,11 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "dataout[5]" is stuck at GND
     Warning (13410): Pin "dataout[6]" is stuck at GND
     Warning (13410): Pin "dataout[7]" is stuck at GND
-Warning: Design contains 14 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "en[0]"
-    Warning (15610): No output dependent on input pin "en[1]"
-    Warning (15610): No output dependent on input pin "en[2]"
+    Warning (13410): Pin "SO" is stuck at GND
+    Warning (13410): Pin "SU" is stuck at GND
+    Warning (13410): Pin "COUTO" is stuck at GND
+    Warning (13410): Pin "COUTU" is stuck at GND
+Warning: Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sel[0]"
     Warning (15610): No output dependent on input pin "sel[1]"
     Warning (15610): No output dependent on input pin "sel[2]"
@@ -203,8 +196,9 @@ Warning: Design contains 14 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "f"
     Warning (15610): No output dependent on input pin "g"
     Warning (15610): No output dependent on input pin "h"
-Info: Implemented 42 device resources after synthesis - the final resource count might be different
-    Info: Implemented 16 input pins
+    Warning (15610): No output dependent on input pin "CIN"
+Info: Implemented 40 device resources after synthesis - the final resource count might be different
+    Info: Implemented 14 input pins
     Info: Implemented 13 output pins
     Info: Implemented 13 macrocells
 Warning: Ignored assignments for entity "ULA1BIT.vhd" -- entity does not exist in design
@@ -223,9 +217,9 @@ Warning: Ignored assignments for entity "components.vhd" -- entity does not exis
     Warning: Assignment for entity set_global_assignment -name EDA_LMF_FILE mentor.lmf -entity components.vhd -section_id eda_design_synthesis was ignored
     Warning: Assignment for entity set_global_assignment -name EDA_SHOW_LMF_MAPPING_MESSAGES OFF -entity components.vhd -section_id eda_design_synthesis was ignored
     Warning: Assignment for entity set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -entity components.vhd -section_id eda_design_synthesis was ignored
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 44 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 42 warnings
     Info: Peak virtual memory: 225 megabytes
-    Info: Processing ended: Tue May 29 16:43:27 2018
+    Info: Processing ended: Tue May 29 17:55:23 2018
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

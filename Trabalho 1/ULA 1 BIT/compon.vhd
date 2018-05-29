@@ -1,47 +1,61 @@
 ENTITY compon IS
 	PORT(
-		en: IN BIT_VECTOR(2 DOWNTO 0);
-		res, reso: OUT BIT_VECTOR(1 DOWNTO 0);
+		--decodificador
 		sel: IN BIT_VECTOR(2 DOWNTO 0);
 		dataout: OUT BIT_VECTOR(7 DOWNTO 0);
-		x,y,a,b,c,d,e,f,g,h: IN BIT;
-		z: OUT BIT);
+		--decodificador
+		-----------------------------------
+		--or_2
+		a,b,c,d,e,f,g,h: IN BIT;
+		--or_2
+		-----------------------------------
+		E0,E1,CIN: IN BIT;
+		z,SO,SU, COUTO, COUTU: OUT BIT);
 END compon;
 
-
-ENTITY arithm IS
-	PORT(
-		en: IN BIT_VECTOR(2 DOWNTO 0);
-		res, reso: OUT BIT_VECTOR(1 DOWNTO 0)
-	);
-END arithm;
-
 ARCHITECTURE som OF compon IS
+SIGNAL INPUTS: BIT_VECTOR(2 DOWNTO 0);
+SIGNAL OUTPUTS: BIT_VECTOR(1 DOWNTO 0);
 BEGIN
-	reso <= "00" WHEN en = "000" ELSE
-		"10" WHEN en = "010" ELSE
-		"10" WHEN en = "100" ELSE
-	  	"01" WHEN en = "110" ELSE
-		"10" WHEN en = "001" ELSE
-		"01" WHEN en = "011" ELSE
-		"01" WHEN en = "101" ELSE
+	INPUTS(2) <= E0;
+	INPUTS(1) <= E1;
+	INPUTS(0) <= CIN;
+	
+	OUTPUTS <= "00" WHEN INPUTS = "000" ELSE
+		"10" WHEN INPUTS = "010" ELSE
+		"10" WHEN INPUTS = "100" ELSE
+	  	"01" WHEN INPUTS = "110" ELSE
+		"10" WHEN INPUTS = "001" ELSE
+		"01" WHEN INPUTS = "011" ELSE
+		"01" WHEN INPUTS = "101" ELSE
 		"11";
+	SO <= OUTPUTS(0);
+	COUTO <= OUTPUTS(1);
 END som;
 
 ARCHITECTURE subt OF compon IS
+SIGNAL INPUTS: BIT_VECTOR(2 DOWNTO 0);
+SIGNAL OUTPUTS: BIT_VECTOR(1 DOWNTO 0);
 BEGIN
-	PROCESS(en)
+	PROCESS(INPUTS)
 	BEGIN
-		CASE en IS
-			WHEN "000" => res <= "00";
-			WHEN "010" => res <= "11";
-			WHEN "100" => res <= "10";
-			WHEN "110" => res <= "00";
-			WHEN "001" => res <= "11";
-			WHEN "011" => res <= "01";
-			WHEN "101" => res <= "00";
-			WHEN "111" => res <= "11";
+		INPUTS(2) <= E0;
+		INPUTS(1) <= E1;
+		INPUTS(0) <= CIN;
+		
+		CASE INPUTS IS
+			WHEN "000" => OUTPUTS <= "00";
+			WHEN "010" => OUTPUTS <= "11";
+			WHEN "100" => OUTPUTS <= "10";
+			WHEN "110" => OUTPUTS <= "00";
+			WHEN "001" => OUTPUTS <= "11";
+			WHEN "011" => OUTPUTS <= "01";
+			WHEN "101" => OUTPUTS <= "00";
+			WHEN "111" => OUTPUTS <= "11";
 		END CASE;
+		
+		SU <= OUTPUTS(0);
+		COUTU <= OUTPUTS(1);
 	END PROCESS;
 END subt;
 ---------------------------------------------------------------------
@@ -49,26 +63,20 @@ PACKAGE aritimetica IS
 
 	COMPONENT somador IS
 		PORT(
-			en: IN BIT_VECTOR(2 DOWNTO 0);
-			reso: OUT BIT_VECTOR(1 DOWNTO 0)
+			E0,E1,CIN: IN BIT;
+			S0, COUTO: OUT BIT
 		);
 	END COMPONENT;
 	
 	COMPONENT subtrator IS
 		PORT(
-			en: IN BIT_VECTOR(2 DOWNTO 0);
-			res: OUT BIT_VECTOR(1 DOWNTO 0)
+			E0,E1,CIN: IN BIT;
+			SU, COUTU: OUT BIT
 		);
 	END COMPONENT;
 
 END aritimetica;
 ---------------------------------------------------------------------
-ENTITY decodif IS
-	PORT(
-		sel: IN BIT_VECTOR(2 DOWNTO 0);
-		dataout: OUT BIT_VECTOR(7 DOWNTO 0));
-END decodif;
-
 ARCHITECTURE decod OF compon IS
 BEGIN
 	PROCESS(sel)
@@ -97,29 +105,11 @@ PACKAGE decodificador IS
 	END COMPONENT;
 END decodificador;
 ---------------------------------------------------------------------
-ENTITY logic IS
-	PORT(
-		x,y,a,b,c,d,e,f,g,h: IN BIT;
-		z: OUT BIT);
-END logic;
-
-ARCHITECTURE not_1 OF compon IS
-	BEGIN
-		PROCESS(x)
-		BEGIN
-			IF(x = '1') THEN
-				z <= '0';
-			ELSE
-				z <= '1';
-			END IF;
-		END PROCESS;
-END not_1;
-
 ARCHITECTURE and_1 OF compon IS
 	BEGIN
-		PROCESS(x,y)
+		PROCESS(E0,E1)
 		BEGIN
-			IF(x = '1' and y = '1') THEN
+			IF(E0 = '1' and E1 = '1') THEN
 				z <= '1';
 			ELSE
 				z <= '0';
@@ -129,9 +119,9 @@ END and_1;
 
 ARCHITECTURE nand_1 OF compon IS
 	BEGIN
-		PROCESS(x,y)
+		PROCESS(E0,E1)
 		BEGIN
-			IF(x = '0' and y = '0') THEN
+			IF(E0 = '0' and E1 = '0') THEN
 				z <= '0';
 			ELSE
 				z <= '1';
@@ -141,9 +131,9 @@ END nand_1;
 
 ARCHITECTURE or_1 OF compon IS
 	BEGIN
-		PROCESS(x,y)
+		PROCESS(E0,E1)
 		BEGIN
-			IF(x = '0' and y = '0') THEN
+			IF(E0 = '0' and E1 = '0') THEN
 				z <= '0';
 			ELSE
 				z <= '1';
@@ -165,9 +155,9 @@ END or_2;
 
 ARCHITECTURE nor_1 OF compon IS
 	BEGIN
-		PROCESS(x,y)
+		PROCESS(E0,E1)
 		BEGIN
-			IF(x = '0' and y = '0') THEN
+			IF(E0 = '0' and E1 = '0') THEN
 				z <= '1';
 			ELSE
 				z <= '0';
@@ -177,9 +167,9 @@ END nor_1;
 
 ARCHITECTURE xor_1 OF compon IS
 	BEGIN
-		PROCESS(x,y)
+		PROCESS(E0,E1)
 		BEGIN
-			IF(x = y) THEN
+			IF(E0 = E1) THEN
 				z <= '0';
 			ELSE
 				z <= '1';
@@ -189,9 +179,9 @@ END xor_1;
 
 ARCHITECTURE xnor_1 OF compon IS
 	BEGIN
-		PROCESS(x,y)
+		PROCESS(E0,E1)
 		BEGIN
-			IF(x = y) THEN
+			IF(E0 = E1) THEN
 				z <= '1';
 			ELSE
 				z <= '0';
@@ -200,31 +190,24 @@ ARCHITECTURE xnor_1 OF compon IS
 END xnor_1;
 ---------------------------------------------------------------------
 PACKAGE logica IS
-
-	COMPONENT not_1 IS
-		PORT(
-			x: IN BIT;
-			Z: OUT BIT
-		);
-	END COMPONENT;
 	
 	COMPONENT and_1 IS
 		PORT(
-			x,y: IN BIT;
+			E0,E1: IN BIT;
 			Z: OUT BIT
 		);
 	END COMPONENT;
 	
 	COMPONENT nand_1 IS
 		PORT(
-			x,y: IN BIT;
+			E0,E1: IN BIT;
 			Z: OUT BIT
 		);
 	END COMPONENT;
 	
 	COMPONENT or_1 IS
 		PORT(
-			x,y: IN BIT;
+			E0,E1: IN BIT;
 			Z: OUT BIT
 		);
 	END COMPONENT;
@@ -238,21 +221,21 @@ PACKAGE logica IS
 	
 	COMPONENT nor_1 IS
 		PORT(
-			x,y: IN BIT;
+			E0,E1: IN BIT;
 			Z: OUT BIT
 		);
 	END COMPONENT;
 	
 	COMPONENT xor_1 IS
 		PORT(
-			x,y: IN BIT;
+			E0,E1: IN BIT;
 			Z: OUT BIT
 		);
 	END COMPONENT;
 	
 	COMPONENT xnor_1 IS
 		PORT(
-			x,y: IN BIT;
+			E0,E1: IN BIT;
 			Z: OUT BIT
 		);
 	END COMPONENT;

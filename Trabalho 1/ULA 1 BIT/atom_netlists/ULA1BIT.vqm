@@ -16,16 +16,11 @@
 // PROGRAM "Quartus II"
 // VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition"
 
-// DATE "05/29/2018 16:43:38"
+// DATE "05/29/2018 17:55:34"
 
 module 	compon (
-	en,
-	res,
-	reso,
 	sel,
 	dataout,
-	x,
-	y,
 	a,
 	b,
 	c,
@@ -34,14 +29,16 @@ module 	compon (
 	f,
 	g,
 	h,
-	z);
-input 	[2:0] en;
-output 	[1:0] res;
-output 	[1:0] reso;
+	E0,
+	E1,
+	CIN,
+	z,
+	SO,
+	SU,
+	COUTO,
+	COUTU);
 input 	[2:0] sel;
 output 	[7:0] dataout;
-input 	x;
-input 	y;
 input 	a;
 input 	b;
 input 	c;
@@ -50,7 +47,14 @@ input 	e;
 input 	f;
 input 	g;
 input 	h;
+input 	E0;
+input 	E1;
+input 	CIN;
 output 	z;
+output 	SO;
+output 	SU;
+output 	COUTO;
+output 	COUTU;
 wire \~GND~0 ;
 wire \~GND~1 ;
 wire \~GND~2 ;
@@ -63,11 +67,11 @@ wire \~GND~8 ;
 wire \~GND~9 ;
 wire \~GND~10 ;
 wire \~GND~11 ;
-wire \x~dataout ;
-wire \y~dataout ;
+wire \E0~dataout ;
+wire \E1~dataout ;
 wire \process_0~1 ;
 
-wire \__ALT_INV__y~dataout ;
+wire \__ALT_INV__E1~dataout ;
 
 wire gnd;
 wire vcc;
@@ -75,7 +79,7 @@ wire vcc;
 assign gnd = 1'b0;
 assign vcc = 1'b1;
 
-assign \__ALT_INV__y~dataout  = ~ \y~dataout ;
+assign \__ALT_INV__E1~dataout  = ~ \E1~dataout ;
 
 max_mcell \~GND~0~I (
 	.pterm1({\gnd }),
@@ -161,53 +165,53 @@ defparam \~GND~11~I .operation_mode = "normal";
 defparam \~GND~11~I .output_mode = "comb";
 defparam \~GND~11~I .pexp_mode = "off";
 
-max_io \x~I (
-	.dataout(\x~dataout ),
-	.padio(x));
-defparam \x~I .operation_mode = "input";
-defparam \x~I .open_drain_output = "false";
-defparam \x~I .bus_hold = "false";
-defparam \x~I .weak_pull_up = "false";
+max_io \E0~I (
+	.dataout(\E0~dataout ),
+	.padio(E0));
+defparam \E0~I .operation_mode = "input";
+defparam \E0~I .open_drain_output = "false";
+defparam \E0~I .bus_hold = "false";
+defparam \E0~I .weak_pull_up = "false";
 
-max_io \y~I (
-	.dataout(\y~dataout ),
-	.padio(y));
-defparam \y~I .operation_mode = "input";
-defparam \y~I .open_drain_output = "false";
-defparam \y~I .bus_hold = "false";
-defparam \y~I .weak_pull_up = "false";
+max_io \E1~I (
+	.dataout(\E1~dataout ),
+	.padio(E1));
+defparam \E1~I .operation_mode = "input";
+defparam \E1~I .open_drain_output = "false";
+defparam \E1~I .bus_hold = "false";
+defparam \E1~I .weak_pull_up = "false";
 
 max_mcell \process_0~1_I (
-	.pterm2({\__ALT_INV__y~dataout }),
-	.pxor({\x~dataout }),
+	.pterm2({\__ALT_INV__E1~dataout }),
+	.pxor({\E0~dataout }),
 	.dataout(\process_0~1 ));
 defparam \process_0~1_I .operation_mode = "xor";
 defparam \process_0~1_I .output_mode = "comb";
 defparam \process_0~1_I .pexp_mode = "off";
 
-assign res[0] = \~GND~0 ;
+assign dataout[0] = \~GND~0 ;
 
-assign res[1] = \~GND~1 ;
+assign dataout[1] = \~GND~1 ;
 
-assign reso[0] = \~GND~2 ;
+assign dataout[2] = \~GND~2 ;
 
-assign reso[1] = \~GND~3 ;
+assign dataout[3] = \~GND~3 ;
 
-assign dataout[0] = \~GND~4 ;
+assign dataout[4] = \~GND~4 ;
 
-assign dataout[1] = \~GND~5 ;
+assign dataout[5] = \~GND~5 ;
 
-assign dataout[2] = \~GND~6 ;
+assign dataout[6] = \~GND~6 ;
 
-assign dataout[3] = \~GND~7 ;
+assign dataout[7] = \~GND~7 ;
 
-assign dataout[4] = \~GND~8 ;
+assign SO = \~GND~8 ;
 
-assign dataout[5] = \~GND~9 ;
+assign SU = \~GND~9 ;
 
-assign dataout[6] = \~GND~10 ;
+assign COUTO = \~GND~10 ;
 
-assign dataout[7] = \~GND~11 ;
+assign COUTU = \~GND~11 ;
 
 assign z = \process_0~1 ;
 

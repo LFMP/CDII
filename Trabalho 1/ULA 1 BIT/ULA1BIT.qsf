@@ -77,3 +77,5 @@ set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
 set_global_assignment -name MISC_FILE "F:/CDII/TRABALHO 1/ULA 1 BIT/ULA1BIT.dpf"
 set_global_assignment -name VHDL_FILE compon.vhd
 set_global_assignment -name VHDL_FILE ULA1BIT.vhd
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name VECTOR_WAVEFORM_FILE ULA1BIT.vwf
