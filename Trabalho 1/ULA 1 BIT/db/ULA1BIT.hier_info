@@ -1,11 +1,32 @@
-|ULA1BIT
-ope[0] => ~NO_FANOUT~
-ope[1] => ~NO_FANOUT~
-ope[2] => ~NO_FANOUT~
-ope[3] => ~NO_FANOUT~
-ea => ~NO_FANOUT~
-eb => ~NO_FANOUT~
-cin => ~NO_FANOUT~
-s <= <GND>
+|compon
+en[0] => ~NO_FANOUT~
+en[1] => ~NO_FANOUT~
+en[2] => ~NO_FANOUT~
+res[0] <= <GND>
+res[1] <= <GND>
+reso[0] <= <GND>
+reso[1] <= <GND>
+sel[0] => ~NO_FANOUT~
+sel[1] => ~NO_FANOUT~
+sel[2] => ~NO_FANOUT~
+dataout[0] <= <GND>
+dataout[1] <= <GND>
+dataout[2] <= <GND>
+dataout[3] <= <GND>
+dataout[4] <= <GND>
+dataout[5] <= <GND>
+dataout[6] <= <GND>
+dataout[7] <= <GND>
+x => process_0.IN0
+y => process_0.IN1
+a => ~NO_FANOUT~
+b => ~NO_FANOUT~
+c => ~NO_FANOUT~
+d => ~NO_FANOUT~
+e => ~NO_FANOUT~
+f => ~NO_FANOUT~
+g => ~NO_FANOUT~
+h => ~NO_FANOUT~
+z <= process_0.DB_MAX_OUTPUT_PORT_TYPE
 
 

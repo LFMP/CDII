@@ -1,0 +1,214 @@
+// Copyright (C) 1991-2010 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II"
+// VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition"
+
+// DATE "05/29/2018 16:43:38"
+
+module 	compon (
+	en,
+	res,
+	reso,
+	sel,
+	dataout,
+	x,
+	y,
+	a,
+	b,
+	c,
+	d,
+	e,
+	f,
+	g,
+	h,
+	z);
+input 	[2:0] en;
+output 	[1:0] res;
+output 	[1:0] reso;
+input 	[2:0] sel;
+output 	[7:0] dataout;
+input 	x;
+input 	y;
+input 	a;
+input 	b;
+input 	c;
+input 	d;
+input 	e;
+input 	f;
+input 	g;
+input 	h;
+output 	z;
+wire \~GND~0 ;
+wire \~GND~1 ;
+wire \~GND~2 ;
+wire \~GND~3 ;
+wire \~GND~4 ;
+wire \~GND~5 ;
+wire \~GND~6 ;
+wire \~GND~7 ;
+wire \~GND~8 ;
+wire \~GND~9 ;
+wire \~GND~10 ;
+wire \~GND~11 ;
+wire \x~dataout ;
+wire \y~dataout ;
+wire \process_0~1 ;
+
+wire \__ALT_INV__y~dataout ;
+
+wire gnd;
+wire vcc;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+
+assign \__ALT_INV__y~dataout  = ~ \y~dataout ;
+
+max_mcell \~GND~0~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~0 ));
+defparam \~GND~0~I .operation_mode = "normal";
+defparam \~GND~0~I .output_mode = "comb";
+defparam \~GND~0~I .pexp_mode = "off";
+
+max_mcell \~GND~1~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~1 ));
+defparam \~GND~1~I .operation_mode = "normal";
+defparam \~GND~1~I .output_mode = "comb";
+defparam \~GND~1~I .pexp_mode = "off";
+
+max_mcell \~GND~2~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~2 ));
+defparam \~GND~2~I .operation_mode = "normal";
+defparam \~GND~2~I .output_mode = "comb";
+defparam \~GND~2~I .pexp_mode = "off";
+
+max_mcell \~GND~3~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~3 ));
+defparam \~GND~3~I .operation_mode = "normal";
+defparam \~GND~3~I .output_mode = "comb";
+defparam \~GND~3~I .pexp_mode = "off";
+
+max_mcell \~GND~4~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~4 ));
+defparam \~GND~4~I .operation_mode = "normal";
+defparam \~GND~4~I .output_mode = "comb";
+defparam \~GND~4~I .pexp_mode = "off";
+
+max_mcell \~GND~5~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~5 ));
+defparam \~GND~5~I .operation_mode = "normal";
+defparam \~GND~5~I .output_mode = "comb";
+defparam \~GND~5~I .pexp_mode = "off";
+
+max_mcell \~GND~6~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~6 ));
+defparam \~GND~6~I .operation_mode = "normal";
+defparam \~GND~6~I .output_mode = "comb";
+defparam \~GND~6~I .pexp_mode = "off";
+
+max_mcell \~GND~7~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~7 ));
+defparam \~GND~7~I .operation_mode = "normal";
+defparam \~GND~7~I .output_mode = "comb";
+defparam \~GND~7~I .pexp_mode = "off";
+
+max_mcell \~GND~8~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~8 ));
+defparam \~GND~8~I .operation_mode = "normal";
+defparam \~GND~8~I .output_mode = "comb";
+defparam \~GND~8~I .pexp_mode = "off";
+
+max_mcell \~GND~9~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~9 ));
+defparam \~GND~9~I .operation_mode = "normal";
+defparam \~GND~9~I .output_mode = "comb";
+defparam \~GND~9~I .pexp_mode = "off";
+
+max_mcell \~GND~10~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~10 ));
+defparam \~GND~10~I .operation_mode = "normal";
+defparam \~GND~10~I .output_mode = "comb";
+defparam \~GND~10~I .pexp_mode = "off";
+
+max_mcell \~GND~11~I (
+	.pterm1({\gnd }),
+	.dataout(\~GND~11 ));
+defparam \~GND~11~I .operation_mode = "normal";
+defparam \~GND~11~I .output_mode = "comb";
+defparam \~GND~11~I .pexp_mode = "off";
+
+max_io \x~I (
+	.dataout(\x~dataout ),
+	.padio(x));
+defparam \x~I .operation_mode = "input";
+defparam \x~I .open_drain_output = "false";
+defparam \x~I .bus_hold = "false";
+defparam \x~I .weak_pull_up = "false";
+
+max_io \y~I (
+	.dataout(\y~dataout ),
+	.padio(y));
+defparam \y~I .operation_mode = "input";
+defparam \y~I .open_drain_output = "false";
+defparam \y~I .bus_hold = "false";
+defparam \y~I .weak_pull_up = "false";
+
+max_mcell \process_0~1_I (
+	.pterm2({\__ALT_INV__y~dataout }),
+	.pxor({\x~dataout }),
+	.dataout(\process_0~1 ));
+defparam \process_0~1_I .operation_mode = "xor";
+defparam \process_0~1_I .output_mode = "comb";
+defparam \process_0~1_I .pexp_mode = "off";
+
+assign res[0] = \~GND~0 ;
+
+assign res[1] = \~GND~1 ;
+
+assign reso[0] = \~GND~2 ;
+
+assign reso[1] = \~GND~3 ;
+
+assign dataout[0] = \~GND~4 ;
+
+assign dataout[1] = \~GND~5 ;
+
+assign dataout[2] = \~GND~6 ;
+
+assign dataout[3] = \~GND~7 ;
+
+assign dataout[4] = \~GND~8 ;
+
+assign dataout[5] = \~GND~9 ;
+
+assign dataout[6] = \~GND~10 ;
+
+assign dataout[7] = \~GND~11 ;
+
+assign z = \process_0~1 ;
+
+endmodule
