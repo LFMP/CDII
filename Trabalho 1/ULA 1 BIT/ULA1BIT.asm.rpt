@@ -1,5 +1,5 @@
 Assembler report for ULA1BIT
-Tue May 29 17:55:28 2018
+Tue May 29 22:11:52 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: F:/CDII/Trabalho 1/ULA 1 BIT/ULA1BIT.pof
+  5. Assembler Device Options: C:/Users/luizf/Documents/ULA1BIT/ULA1BIT.pof
   6. Assembler Messages
 
 
@@ -37,9 +37,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue May 29 17:55:28 2018 ;
+; Assembler Status      ; Successful - Tue May 29 22:11:52 2018 ;
 ; Revision Name         ; ULA1BIT                               ;
-; Top-level Entity Name ; compon                                ;
+; Top-level Entity Name ; ULA1BIT                               ;
 ; Family                ; MAX7000S                              ;
 ; Device                ; EPM7128SLC84-7                        ;
 +-----------------------+---------------------------------------+
@@ -73,24 +73,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------+
-; Assembler Generated Files                ;
-+------------------------------------------+
-; File Name                                ;
-+------------------------------------------+
-; F:/CDII/Trabalho 1/ULA 1 BIT/ULA1BIT.pof ;
-+------------------------------------------+
++----------------------------------------------+
+; Assembler Generated Files                    ;
++----------------------------------------------+
+; File Name                                    ;
++----------------------------------------------+
+; C:/Users/luizf/Documents/ULA1BIT/ULA1BIT.pof ;
++----------------------------------------------+
 
 
-+--------------------------------------------------------------------+
-; Assembler Device Options: F:/CDII/Trabalho 1/ULA 1 BIT/ULA1BIT.pof ;
-+----------------+---------------------------------------------------+
-; Option         ; Setting                                           ;
-+----------------+---------------------------------------------------+
-; Device         ; EPM7128SLC84-7                                    ;
-; JTAG usercode  ; 0x00000000                                        ;
-; Checksum       ; 0x001C7E4A                                        ;
-+----------------+---------------------------------------------------+
++------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/luizf/Documents/ULA1BIT/ULA1BIT.pof ;
++----------------+-------------------------------------------------------+
+; Option         ; Setting                                               ;
++----------------+-------------------------------------------------------+
+; Device         ; EPM7128SLC84-7                                        ;
+; JTAG usercode  ; 0x00000000                                            ;
+; Checksum       ; 0x001DFB45                                            ;
++----------------+-------------------------------------------------------+
 
 
 +--------------------+
@@ -99,13 +99,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue May 29 17:55:27 2018
+    Info: Processing started: Tue May 29 22:11:52 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off ULA1BIT -c ULA1BIT
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 184 megabytes
-    Info: Processing ended: Tue May 29 17:55:28 2018
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 180 megabytes
+    Info: Processing ended: Tue May 29 22:11:52 2018
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 

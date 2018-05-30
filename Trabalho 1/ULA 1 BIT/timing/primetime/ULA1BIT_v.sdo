@@ -23,8 +23,8 @@
 
 (DELAYFILE
   (SDFVERSION "2.1")
-  (DESIGN "compon")
-  (DATE "05/29/2018 17:55:32")
+  (DESIGN "ULA1BIT")
+  (DATE "05/29/2018 22:11:55")
   (VENDOR "Altera")
   (PROGRAM "Quartus II")
   (VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition")
@@ -50,20 +50,191 @@
     )
   )
   (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE CIN\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (500:500:500) (500:500:500))
+      )
+    )
+  )
+  (CELL
     (CELLTYPE "max_asynch_mcell")
-    (INSTANCE process_0\~1.pcom)
+    (INSTANCE S7\|Mux0\~1.pcom)
     (DELAY
       (ABSOLUTE
         (PORT pxor[0] (1000:1000:1000) (1000:1000:1000))
         (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
         (IOPATH pxor[0] combout (4000:4000:4000) (4000:4000:4000))
         (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
       )
     )
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE dataout\[0\]\~I.asynch_inst)
+    (INSTANCE sel\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (500:500:500) (500:500:500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE sel\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (500:500:500) (500:500:500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE sel\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (500:500:500) (500:500:500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE sULA\|S\~25.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[3] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[2] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[0] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[1] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[2] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[3] pexpout (3000:3000:3000) (3000:3000:3000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE sULA\|S\~28.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm0[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm0[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm0[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm0[3] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[3] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[3] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[4] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[3] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[3] (1000:1000:1000) (1000:1000:1000))
+        (PORT pexpin (0:0:0) (0:0:0))
+        (IOPATH pterm0[0] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm0[1] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm0[2] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm0[3] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[0] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[2] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[3] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[0] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[1] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[2] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[3] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[4] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm3[0] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm3[1] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm3[2] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm3[3] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm4[0] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm4[1] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm4[2] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm4[3] pexpout (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pexpin pexpout (800:800:800) (800:800:800))
+        (IOPATH pexpin regin (800:800:800) (800:800:800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE sULA\|S\~23.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm0[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm0[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm0[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm0[3] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[3] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[3] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[3] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[4] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[3] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[4] (1000:1000:1000) (1000:1000:1000))
+        (PORT pexpin (0:0:0) (0:0:0))
+        (IOPATH pterm0[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm0[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm0[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm0[3] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[3] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[3] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[3] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[4] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[3] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[4] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pexpin combout (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE COUT\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
@@ -72,106 +243,7 @@
   )
   (CELL
     (CELLTYPE "max_asynch_io")
-    (INSTANCE dataout\[1\]\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE dataout\[2\]\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE dataout\[3\]\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE dataout\[4\]\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE dataout\[5\]\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE dataout\[6\]\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE dataout\[7\]\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE SO\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE SU\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE COUTO\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE COUTU\~I.asynch_inst)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "max_asynch_io")
-    (INSTANCE z\~I.asynch_inst)
+    (INSTANCE S\~I.asynch_inst)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))

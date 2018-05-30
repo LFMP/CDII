@@ -1,0 +1,34 @@
+ENTITY decod IS
+	PORT(
+		--decodificador
+		sel: IN BIT_VECTOR(2 DOWNTO 0);
+		S: OUT BIT_VECTOR(7 DOWNTO 0)
+	);
+END decod;
+
+ARCHITECTURE logic OF decod IS
+BEGIN
+	PROCESS(sel)
+	BEGIN
+		CASE(sel) IS
+			WHEN "000" => S <= "00000001";
+			WHEN "001" => S <= "00000010";
+			WHEN "010" => S <= "00000100";
+			WHEN "011" => S <= "00001000";
+			WHEN "100" => S <= "00010000";
+			WHEN "101" => S <= "00100000";
+			WHEN "110" => S <= "01000000";
+			WHEN "111" => S <= "10000000";
+			WHEN OTHERS => S <= "00000000";
+		END CASE;
+	END PROCESS;
+END logic;
+---------------------------------------------------------------------
+PACKAGE seletor IS
+	COMPONENT decod IS
+		PORT(
+			sel: IN BIT_VECTOR(2 DOWNTO 0);
+			S: OUT BIT_VECTOR(7 DOWNTO 0)
+		);
+	END COMPONENT;
+END seletor;

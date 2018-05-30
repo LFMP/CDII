@@ -16,7 +16,7 @@
 ## PROGRAM "Quartus II"
 ## VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition"
 
-## DATE "05/29/2018 17:55:32"
+## DATE "05/29/2018 22:11:55"
 
 ## 
 ## Device: Altera EPM7128SLC84-7 Package PLCC84
@@ -43,7 +43,7 @@ read_verilog  max_all_pt.v
 ##########################
 
 read_verilog  ULA1BIT.vo
-current_design compon
+current_design ULA1BIT
 link
 ## Set variable timing_propagate_single_condition_min_slew to false only for versions 2004.06 and earlier
 regexp {([1-9][0-9][0-9][0-9]\.[0-9][0-9])} $sh_product_version dummy version
@@ -75,19 +75,8 @@ read_sdf ULA1BIT_v.sdo
 ## End individual pin commands definition ##
 
 ## Start Output pin capacitance definition ##
-set_load -pin_load 10 [get_ports { COUTO } ]
-set_load -pin_load 10 [get_ports { COUTU } ]
-set_load -pin_load 10 [get_ports { SO } ]
-set_load -pin_load 10 [get_ports { SU } ]
-set_load -pin_load 10 [get_ports { dataout[0] } ]
-set_load -pin_load 10 [get_ports { dataout[1] } ]
-set_load -pin_load 10 [get_ports { dataout[2] } ]
-set_load -pin_load 10 [get_ports { dataout[3] } ]
-set_load -pin_load 10 [get_ports { dataout[4] } ]
-set_load -pin_load 10 [get_ports { dataout[5] } ]
-set_load -pin_load 10 [get_ports { dataout[6] } ]
-set_load -pin_load 10 [get_ports { dataout[7] } ]
-set_load -pin_load 10 [get_ports { z } ]
+set_load -pin_load 10 [get_ports { COUT } ]
+set_load -pin_load 10 [get_ports { S } ]
 ## End Output pin capacitance definition ##
 
 ## Start clock uncertainty definition ##

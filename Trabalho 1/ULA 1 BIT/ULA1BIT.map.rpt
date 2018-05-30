@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA1BIT
-Tue May 29 17:55:23 2018
+Tue May 29 22:11:49 2018
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,13 +38,13 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue May 29 17:55:23 2018        ;
+; Analysis & Synthesis Status ; Successful - Tue May 29 22:11:49 2018        ;
 ; Quartus II Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name               ; ULA1BIT                                      ;
-; Top-level Entity Name       ; compon                                       ;
+; Top-level Entity Name       ; ULA1BIT                                      ;
 ; Family                      ; MAX7000S                                     ;
-; Total macrocells            ; 13                                           ;
-; Total pins                  ; 27                                           ;
+; Total macrocells            ; 4                                            ;
+; Total pins                  ; 8                                            ;
 +-----------------------------+----------------------------------------------+
 
 
@@ -54,10 +54,8 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting        ; Default Value ;
 +----------------------------------------------------------------------------+----------------+---------------+
 ; Device                                                                     ; EPM7128SLC84-7 ;               ;
-; Top-level entity name                                                      ; compon         ; ULA1BIT       ;
+; Top-level entity name                                                      ; ULA1BIT        ; ULA1BIT       ;
 ; Family name                                                                ; MAX7000S       ; Stratix II    ;
-; VHDL Show LMF Mapping Messages                                             ; Off            ;               ;
-; VHDL Version                                                               ; VHDL_2008      ; VHDL_1993     ;
 ; Type of Retiming Performed During Resynthesis                              ; Full           ;               ;
 ; Resynthesis Optimization Effort                                            ; Normal         ;               ;
 ; Physical Synthesis Level for Resynthesis                                   ; Normal         ;               ;
@@ -69,6 +67,7 @@ applicable agreement for further details.
 ; Preserve fewer node names                                                  ; On             ; On            ;
 ; Disable OpenCore Plus hardware evaluation                                  ; Off            ; Off           ;
 ; Verilog Version                                                            ; Verilog_2001   ; Verilog_2001  ;
+; VHDL Version                                                               ; VHDL_1993      ; VHDL_1993     ;
 ; State Machine Processing                                                   ; Auto           ; Auto          ;
 ; Safe State Machine                                                         ; Off            ; Off           ;
 ; Extract Verilog State Machines                                             ; On             ; On            ;
@@ -111,13 +110,16 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+----------------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path            ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------+
-; compon.vhd                       ; yes             ; User VHDL File  ; F:/CDII/Trabalho 1/ULA 1 BIT/compon.vhd ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                    ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                       ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+
+; ari/ari.vhd                      ; yes             ; User VHDL File  ; C:/Users/luizf/Documents/ULA1BIT/ari/ari.vhd       ;
+; logic/logic.vhd                  ; yes             ; User VHDL File  ; C:/Users/luizf/Documents/ULA1BIT/logic/logic.vhd   ;
+; decodi/decodi.vhd                ; yes             ; User VHDL File  ; C:/Users/luizf/Documents/ULA1BIT/decodi/decodi.vhd ;
+; ULA1BIT.vhd                      ; yes             ; User VHDL File  ; C:/Users/luizf/Documents/ULA1BIT/ULA1BIT.vhd       ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+
 
 
 +---------------------------------------------+
@@ -125,23 +127,26 @@ applicable agreement for further details.
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 13                   ;
+; Logic cells          ; 4                    ;
 ; Total registers      ; 0                    ;
-; I/O pins             ; 27                   ;
-; Maximum fan-out node ; process_0~1          ;
-; Maximum fan-out      ; 1                    ;
-; Total fan-out        ; 15                   ;
-; Average fan-out      ; 0.38                 ;
+; I/O pins             ; 8                    ;
+; Parallel expanders   ; 2                    ;
+; Maximum fan-out node ; E0                   ;
+; Maximum fan-out      ; 4                    ;
+; Total fan-out        ; 24                   ;
+; Average fan-out      ; 2.00                 ;
 +----------------------+----------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                 ;
-+----------------------------+------------+------+---------------------+--------------+
-; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+------------+------+---------------------+--------------+
-; |compon                    ; 13         ; 27   ; |compon             ; work         ;
-+----------------------------+------------+------+---------------------+--------------+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                   ;
++----------------------------+------------+------+-----------------------+--------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name   ; Library Name ;
++----------------------------+------------+------+-----------------------+--------------+
+; |ULA1BIT                   ; 4          ; 8    ; |ULA1BIT              ; work         ;
+;    |or_2:sULA|             ; 3          ; 0    ; |ULA1BIT|or_2:sULA    ; work         ;
+;    |subtrator:S7|          ; 1          ; 0    ; |ULA1BIT|subtrator:S7 ; work         ;
++----------------------------+------------+------+-----------------------+--------------+
 
 
 +-------------------------------+
@@ -150,76 +155,61 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue May 29 17:55:21 2018
+    Info: Processing started: Tue May 29 22:11:47 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA1BIT -c ULA1BIT
-Info: Found 14 design units, including 1 entities, in source file compon.vhd
-    Info: Found design unit 1: compon-som
-    Info: Found design unit 2: compon-subt
-    Info: Found design unit 3: aritimetica
-    Info: Found design unit 4: compon-decod
-    Info: Found design unit 5: decodificador
-    Info: Found design unit 6: compon-and_1
-    Info: Found design unit 7: compon-nand_1
-    Info: Found design unit 8: compon-or_1
-    Info: Found design unit 9: compon-or_2
-    Info: Found design unit 10: compon-nor_1
-    Info: Found design unit 11: compon-xor_1
-    Info: Found design unit 12: compon-xnor_1
-    Info: Found design unit 13: logica
-    Info: Found entity 1: compon
+Info: Found 5 design units, including 2 entities, in source file ari/ari.vhd
+    Info: Found design unit 1: somador-logic
+    Info: Found design unit 2: subtrator-logic
+    Info: Found design unit 3: UA
+    Info: Found entity 1: somador
+    Info: Found entity 2: subtrator
+Info: Found 15 design units, including 7 entities, in source file logic/logic.vhd
+    Info: Found design unit 1: and_1-logic
+    Info: Found design unit 2: nand_1-logic
+    Info: Found design unit 3: or_1-logic
+    Info: Found design unit 4: or_2-logic
+    Info: Found design unit 5: nor_1-logic
+    Info: Found design unit 6: xor_1-logic
+    Info: Found design unit 7: xnor_1-logic
+    Info: Found design unit 8: portas
+    Info: Found entity 1: and_1
+    Info: Found entity 2: nand_1
+    Info: Found entity 3: or_1
+    Info: Found entity 4: or_2
+    Info: Found entity 5: nor_1
+    Info: Found entity 6: xor_1
+    Info: Found entity 7: xnor_1
+Info: Found 3 design units, including 1 entities, in source file decodi/decodi.vhd
+    Info: Found design unit 1: decod-logic
+    Info: Found design unit 2: seletor
+    Info: Found entity 1: decod
 Info: Found 2 design units, including 1 entities, in source file ula1bit.vhd
     Info: Found design unit 1: ULA1BIT-des
     Info: Found entity 1: ULA1BIT
-Info: Elaborating entity "compon" for the top level hierarchy
-Warning: Output pins are stuck at VCC or GND
-    Warning (13410): Pin "dataout[0]" is stuck at GND
-    Warning (13410): Pin "dataout[1]" is stuck at GND
-    Warning (13410): Pin "dataout[2]" is stuck at GND
-    Warning (13410): Pin "dataout[3]" is stuck at GND
-    Warning (13410): Pin "dataout[4]" is stuck at GND
-    Warning (13410): Pin "dataout[5]" is stuck at GND
-    Warning (13410): Pin "dataout[6]" is stuck at GND
-    Warning (13410): Pin "dataout[7]" is stuck at GND
-    Warning (13410): Pin "SO" is stuck at GND
-    Warning (13410): Pin "SU" is stuck at GND
-    Warning (13410): Pin "COUTO" is stuck at GND
-    Warning (13410): Pin "COUTU" is stuck at GND
-Warning: Design contains 12 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sel[0]"
-    Warning (15610): No output dependent on input pin "sel[1]"
-    Warning (15610): No output dependent on input pin "sel[2]"
-    Warning (15610): No output dependent on input pin "a"
-    Warning (15610): No output dependent on input pin "b"
-    Warning (15610): No output dependent on input pin "c"
-    Warning (15610): No output dependent on input pin "d"
-    Warning (15610): No output dependent on input pin "e"
-    Warning (15610): No output dependent on input pin "f"
-    Warning (15610): No output dependent on input pin "g"
-    Warning (15610): No output dependent on input pin "h"
-    Warning (15610): No output dependent on input pin "CIN"
-Info: Implemented 40 device resources after synthesis - the final resource count might be different
-    Info: Implemented 14 input pins
-    Info: Implemented 13 output pins
-    Info: Implemented 13 macrocells
-Warning: Ignored assignments for entity "ULA1BIT.vhd" -- entity does not exist in design
-    Warning: Assignment for entity set_global_assignment -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL LeonardoSpectrum -entity ULA1BIT.vhd was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_INPUT_GND_NAME GND -entity ULA1BIT.vhd -section_id eda_design_synthesis was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_INPUT_VCC_NAME VCC -entity ULA1BIT.vhd -section_id eda_design_synthesis was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_INPUT_DATA_FORMAT EDIF -entity ULA1BIT.vhd -section_id eda_design_synthesis was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_LMF_FILE mentor.lmf -entity ULA1BIT.vhd -section_id eda_design_synthesis was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_SHOW_LMF_MAPPING_MESSAGES OFF -entity ULA1BIT.vhd -section_id eda_design_synthesis was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -entity ULA1BIT.vhd -section_id eda_design_synthesis was ignored
-Warning: Ignored assignments for entity "components.vhd" -- entity does not exist in design
-    Warning: Assignment for entity set_global_assignment -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL LeonardoSpectrum -entity components.vhd was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_INPUT_GND_NAME GND -entity components.vhd -section_id eda_design_synthesis was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_INPUT_VCC_NAME VCC -entity components.vhd -section_id eda_design_synthesis was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_INPUT_DATA_FORMAT EDIF -entity components.vhd -section_id eda_design_synthesis was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_LMF_FILE mentor.lmf -entity components.vhd -section_id eda_design_synthesis was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_SHOW_LMF_MAPPING_MESSAGES OFF -entity components.vhd -section_id eda_design_synthesis was ignored
-    Warning: Assignment for entity set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -entity components.vhd -section_id eda_design_synthesis was ignored
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 42 warnings
+Info: Elaborating entity "ULA1BIT" for the top level hierarchy
+Info: Elaborating entity "decod" for hierarchy "decod:selecao"
+Info: Elaborating entity "and_1" for hierarchy "and_1:S0"
+Info: Elaborating entity "nand_1" for hierarchy "nand_1:S1"
+Info: Elaborating entity "or_1" for hierarchy "or_1:S2"
+Info: Elaborating entity "nor_1" for hierarchy "nor_1:S3"
+Info: Elaborating entity "xor_1" for hierarchy "xor_1:S4"
+Info: Elaborating entity "xnor_1" for hierarchy "xnor_1:S5"
+Info: Elaborating entity "somador" for hierarchy "somador:S6"
+Info: Elaborating entity "subtrator" for hierarchy "subtrator:S7"
+Warning (10492): VHDL Process Statement warning at ari.vhd(41): signal "E0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ari.vhd(42): signal "E1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ari.vhd(43): signal "CIN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ari.vhd(56): signal "OUTPUTS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ari.vhd(57): signal "OUTPUTS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "or_2" for hierarchy "or_2:sULA"
+Warning (10492): VHDL Process Statement warning at logic.vhd(70): signal "h" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Implemented 12 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 2 output pins
+    Info: Implemented 4 macrocells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 225 megabytes
-    Info: Processing ended: Tue May 29 17:55:23 2018
+    Info: Processing ended: Tue May 29 22:11:49 2018
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

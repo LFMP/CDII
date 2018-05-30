@@ -1,9 +1,9 @@
-Fitter Status : Successful - Tue May 29 17:55:25 2018
+Fitter Status : Successful - Tue May 29 22:11:50 2018
 Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : ULA1BIT
-Top-level Entity Name : compon
+Top-level Entity Name : ULA1BIT
 Family : MAX7000S
 Device : EPM7128SLC84-7
 Timing Models : Final
-Total macrocells : 13 / 128 ( 10 % )
-Total pins : 31 / 68 ( 46 % )
+Total macrocells : 4 / 128 ( 3 % )
+Total pins : 12 / 68 ( 18 % )

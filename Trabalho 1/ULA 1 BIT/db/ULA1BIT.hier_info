@@ -1,30 +1,200 @@
-|compon
-sel[0] => ~NO_FANOUT~
-sel[1] => ~NO_FANOUT~
-sel[2] => ~NO_FANOUT~
-dataout[0] <= <GND>
-dataout[1] <= <GND>
-dataout[2] <= <GND>
-dataout[3] <= <GND>
-dataout[4] <= <GND>
-dataout[5] <= <GND>
-dataout[6] <= <GND>
-dataout[7] <= <GND>
-a => ~NO_FANOUT~
-b => ~NO_FANOUT~
-c => ~NO_FANOUT~
-d => ~NO_FANOUT~
-e => ~NO_FANOUT~
-f => ~NO_FANOUT~
-g => ~NO_FANOUT~
-h => ~NO_FANOUT~
+|ULA1BIT
+sel[0] => decod:selecao.sel[0]
+sel[1] => decod:selecao.sel[1]
+sel[2] => decod:selecao.sel[2]
+E0 => and_1:S0.E0
+E0 => nand_1:S1.E0
+E0 => or_1:S2.E0
+E0 => nor_1:S3.E0
+E0 => xor_1:S4.E0
+E0 => xnor_1:S5.E0
+E0 => somador:S6.E0
+E0 => subtrator:S7.E0
+E1 => and_1:S0.E1
+E1 => nand_1:S1.E1
+E1 => or_1:S2.E1
+E1 => nor_1:S3.E1
+E1 => xor_1:S4.E1
+E1 => xnor_1:S5.E1
+E1 => somador:S6.E1
+E1 => subtrator:S7.E1
+CIN => somador:S6.CIN
+CIN => subtrator:S7.CIN
+COUT <= or_1:sCOUT.S
+S <= or_2:sULA.S
+
+
+|ULA1BIT|decod:selecao
+sel[0] => Mux0.IN10
+sel[0] => Mux1.IN10
+sel[0] => Mux2.IN10
+sel[0] => Mux3.IN10
+sel[0] => Mux4.IN10
+sel[0] => Mux5.IN10
+sel[0] => Mux6.IN10
+sel[0] => Mux7.IN10
+sel[1] => Mux0.IN9
+sel[1] => Mux1.IN9
+sel[1] => Mux2.IN9
+sel[1] => Mux3.IN9
+sel[1] => Mux4.IN9
+sel[1] => Mux5.IN9
+sel[1] => Mux6.IN9
+sel[1] => Mux7.IN9
+sel[2] => Mux0.IN8
+sel[2] => Mux1.IN8
+sel[2] => Mux2.IN8
+sel[2] => Mux3.IN8
+sel[2] => Mux4.IN8
+sel[2] => Mux5.IN8
+sel[2] => Mux6.IN8
+sel[2] => Mux7.IN8
+S[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|and_1:S0
 E0 => process_0.IN0
 E1 => process_0.IN1
-CIN => ~NO_FANOUT~
-z <= process_0.DB_MAX_OUTPUT_PORT_TYPE
-SO <= <GND>
-SU <= <GND>
-COUTO <= <GND>
-COUTU <= <GND>
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|nand_1:S1
+E0 => process_0.IN0
+E1 => process_0.IN0
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|or_1:S2
+E0 => process_0.IN0
+E1 => process_0.IN0
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|nor_1:S3
+E0 => process_0.IN0
+E1 => process_0.IN0
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|xor_1:S4
+E0 => process_0.IN0
+E1 => process_0.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|xnor_1:S5
+E0 => process_0.IN0
+E1 => process_0.IN1
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|somador:S6
+E0 => Equal0.IN3
+E0 => Equal1.IN3
+E0 => Equal2.IN3
+E0 => Equal3.IN3
+E0 => Equal4.IN3
+E0 => Equal5.IN3
+E0 => Equal6.IN3
+E1 => Equal0.IN4
+E1 => Equal1.IN4
+E1 => Equal2.IN4
+E1 => Equal3.IN4
+E1 => Equal4.IN4
+E1 => Equal5.IN4
+E1 => Equal6.IN4
+CIN => Equal0.IN5
+CIN => Equal1.IN5
+CIN => Equal2.IN5
+CIN => Equal3.IN5
+CIN => Equal4.IN5
+CIN => Equal5.IN5
+CIN => Equal6.IN5
+S <= OUTPUTS.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= OUTPUTS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|subtrator:S7
+E0 => Mux0.IN8
+E0 => Mux1.IN8
+E1 => Mux0.IN9
+E1 => Mux1.IN9
+CIN => Mux0.IN10
+CIN => Mux1.IN10
+S <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+COUT <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|and_1:oAND
+E0 => process_0.IN0
+E1 => process_0.IN1
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|and_1:oNAND
+E0 => process_0.IN0
+E1 => process_0.IN1
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|and_1:oOR
+E0 => process_0.IN0
+E1 => process_0.IN1
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|and_1:oNOR
+E0 => process_0.IN0
+E1 => process_0.IN1
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|and_1:oXOR
+E0 => process_0.IN0
+E1 => process_0.IN1
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|and_1:oXNOR
+E0 => process_0.IN0
+E1 => process_0.IN1
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|and_1:oSOM
+E0 => process_0.IN0
+E1 => process_0.IN1
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|and_1:oSUB
+E0 => process_0.IN0
+E1 => process_0.IN1
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|or_1:sCOUT
+E0 => process_0.IN0
+E1 => process_0.IN0
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA1BIT|or_2:sULA
+a => process_0.IN0
+b => process_0.IN1
+c => process_0.IN1
+d => process_0.IN1
+e => process_0.IN1
+f => process_0.IN1
+g => process_0.IN1
+h => process_0.IN1
+S <= process_0.DB_MAX_OUTPUT_PORT_TYPE
 
 
