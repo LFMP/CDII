@@ -1,0 +1,630 @@
+Simulator report for ULA1BIT
+Tue May 29 22:37:21 2018
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 20.0 ns      ;
+; Simulation Netlist Size     ; 337 nodes    ;
+; Simulation Coverage         ;       2.37 % ;
+; Total Number of Transitions ; 255          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; MAX7000S     ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                       ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+; Option                                                                                     ; Setting     ; Default Value ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+; Simulation mode                                                                            ; Functional  ; Timing        ;
+; Start time                                                                                 ; 0 ns        ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF        ;               ;
+; Vector input source                                                                        ; ULA1BIT.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On          ; On            ;
+; Check outputs                                                                              ; Off         ; Off           ;
+; Report simulation coverage                                                                 ; On          ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On          ; On            ;
+; Display missing 1-value coverage report                                                    ; On          ; On            ;
+; Display missing 0-value coverage report                                                    ; On          ; On            ;
+; Detect setup and hold time violations                                                      ; Off         ; Off           ;
+; Detect glitches                                                                            ; Off         ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off         ; Off           ;
+; Generate Signal Activity File                                                              ; Off         ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off         ; Off           ;
+; Group bus channels in simulation results                                                   ; Off         ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On          ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE  ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off         ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto        ; Auto          ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       2.37 % ;
+; Total nodes checked                                 ; 337          ;
+; Total output ports checked                          ; 337          ;
+; Total output ports with complete 1/0-value coverage ; 8            ;
+; Total output ports with no 1/0-value coverage       ; 132          ;
+; Total output ports with no 1-value coverage         ; 247          ;
+; Total output ports with no 0-value coverage         ; 214          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                      ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+; Node Name                                                                     ; Output Port Name                                                              ; Output Port Type ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+; |ULA1BIT|or_2:sULA|process_0~3                                                ; |ULA1BIT|or_2:sULA|process_0~3                                                ; out0             ;
+; |ULA1BIT|or_2:sULA|process_0~4                                                ; |ULA1BIT|or_2:sULA|process_0~4                                                ; out0             ;
+; |ULA1BIT|or_2:sULA|process_0~5                                                ; |ULA1BIT|or_2:sULA|process_0~5                                                ; out0             ;
+; |ULA1BIT|and_1:oXOR|S                                                         ; |ULA1BIT|and_1:oXOR|S                                                         ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node    ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node    ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node    ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node    ; out0             ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                         ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+; Node Name                                                                     ; Output Port Name                                                              ; Output Port Type ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+; |ULA1BIT|E0                                                                   ; |ULA1BIT|E0                                                                   ; out              ;
+; |ULA1BIT|CIN                                                                  ; |ULA1BIT|CIN                                                                  ; out              ;
+; |ULA1BIT|or_2:sULA|process_0~0                                                ; |ULA1BIT|or_2:sULA|process_0~0                                                ; out0             ;
+; |ULA1BIT|or_2:sULA|process_0~1                                                ; |ULA1BIT|or_2:sULA|process_0~1                                                ; out0             ;
+; |ULA1BIT|or_2:sULA|process_0~2                                                ; |ULA1BIT|or_2:sULA|process_0~2                                                ; out0             ;
+; |ULA1BIT|or_1:sCOUT|process_0~2                                               ; |ULA1BIT|or_1:sCOUT|process_0~2                                               ; out0             ;
+; |ULA1BIT|and_1:oSOM|S                                                         ; |ULA1BIT|and_1:oSOM|S                                                         ; out0             ;
+; |ULA1BIT|and_1:oXNOR|S                                                        ; |ULA1BIT|and_1:oXNOR|S                                                        ; out0             ;
+; |ULA1BIT|and_1:oNOR|S                                                         ; |ULA1BIT|and_1:oNOR|S                                                         ; out0             ;
+; |ULA1BIT|and_1:oOR|S                                                          ; |ULA1BIT|and_1:oOR|S                                                          ; out0             ;
+; |ULA1BIT|and_1:oNAND|S                                                        ; |ULA1BIT|and_1:oNAND|S                                                        ; out0             ;
+; |ULA1BIT|and_1:oAND|S                                                         ; |ULA1BIT|and_1:oAND|S                                                         ; out0             ;
+; |ULA1BIT|somador:S6|OUTPUTS~5                                                 ; |ULA1BIT|somador:S6|OUTPUTS~5                                                 ; out              ;
+; |ULA1BIT|somador:S6|OUTPUTS~7                                                 ; |ULA1BIT|somador:S6|OUTPUTS~7                                                 ; out              ;
+; |ULA1BIT|somador:S6|OUTPUTS~9                                                 ; |ULA1BIT|somador:S6|OUTPUTS~9                                                 ; out              ;
+; |ULA1BIT|somador:S6|S                                                         ; |ULA1BIT|somador:S6|S                                                         ; out              ;
+; |ULA1BIT|xnor_1:S5|process_0~0                                                ; |ULA1BIT|xnor_1:S5|process_0~0                                                ; out0             ;
+; |ULA1BIT|xor_1:S4|process_0~0                                                 ; |ULA1BIT|xor_1:S4|process_0~0                                                 ; out0             ;
+; |ULA1BIT|nor_1:S3|S                                                           ; |ULA1BIT|nor_1:S3|S                                                           ; out0             ;
+; |ULA1BIT|or_1:S2|process_0~2                                                  ; |ULA1BIT|or_1:S2|process_0~2                                                  ; out0             ;
+; |ULA1BIT|nand_1:S1|process_0~2                                                ; |ULA1BIT|nand_1:S1|process_0~2                                                ; out0             ;
+; |ULA1BIT|and_1:S0|S                                                           ; |ULA1BIT|and_1:S0|S                                                           ; out0             ;
+; |ULA1BIT|somador:S6|Equal0~0                                                  ; |ULA1BIT|somador:S6|Equal0~0                                                  ; out0             ;
+; |ULA1BIT|somador:S6|Equal1~0                                                  ; |ULA1BIT|somador:S6|Equal1~0                                                  ; out0             ;
+; |ULA1BIT|somador:S6|Equal2~0                                                  ; |ULA1BIT|somador:S6|Equal2~0                                                  ; out0             ;
+; |ULA1BIT|somador:S6|Equal3~0                                                  ; |ULA1BIT|somador:S6|Equal3~0                                                  ; out0             ;
+; |ULA1BIT|somador:S6|Equal4~0                                                  ; |ULA1BIT|somador:S6|Equal4~0                                                  ; out0             ;
+; |ULA1BIT|somador:S6|Equal6~0                                                  ; |ULA1BIT|somador:S6|Equal6~0                                                  ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00016|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00016|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00016|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00016|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~0           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~0           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~3           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~3           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~7           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~7           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|sel_node[2]                                ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|sel_node[2]                                ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~1  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~1  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~0            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~0            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~1            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~1            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~2            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~2            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~4            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~4            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node~0  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node~0  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~5            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~5            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~8            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~8            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~0            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~0            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~1            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~1            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~2            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~2            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~0  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~0  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~5            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~5            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~6            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~6            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~8            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~8            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~1  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~1  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node    ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node    ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|sel_node[2]                                ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|sel_node[2]                                ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~1  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~1  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~0            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~0            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~1            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~1            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~2            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~2            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~4            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~4            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node~0  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node~0  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~5            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~5            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~0            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~0            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~1            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~1            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~2            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~2            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~0  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~0  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~5            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~5            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~6            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~6            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~8            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~8            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~1  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~1  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node    ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node    ; out0             ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                         ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+; Node Name                                                                     ; Output Port Name                                                              ; Output Port Type ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+; |ULA1BIT|sel[0]                                                               ; |ULA1BIT|sel[0]                                                               ; out              ;
+; |ULA1BIT|sel[1]                                                               ; |ULA1BIT|sel[1]                                                               ; out              ;
+; |ULA1BIT|sel[2]                                                               ; |ULA1BIT|sel[2]                                                               ; out              ;
+; |ULA1BIT|E1                                                                   ; |ULA1BIT|E1                                                                   ; out              ;
+; |ULA1BIT|COUT                                                                 ; |ULA1BIT|COUT                                                                 ; pin_out          ;
+; |ULA1BIT|S                                                                    ; |ULA1BIT|S                                                                    ; pin_out          ;
+; |ULA1BIT|or_2:sULA|process_0~0                                                ; |ULA1BIT|or_2:sULA|process_0~0                                                ; out0             ;
+; |ULA1BIT|or_2:sULA|process_0~1                                                ; |ULA1BIT|or_2:sULA|process_0~1                                                ; out0             ;
+; |ULA1BIT|or_2:sULA|process_0~2                                                ; |ULA1BIT|or_2:sULA|process_0~2                                                ; out0             ;
+; |ULA1BIT|or_2:sULA|S                                                          ; |ULA1BIT|or_2:sULA|S                                                          ; out0             ;
+; |ULA1BIT|and_1:oSUB|S                                                         ; |ULA1BIT|and_1:oSUB|S                                                         ; out0             ;
+; |ULA1BIT|and_1:oSOM|S                                                         ; |ULA1BIT|and_1:oSOM|S                                                         ; out0             ;
+; |ULA1BIT|and_1:oXNOR|S                                                        ; |ULA1BIT|and_1:oXNOR|S                                                        ; out0             ;
+; |ULA1BIT|and_1:oNOR|S                                                         ; |ULA1BIT|and_1:oNOR|S                                                         ; out0             ;
+; |ULA1BIT|and_1:oOR|S                                                          ; |ULA1BIT|and_1:oOR|S                                                          ; out0             ;
+; |ULA1BIT|and_1:oNAND|S                                                        ; |ULA1BIT|and_1:oNAND|S                                                        ; out0             ;
+; |ULA1BIT|and_1:oAND|S                                                         ; |ULA1BIT|and_1:oAND|S                                                         ; out0             ;
+; |ULA1BIT|somador:S6|OUTPUTS~1                                                 ; |ULA1BIT|somador:S6|OUTPUTS~1                                                 ; out              ;
+; |ULA1BIT|somador:S6|OUTPUTS~2                                                 ; |ULA1BIT|somador:S6|OUTPUTS~2                                                 ; out              ;
+; |ULA1BIT|somador:S6|OUTPUTS~4                                                 ; |ULA1BIT|somador:S6|OUTPUTS~4                                                 ; out              ;
+; |ULA1BIT|somador:S6|OUTPUTS~5                                                 ; |ULA1BIT|somador:S6|OUTPUTS~5                                                 ; out              ;
+; |ULA1BIT|somador:S6|OUTPUTS~6                                                 ; |ULA1BIT|somador:S6|OUTPUTS~6                                                 ; out              ;
+; |ULA1BIT|somador:S6|OUTPUTS~7                                                 ; |ULA1BIT|somador:S6|OUTPUTS~7                                                 ; out              ;
+; |ULA1BIT|somador:S6|OUTPUTS~8                                                 ; |ULA1BIT|somador:S6|OUTPUTS~8                                                 ; out              ;
+; |ULA1BIT|somador:S6|COUT                                                      ; |ULA1BIT|somador:S6|COUT                                                      ; out              ;
+; |ULA1BIT|xnor_1:S5|process_0~0                                                ; |ULA1BIT|xnor_1:S5|process_0~0                                                ; out0             ;
+; |ULA1BIT|xor_1:S4|process_0~0                                                 ; |ULA1BIT|xor_1:S4|process_0~0                                                 ; out0             ;
+; |ULA1BIT|nor_1:S3|S                                                           ; |ULA1BIT|nor_1:S3|S                                                           ; out0             ;
+; |ULA1BIT|or_1:S2|process_0~2                                                  ; |ULA1BIT|or_1:S2|process_0~2                                                  ; out0             ;
+; |ULA1BIT|nand_1:S1|process_0~2                                                ; |ULA1BIT|nand_1:S1|process_0~2                                                ; out0             ;
+; |ULA1BIT|and_1:S0|S                                                           ; |ULA1BIT|and_1:S0|S                                                           ; out0             ;
+; |ULA1BIT|somador:S6|Equal1~0                                                  ; |ULA1BIT|somador:S6|Equal1~0                                                  ; out0             ;
+; |ULA1BIT|somador:S6|Equal2~0                                                  ; |ULA1BIT|somador:S6|Equal2~0                                                  ; out0             ;
+; |ULA1BIT|somador:S6|Equal3~0                                                  ; |ULA1BIT|somador:S6|Equal3~0                                                  ; out0             ;
+; |ULA1BIT|somador:S6|Equal4~0                                                  ; |ULA1BIT|somador:S6|Equal4~0                                                  ; out0             ;
+; |ULA1BIT|somador:S6|Equal5~0                                                  ; |ULA1BIT|somador:S6|Equal5~0                                                  ; out0             ;
+; |ULA1BIT|somador:S6|Equal6~0                                                  ; |ULA1BIT|somador:S6|Equal6~0                                                  ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|sel_node[2]                               ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|sel_node[2]                               ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux7|muxlut:$00010|muxlut:$00012|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|sel_node[2]                               ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|sel_node[2]                               ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux6|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|sel_node[2]                               ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|sel_node[2]                               ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux5|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|sel_node[2]                               ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|sel_node[2]                               ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux4|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|sel_node[2]                               ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|sel_node[2]                               ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00014|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux3|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|sel_node[2]                               ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|sel_node[2]                               ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux2|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|sel_node[2]                               ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|sel_node[2]                               ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|sel_node[2]                               ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|sel_node[2]                               ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~2           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~2           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node~0 ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node~0 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node   ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~1           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~1           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~4           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~4           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~5           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~5           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~6           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~6           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~8           ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~8           ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~1 ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~1 ; out0             ;
+; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node   ; |ULA1BIT|decod:selecao|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node   ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|_~0            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|_~0            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~0  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~0  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~1  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node~1  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node    ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00016|result_node    ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~3            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~3            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~4            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~4            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~5            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~5            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~6            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~6            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~7            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~7            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~8            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|_~8            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node~1  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00014|result_node~1  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~3            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~3            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~4            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~4            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~0  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~0  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~6            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~6            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~7            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~7            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~8            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|_~8            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~1  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node~1  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node    ; |ULA1BIT|subtrator:S7|lpm_mux:Mux1|muxlut:$00010|muxlut:$00012|result_node    ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|_~0            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|_~0            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~0  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~0  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~1  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node~1  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node    ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00016|result_node    ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~3            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~3            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~4            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~4            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~5            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~5            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~6            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~6            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~7            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~7            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~8            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|_~8            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node~1  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00014|result_node~1  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~1            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~1            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~3            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~3            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~4            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~4            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~0  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~0  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~6            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~6            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~7            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~7            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~8            ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|_~8            ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~1  ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node~1  ; out0             ;
+; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node    ; |ULA1BIT|subtrator:S7|lpm_mux:Mux0|muxlut:$00010|muxlut:$00012|result_node    ; out0             ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue May 29 22:37:21 2018
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off ULA1BIT -c ULA1BIT
+Info: Using vector source file "F:/CDII/Trabalho 1/ULA 1 BIT/ULA1BIT.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is       2.37 %
+Info: Number of transitions in simulation is 255
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 147 megabytes
+    Info: Processing ended: Tue May 29 22:37:22 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
