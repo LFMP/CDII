@@ -128,7 +128,7 @@ set_global_assignment -name VHDL_FILE ari/ari.vhd
 set_global_assignment -name VHDL_FILE logic/logic.vhd
 set_global_assignment -name VHDL_FILE decodi/decodi.vhd
 set_global_assignment -name VHDL_FILE ULA1BIT.vhd
-set_global_assignment -name RTLV_GROUP_COMB_LOGIC_IN_CLOUD ON
+set_global_assignment -name RTLV_GROUP_COMB_LOGIC_IN_CLOUD OFF
 set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
 set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
 set_global_assignment -name VECTOR_WAVEFORM_FILE ULA1BIT.vwf

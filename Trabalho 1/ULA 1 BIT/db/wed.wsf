@@ -38,15 +38,15 @@ VECTOR("F:/CDII/Trabalho 1/ULA 1 BIT/db/ULA1BIT.sim.cvwf")
 		INTERVAL_TYPE = HALF_GRID;
 	}
 	LINE{
-		SIGNAL = "CIN";
+		SIGNAL = "IN";
 		INDEX = 0;
-		FORMAT = E;
+		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "E0";
+		SIGNAL = "CIN";
 		INDEX = 1;
 		FORMAT = E;
 		SCALE = 1;
@@ -54,7 +54,7 @@ VECTOR("F:/CDII/Trabalho 1/ULA 1 BIT/db/ULA1BIT.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "E1";
+		SIGNAL = "E0";
 		INDEX = 2;
 		FORMAT = E;
 		SCALE = 1;
@@ -62,7 +62,7 @@ VECTOR("F:/CDII/Trabalho 1/ULA 1 BIT/db/ULA1BIT.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "COUT";
+		SIGNAL = "E1";
 		INDEX = 3;
 		FORMAT = E;
 		SCALE = 1;
@@ -70,16 +70,8 @@ VECTOR("F:/CDII/Trabalho 1/ULA 1 BIT/db/ULA1BIT.sim.cvwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "S";
-		INDEX = 4;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
 		SIGNAL = "sel";
-		INDEX = 5;
+		INDEX = 4;
 		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -87,7 +79,7 @@ VECTOR("F:/CDII/Trabalho 1/ULA 1 BIT/db/ULA1BIT.sim.cvwf")
 	}
 	LINE{
 		SIGNAL = "sel[2]";
-		INDEX = 6;
+		INDEX = 5;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -95,7 +87,7 @@ VECTOR("F:/CDII/Trabalho 1/ULA 1 BIT/db/ULA1BIT.sim.cvwf")
 	}
 	LINE{
 		SIGNAL = "sel[1]";
-		INDEX = 7;
+		INDEX = 6;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -103,7 +95,23 @@ VECTOR("F:/CDII/Trabalho 1/ULA 1 BIT/db/ULA1BIT.sim.cvwf")
 	}
 	LINE{
 		SIGNAL = "sel[0]";
+		INDEX = 7;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "COUT";
 		INDEX = 8;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "S";
+		INDEX = 9;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -116,28 +124,29 @@ VECTOR("F:/CDII/TRABALHO 1/ULA 1 BIT/ULA1BIT.vwf")
 	ZOOM{
 		ZBEGIN = 0;
 		ZEND = 20000;
-		NUMERATOR = 767;
+		NUMERATOR = 1141;
 		DENOMINATOR = 20000;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
-		PERIOD = 10000;
+		PERIOD = 1000;
 		OFFSET = 0;
 		DUTY_CYCLE = 50;
 	}
 	RANDOM_VALUE{
-		INTERVAL_TYPE = HALF_GRID;
+		INTERVAL_TYPE = USER;
+		USER_INTERVAL = 1000;
 	}
 	LINE{
-		SIGNAL = "CIN";
+		SIGNAL = "IN";
 		INDEX = 0;
-		FORMAT = E;
+		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "E0";
+		SIGNAL = "CIN";
 		INDEX = 1;
 		FORMAT = E;
 		SCALE = 1;
@@ -145,7 +154,7 @@ VECTOR("F:/CDII/TRABALHO 1/ULA 1 BIT/ULA1BIT.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "E1";
+		SIGNAL = "E0";
 		INDEX = 2;
 		FORMAT = E;
 		SCALE = 1;
@@ -153,7 +162,7 @@ VECTOR("F:/CDII/TRABALHO 1/ULA 1 BIT/ULA1BIT.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "COUT";
+		SIGNAL = "E1";
 		INDEX = 3;
 		FORMAT = E;
 		SCALE = 1;
@@ -161,16 +170,8 @@ VECTOR("F:/CDII/TRABALHO 1/ULA 1 BIT/ULA1BIT.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "S";
-		INDEX = 4;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
 		SIGNAL = "sel";
-		INDEX = 5;
+		INDEX = 4;
 		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -178,7 +179,7 @@ VECTOR("F:/CDII/TRABALHO 1/ULA 1 BIT/ULA1BIT.vwf")
 	}
 	LINE{
 		SIGNAL = "sel[2]";
-		INDEX = 6;
+		INDEX = 5;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -186,7 +187,7 @@ VECTOR("F:/CDII/TRABALHO 1/ULA 1 BIT/ULA1BIT.vwf")
 	}
 	LINE{
 		SIGNAL = "sel[1]";
-		INDEX = 7;
+		INDEX = 6;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -194,7 +195,23 @@ VECTOR("F:/CDII/TRABALHO 1/ULA 1 BIT/ULA1BIT.vwf")
 	}
 	LINE{
 		SIGNAL = "sel[0]";
+		INDEX = 7;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "COUT";
 		INDEX = 8;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "S";
+		INDEX = 9;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
