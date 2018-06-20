@@ -1,0 +1,21 @@
+library work;
+use work.som_2_bits_pf_package.all;
+
+entity som_2_bits_pf is
+	generic (n: integer := 2);
+	port(
+		a,b : in bit_vecttor(n-1 downto 0);
+		cin: in bit;
+		s: out bit_vector(n-1 downto 0);
+		cout: out bit
+		);
+end som_2_bits_pf;
+
+architecture function_add of som_2_bits_pf is
+begin
+	process(a,b,cin)
+		begin
+			s<= soma(a,b,cin);
+			cout<= couti(a,b,cin);
+		end process;
+end fuction_add;

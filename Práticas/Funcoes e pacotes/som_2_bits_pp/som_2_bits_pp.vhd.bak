@@ -1,0 +1,15 @@
+library work;
+use work.som_2_bits_pp_package.all;
+
+entity som_2_bits_pp is
+	generic n:integer:=2;
+	port(a,b: in bit_vector(n-1 downto 0);
+		cin: in bit;
+		s: out bit_vector(n-1 downto 0);
+		cout: out bit);
+end som_2_bits_pp;
+
+architecture procedure_add of som_2_bits_pp is
+begin
+	soma(a,b,cin,s,cout);
+end procedure_add;

@@ -1,0 +1,21 @@
+|som_2_bits_af
+a[0] => res.IN0
+a[0] => vai1.IN0
+a[0] => vai1.IN0
+a[1] => res.IN0
+a[1] => vai1.IN0
+a[1] => vai1.IN1
+b[0] => res.IN1
+b[0] => vai1.IN1
+b[0] => vai1.IN0
+b[1] => res.IN1
+b[1] => vai1.IN1
+b[1] => vai1.IN1
+cin => res.IN1
+cin => vai1.IN1
+cin => vai1.IN1
+s[0] <= res.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= res.DB_MAX_OUTPUT_PORT_TYPE
+cout <= vai1.DB_MAX_OUTPUT_PORT_TYPE
+
+

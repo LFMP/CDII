@@ -1,0 +1,40 @@
+entity som_2_bits_af is
+	generic(n: integer := 2);
+	port(
+		a,b : bit_vector(n-1 downto 0);
+		cin: in bit;
+		s: out bit_vector(n-1 downto 0);
+		cout: out bit
+	);
+end som_2_bits_af;
+
+architecture function_add of som_2_bits_af is
+	constant m: integer := 2;
+	function soma(x: bit_vector; y: bit_vector; vem1: bit) return bit_vector is
+		variable vai1: bit_vector(m downto 0);
+		variable res: bit_vector(m-1 downto 0);
+		
+		begin
+			vai1(0):=vem1;
+			loopsoma: for i in 0 to m-1 loop
+				res(i):= x(i) xor y(i) xor vai1(i);
+				vai1(i+1):= (x(i) and y(i)) or (y(i) and vai1(i)) or (x(i) and vai1(i));
+			end loop loopsoma;
+			return res;
+		end soma;
+	function couti(x:bit_vector; y:bit_vector;vem1:bit) return bit is
+		variable vai1: bit_vector(m downto 0);
+		begin
+			vai1(0):= vem1;
+			loopvai1: for i in 0 to m-1 loop
+				vai1(i+1):=(x(i) and y(i)) or (y(i) and vai1(i)) or (x(i) and vai1(i));
+			end loop loopvai1;
+			return vai1(m);
+		end couti;
+begin
+	process(a,b,cin)
+		begin
+			s<= soma(a,b,cin);
+			cout<= couti(a,b,cin);
+		end process;
+end function_add;
