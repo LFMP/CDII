@@ -1,0 +1,352 @@
+Simulator report for relogio_digital
+Mon Jul 09 13:07:37 2018
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------+
+; Simulator Summary                            ;
++-----------------------------+----------------+
+; Type                        ; Value          ;
++-----------------------------+----------------+
+; Simulation Start Time       ; 0 ps           ;
+; Simulation End Time         ; 100.0 ns       ;
+; Simulation Netlist Size     ; 75 nodes       ;
+; Simulation Coverage         ;      21.13 %   ;
+; Total Number of Transitions ; 360            ;
+; Simulation Breakpoints      ; 0              ;
+; Family                      ; MAX7000S       ;
+; Device                      ; EPM7064SLC44-7 ;
++-----------------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                         ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+; Option                                                                                     ; Setting       ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+; Simulation mode                                                                            ; Timing        ; Timing        ;
+; Start time                                                                                 ; 0 ns          ; 0 ns          ;
+; End time                                                                                   ; 100 ns        ;               ;
+; Simulation results format                                                                  ; CVWF          ;               ;
+; Vector input source                                                                        ; Waveform1.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On            ; On            ;
+; Check outputs                                                                              ; Off           ; Off           ;
+; Report simulation coverage                                                                 ; On            ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On            ; On            ;
+; Display missing 1-value coverage report                                                    ; On            ; On            ;
+; Display missing 0-value coverage report                                                    ; On            ; On            ;
+; Detect setup and hold time violations                                                      ; Off           ; Off           ;
+; Detect glitches                                                                            ; Off           ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off           ; Off           ;
+; Generate Signal Activity File                                                              ; Off           ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off           ; Off           ;
+; Group bus channels in simulation results                                                   ; Off           ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On            ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE    ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off           ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off           ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto          ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      21.13 % ;
+; Total nodes checked                                 ; 75           ;
+; Total output ports checked                          ; 71           ;
+; Total output ports with complete 1/0-value coverage ; 15           ;
+; Total output ports with no 1/0-value coverage       ; 56           ;
+; Total output ports with no 1-value coverage         ; 56           ;
+; Total output ports with no 0-value coverage         ; 56           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                        ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; Node Name                                                              ; Output Port Name                                                       ; Output Port Type ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; |relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp ; |relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp ; dataout          ;
+; |relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk2|qtemp ; |relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk2|qtemp ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_seg|Equal9~10               ; |relogio_digital|decodificador_bcd:bcd_uni_seg|Equal9~10               ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos~27            ; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos~27            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos[2]~32         ; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos[2]~32         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos~36            ; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos~36            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos~43            ; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos~43            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos[0]~49         ; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos[0]~49         ; dataout          ;
+; |relogio_digital|clock                                                 ; |relogio_digital|clock~corein                                          ; dataout          ;
+; |relogio_digital|uni_sec[1]                                            ; |relogio_digital|uni_sec[1]                                            ; padio            ;
+; |relogio_digital|uni_sec[2]                                            ; |relogio_digital|uni_sec[2]                                            ; padio            ;
+; |relogio_digital|uni_sec[4]                                            ; |relogio_digital|uni_sec[4]                                            ; padio            ;
+; |relogio_digital|uni_sec[6]                                            ; |relogio_digital|uni_sec[6]                                            ; padio            ;
+; |relogio_digital|uni_sec[3]                                            ; |relogio_digital|uni_sec[3]                                            ; padio            ;
+; |relogio_digital|uni_sec[0]                                            ; |relogio_digital|uni_sec[0]                                            ; padio            ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                           ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; Node Name                                                              ; Output Port Name                                                       ; Output Port Type ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; |relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp ; |relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp ; dataout          ;
+; |relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk0|qtemp   ; |relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk0|qtemp   ; dataout          ;
+; |relogio_digital|and_2:clock_dezenas_segundos|z~3                      ; |relogio_digital|and_2:clock_dezenas_segundos|z~3                      ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos[5]~21         ; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos[5]~21         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos~19            ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos~19            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[3]~25         ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[3]~25         ; dataout          ;
+; |relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk2|qtemp   ; |relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk2|qtemp   ; dataout          ;
+; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk0|qtemp  ; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk0|qtemp  ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|Equal9~3                ; |relogio_digital|decodificador_bcd:bcd_dez_seg|Equal9~3                ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos~28            ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos~28            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[0]~33         ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[0]~33         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[2]~35         ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[2]~35         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[1]~41         ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[1]~41         ; dataout          ;
+; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk2|qtemp  ; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk2|qtemp  ; dataout          ;
+; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk3|qtemp  ; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk3|qtemp  ; dataout          ;
+; |relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk0|qtemp    ; |relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk0|qtemp    ; dataout          ;
+; |relogio_digital|and_2:clock_dezenas_minutos|z~3                       ; |relogio_digital|and_2:clock_dezenas_minutos|z~3                       ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[5]~21         ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[5]~21         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|Equal9~10               ; |relogio_digital|decodificador_bcd:bcd_uni_min|Equal9~10               ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~27            ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~27            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[2]~32         ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[2]~32         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~36            ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~36            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~43            ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~43            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[0]~49         ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[0]~49         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos~19            ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos~19            ; dataout          ;
+; |relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk1|qtemp    ; |relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk1|qtemp    ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos~23            ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos~23            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|Equal9~3                ; |relogio_digital|decodificador_bcd:bcd_dez_min|Equal9~3                ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[2]~26         ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[2]~26         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[3]~33         ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[3]~33         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[0]~37         ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[0]~37         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[1]~41         ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[1]~41         ; dataout          ;
+; |relogio_digital|entrada                                               ; |relogio_digital|entrada~corein                                        ; dataout          ;
+; |relogio_digital|clear                                                 ; |relogio_digital|clear~corein                                          ; dataout          ;
+; |relogio_digital|uni_sec[5]                                            ; |relogio_digital|uni_sec[5]                                            ; padio            ;
+; |relogio_digital|dez_sec[6]                                            ; |relogio_digital|dez_sec[6]                                            ; padio            ;
+; |relogio_digital|dez_sec[3]                                            ; |relogio_digital|dez_sec[3]                                            ; padio            ;
+; |relogio_digital|dez_sec[4]                                            ; |relogio_digital|dez_sec[4]                                            ; padio            ;
+; |relogio_digital|dez_sec[5]                                            ; |relogio_digital|dez_sec[5]                                            ; padio            ;
+; |relogio_digital|dez_sec[0]                                            ; |relogio_digital|dez_sec[0]                                            ; padio            ;
+; |relogio_digital|dez_sec[1]                                            ; |relogio_digital|dez_sec[1]                                            ; padio            ;
+; |relogio_digital|dez_sec[2]                                            ; |relogio_digital|dez_sec[2]                                            ; padio            ;
+; |relogio_digital|uni_min[5]                                            ; |relogio_digital|uni_min[5]                                            ; padio            ;
+; |relogio_digital|uni_min[1]                                            ; |relogio_digital|uni_min[1]                                            ; padio            ;
+; |relogio_digital|uni_min[2]                                            ; |relogio_digital|uni_min[2]                                            ; padio            ;
+; |relogio_digital|uni_min[4]                                            ; |relogio_digital|uni_min[4]                                            ; padio            ;
+; |relogio_digital|uni_min[6]                                            ; |relogio_digital|uni_min[6]                                            ; padio            ;
+; |relogio_digital|uni_min[3]                                            ; |relogio_digital|uni_min[3]                                            ; padio            ;
+; |relogio_digital|uni_min[0]                                            ; |relogio_digital|uni_min[0]                                            ; padio            ;
+; |relogio_digital|dez_min[5]                                            ; |relogio_digital|dez_min[5]                                            ; padio            ;
+; |relogio_digital|dez_min[6]                                            ; |relogio_digital|dez_min[6]                                            ; padio            ;
+; |relogio_digital|dez_min[2]                                            ; |relogio_digital|dez_min[2]                                            ; padio            ;
+; |relogio_digital|dez_min[3]                                            ; |relogio_digital|dez_min[3]                                            ; padio            ;
+; |relogio_digital|dez_min[4]                                            ; |relogio_digital|dez_min[4]                                            ; padio            ;
+; |relogio_digital|dez_min[0]                                            ; |relogio_digital|dez_min[0]                                            ; padio            ;
+; |relogio_digital|dez_min[1]                                            ; |relogio_digital|dez_min[1]                                            ; padio            ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                           ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; Node Name                                                              ; Output Port Name                                                       ; Output Port Type ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; |relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp ; |relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp ; dataout          ;
+; |relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk0|qtemp   ; |relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk0|qtemp   ; dataout          ;
+; |relogio_digital|and_2:clock_dezenas_segundos|z~3                      ; |relogio_digital|and_2:clock_dezenas_segundos|z~3                      ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos[5]~21         ; |relogio_digital|decodificador_bcd:bcd_uni_seg|segmentos[5]~21         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos~19            ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos~19            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[3]~25         ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[3]~25         ; dataout          ;
+; |relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk2|qtemp   ; |relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk2|qtemp   ; dataout          ;
+; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk0|qtemp  ; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk0|qtemp  ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|Equal9~3                ; |relogio_digital|decodificador_bcd:bcd_dez_seg|Equal9~3                ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos~28            ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos~28            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[0]~33         ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[0]~33         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[2]~35         ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[2]~35         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[1]~41         ; |relogio_digital|decodificador_bcd:bcd_dez_seg|segmentos[1]~41         ; dataout          ;
+; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk2|qtemp  ; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk2|qtemp  ; dataout          ;
+; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk3|qtemp  ; |relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk3|qtemp  ; dataout          ;
+; |relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk0|qtemp    ; |relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk0|qtemp    ; dataout          ;
+; |relogio_digital|and_2:clock_dezenas_minutos|z~3                       ; |relogio_digital|and_2:clock_dezenas_minutos|z~3                       ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[5]~21         ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[5]~21         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|Equal9~10               ; |relogio_digital|decodificador_bcd:bcd_uni_min|Equal9~10               ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~27            ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~27            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[2]~32         ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[2]~32         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~36            ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~36            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~43            ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos~43            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[0]~49         ; |relogio_digital|decodificador_bcd:bcd_uni_min|segmentos[0]~49         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos~19            ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos~19            ; dataout          ;
+; |relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk1|qtemp    ; |relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk1|qtemp    ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos~23            ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos~23            ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|Equal9~3                ; |relogio_digital|decodificador_bcd:bcd_dez_min|Equal9~3                ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[2]~26         ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[2]~26         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[3]~33         ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[3]~33         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[0]~37         ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[0]~37         ; dataout          ;
+; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[1]~41         ; |relogio_digital|decodificador_bcd:bcd_dez_min|segmentos[1]~41         ; dataout          ;
+; |relogio_digital|entrada                                               ; |relogio_digital|entrada~corein                                        ; dataout          ;
+; |relogio_digital|clear                                                 ; |relogio_digital|clear~corein                                          ; dataout          ;
+; |relogio_digital|uni_sec[5]                                            ; |relogio_digital|uni_sec[5]                                            ; padio            ;
+; |relogio_digital|dez_sec[6]                                            ; |relogio_digital|dez_sec[6]                                            ; padio            ;
+; |relogio_digital|dez_sec[3]                                            ; |relogio_digital|dez_sec[3]                                            ; padio            ;
+; |relogio_digital|dez_sec[4]                                            ; |relogio_digital|dez_sec[4]                                            ; padio            ;
+; |relogio_digital|dez_sec[5]                                            ; |relogio_digital|dez_sec[5]                                            ; padio            ;
+; |relogio_digital|dez_sec[0]                                            ; |relogio_digital|dez_sec[0]                                            ; padio            ;
+; |relogio_digital|dez_sec[1]                                            ; |relogio_digital|dez_sec[1]                                            ; padio            ;
+; |relogio_digital|dez_sec[2]                                            ; |relogio_digital|dez_sec[2]                                            ; padio            ;
+; |relogio_digital|uni_min[5]                                            ; |relogio_digital|uni_min[5]                                            ; padio            ;
+; |relogio_digital|uni_min[1]                                            ; |relogio_digital|uni_min[1]                                            ; padio            ;
+; |relogio_digital|uni_min[2]                                            ; |relogio_digital|uni_min[2]                                            ; padio            ;
+; |relogio_digital|uni_min[4]                                            ; |relogio_digital|uni_min[4]                                            ; padio            ;
+; |relogio_digital|uni_min[6]                                            ; |relogio_digital|uni_min[6]                                            ; padio            ;
+; |relogio_digital|uni_min[3]                                            ; |relogio_digital|uni_min[3]                                            ; padio            ;
+; |relogio_digital|uni_min[0]                                            ; |relogio_digital|uni_min[0]                                            ; padio            ;
+; |relogio_digital|dez_min[5]                                            ; |relogio_digital|dez_min[5]                                            ; padio            ;
+; |relogio_digital|dez_min[6]                                            ; |relogio_digital|dez_min[6]                                            ; padio            ;
+; |relogio_digital|dez_min[2]                                            ; |relogio_digital|dez_min[2]                                            ; padio            ;
+; |relogio_digital|dez_min[3]                                            ; |relogio_digital|dez_min[3]                                            ; padio            ;
+; |relogio_digital|dez_min[4]                                            ; |relogio_digital|dez_min[4]                                            ; padio            ;
+; |relogio_digital|dez_min[0]                                            ; |relogio_digital|dez_min[0]                                            ; padio            ;
+; |relogio_digital|dez_min[1]                                            ; |relogio_digital|dez_min[1]                                            ; padio            ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Jul 09 13:07:34 2018
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off relogio_digital -c relogio_digital
+Info: Using vector source file "C:/Users/luizf/Downloads/relógio/Waveform1.vwf"
+Info: Simulation end time 100.0 ns did not reach the end of the input vector, which ended at 1.0 us
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning: Found clock high time violation at 9.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 9.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 9.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 14.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 14.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 14.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 19.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 19.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 19.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 24.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 24.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 24.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk2|qtemp"
+Warning: Found clock high time violation at 24.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 29.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 29.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 29.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 34.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 34.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 34.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 39.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 39.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 39.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 44.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 44.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 44.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk2|qtemp"
+Warning: Found clock high time violation at 44.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 49.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 49.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 49.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 54.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 54.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 54.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 59.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 59.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 59.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 64.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 64.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 64.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk2|qtemp"
+Warning: Found clock high time violation at 64.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 69.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 69.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 69.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 74.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 74.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 74.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 79.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 79.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 79.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 84.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 84.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 84.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk2|qtemp"
+Warning: Found clock high time violation at 84.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 89.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 89.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 89.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 94.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 94.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 94.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Warning: Found clock high time violation at 99.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp"
+Warning: Found clock high time violation at 99.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1|qtemp"
+Warning: Found clock high time violation at 99.0 ns on register "|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3|qtemp"
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      21.13 %
+Info: Number of transitions in simulation is 360
+Info: Quartus II Simulator was successful. 0 errors, 61 warnings
+    Info: Peak virtual memory: 148 megabytes
+    Info: Processing ended: Mon Jul 09 13:07:46 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:08
+
+

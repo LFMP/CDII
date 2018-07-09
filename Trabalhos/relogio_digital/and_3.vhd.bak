@@ -1,0 +1,16 @@
+ENTITY and_3 IS
+	PORT(a, b, c : IN BIT;
+		 d : OUT BIT);
+END and_3;
+
+ARCHITECTURE rtl OF and_3  IS
+	BEGIN
+		d <= a AND b AND c;
+END rtl;
+
+PACKAGE and3 IS
+	COMPONENT and_3 IS
+		PORT(x, y : IN BIT;
+		 z : OUT BIT);
+	END COMPONENT;
+END and3;

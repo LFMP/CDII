@@ -1,0 +1,544 @@
+|relogio_digital
+entrada => contador_mod10:unidades_segundos.entrada
+entrada => contador_mod6:dezenas_segundos.entrada
+entrada => contador_mod10:unidades_minutos.entrada
+entrada => contador_mod6:dezenas_minutos.entrada
+clock => contador_mod10:unidades_segundos.clock
+clear => contador_mod10:unidades_segundos.clear
+clear => contador_mod6:dezenas_segundos.clear
+clear => contador_mod10:unidades_minutos.clear
+clear => contador_mod6:dezenas_minutos.clear
+dez_min[0] <= decodificador_bcd:bcd_dez_min.segmentos[0]
+dez_min[1] <= decodificador_bcd:bcd_dez_min.segmentos[1]
+dez_min[2] <= decodificador_bcd:bcd_dez_min.segmentos[2]
+dez_min[3] <= decodificador_bcd:bcd_dez_min.segmentos[3]
+dez_min[4] <= decodificador_bcd:bcd_dez_min.segmentos[4]
+dez_min[5] <= decodificador_bcd:bcd_dez_min.segmentos[5]
+dez_min[6] <= decodificador_bcd:bcd_dez_min.segmentos[6]
+uni_min[0] <= decodificador_bcd:bcd_uni_min.segmentos[0]
+uni_min[1] <= decodificador_bcd:bcd_uni_min.segmentos[1]
+uni_min[2] <= decodificador_bcd:bcd_uni_min.segmentos[2]
+uni_min[3] <= decodificador_bcd:bcd_uni_min.segmentos[3]
+uni_min[4] <= decodificador_bcd:bcd_uni_min.segmentos[4]
+uni_min[5] <= decodificador_bcd:bcd_uni_min.segmentos[5]
+uni_min[6] <= decodificador_bcd:bcd_uni_min.segmentos[6]
+dez_sec[0] <= decodificador_bcd:bcd_dez_seg.segmentos[0]
+dez_sec[1] <= decodificador_bcd:bcd_dez_seg.segmentos[1]
+dez_sec[2] <= decodificador_bcd:bcd_dez_seg.segmentos[2]
+dez_sec[3] <= decodificador_bcd:bcd_dez_seg.segmentos[3]
+dez_sec[4] <= decodificador_bcd:bcd_dez_seg.segmentos[4]
+dez_sec[5] <= decodificador_bcd:bcd_dez_seg.segmentos[5]
+dez_sec[6] <= decodificador_bcd:bcd_dez_seg.segmentos[6]
+uni_sec[0] <= decodificador_bcd:bcd_uni_seg.segmentos[0]
+uni_sec[1] <= decodificador_bcd:bcd_uni_seg.segmentos[1]
+uni_sec[2] <= decodificador_bcd:bcd_uni_seg.segmentos[2]
+uni_sec[3] <= decodificador_bcd:bcd_uni_seg.segmentos[3]
+uni_sec[4] <= decodificador_bcd:bcd_uni_seg.segmentos[4]
+uni_sec[5] <= decodificador_bcd:bcd_uni_seg.segmentos[5]
+uni_sec[6] <= decodificador_bcd:bcd_uni_seg.segmentos[6]
+
+
+|relogio_digital|contador_mod10:unidades_segundos
+clock => ffjk_bdc:ffjk0.clock
+clock => ffjk_bdc:ffjk1.clock
+clock => ffjk_bdc:ffjk2.clock
+clock => ffjk_bdc:ffjk3.clock
+clear => ffjk_bdc:ffjk0.clear
+clear => ffjk_bdc:ffjk1.clear
+clear => ffjk_bdc:ffjk2.clear
+clear => ffjk_bdc:ffjk3.clear
+entrada => ffjk_bdc:ffjk0.j
+entrada => ffjk_bdc:ffjk0.k
+saidas[0] <= ffjk_bdc:ffjk0.q
+saidas[1] <= ffjk_bdc:ffjk1.q
+saidas[2] <= ffjk_bdc:ffjk2.q
+saidas[3] <= ffjk_bdc:ffjk3.q
+saidasbarra[0] <= ffjk_bdc:ffjk0.qbarra
+saidasbarra[1] <= ffjk_bdc:ffjk1.qbarra
+saidasbarra[2] <= ffjk_bdc:ffjk2.qbarra
+saidasbarra[3] <= ffjk_bdc:ffjk3.qbarra
+
+
+|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk0
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_segundos|and_2:and_j1
+x => z.IN0
+y => z.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk1
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_segundos|and_2:and_j2
+x => z.IN0
+y => z.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk2
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_segundos|and_3:and_j3
+a => d.IN0
+b => d.IN1
+c => d.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_segundos|ffjk_bdc:ffjk3
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|and_2:clock_dezenas_segundos
+x => z.IN0
+y => z.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod6:dezenas_segundos
+clock => ffjk_bdc:ffjk0.clock
+clock => ffjk_bdc:ffjk1.clock
+clock => ffjk_bdc:ffjk2.clock
+clear => ffjk_bdc:ffjk0.clear
+clear => ffjk_bdc:ffjk1.clear
+clear => ffjk_bdc:ffjk2.clear
+entrada => ffjk_bdc:ffjk0.j
+entrada => ffjk_bdc:ffjk0.k
+saidas[0] <= ffjk_bdc:ffjk0.q
+saidas[1] <= ffjk_bdc:ffjk1.q
+saidas[2] <= ffjk_bdc:ffjk2.q
+saidasbarra[0] <= ffjk_bdc:ffjk0.qbarra
+saidasbarra[1] <= ffjk_bdc:ffjk1.qbarra
+saidasbarra[2] <= ffjk_bdc:ffjk2.qbarra
+
+
+|relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk0
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod6:dezenas_segundos|and_2:and_j1
+x => z.IN0
+y => z.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk1
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod6:dezenas_segundos|and_2:and_j2
+x => z.IN0
+y => z.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod6:dezenas_segundos|ffjk_bdc:ffjk2
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_minutos
+clock => ffjk_bdc:ffjk0.clock
+clock => ffjk_bdc:ffjk1.clock
+clock => ffjk_bdc:ffjk2.clock
+clock => ffjk_bdc:ffjk3.clock
+clear => ffjk_bdc:ffjk0.clear
+clear => ffjk_bdc:ffjk1.clear
+clear => ffjk_bdc:ffjk2.clear
+clear => ffjk_bdc:ffjk3.clear
+entrada => ffjk_bdc:ffjk0.j
+entrada => ffjk_bdc:ffjk0.k
+saidas[0] <= ffjk_bdc:ffjk0.q
+saidas[1] <= ffjk_bdc:ffjk1.q
+saidas[2] <= ffjk_bdc:ffjk2.q
+saidas[3] <= ffjk_bdc:ffjk3.q
+saidasbarra[0] <= ffjk_bdc:ffjk0.qbarra
+saidasbarra[1] <= ffjk_bdc:ffjk1.qbarra
+saidasbarra[2] <= ffjk_bdc:ffjk2.qbarra
+saidasbarra[3] <= ffjk_bdc:ffjk3.qbarra
+
+
+|relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk0
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_minutos|and_2:and_j1
+x => z.IN0
+y => z.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk1
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_minutos|and_2:and_j2
+x => z.IN0
+y => z.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk2
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_minutos|and_3:and_j3
+a => d.IN0
+b => d.IN1
+c => d.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod10:unidades_minutos|ffjk_bdc:ffjk3
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|and_2:clock_dezenas_minutos
+x => z.IN0
+y => z.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod6:dezenas_minutos
+clock => ffjk_bdc:ffjk0.clock
+clock => ffjk_bdc:ffjk1.clock
+clock => ffjk_bdc:ffjk2.clock
+clear => ffjk_bdc:ffjk0.clear
+clear => ffjk_bdc:ffjk1.clear
+clear => ffjk_bdc:ffjk2.clear
+entrada => ffjk_bdc:ffjk0.j
+entrada => ffjk_bdc:ffjk0.k
+saidas[0] <= ffjk_bdc:ffjk0.q
+saidas[1] <= ffjk_bdc:ffjk1.q
+saidas[2] <= ffjk_bdc:ffjk2.q
+saidasbarra[0] <= ffjk_bdc:ffjk0.qbarra
+saidasbarra[1] <= ffjk_bdc:ffjk1.qbarra
+saidasbarra[2] <= ffjk_bdc:ffjk2.qbarra
+
+
+|relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk0
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod6:dezenas_minutos|and_2:and_j1
+x => z.IN0
+y => z.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk1
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod6:dezenas_minutos|and_2:and_j2
+x => z.IN0
+y => z.IN1
+z <= z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|contador_mod6:dezenas_minutos|ffjk_bdc:ffjk2
+j => process_0.IN1
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN0
+clear => process_0.IN0
+clock => process_0.IN0
+q <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+qbarra <= qtemp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|decodificador_bcd:bcd_dez_min
+bcd[0] => Equal0.IN7
+bcd[0] => Equal1.IN7
+bcd[0] => Equal2.IN7
+bcd[0] => Equal3.IN7
+bcd[0] => Equal4.IN7
+bcd[0] => Equal5.IN7
+bcd[0] => Equal6.IN7
+bcd[0] => Equal7.IN7
+bcd[0] => Equal8.IN7
+bcd[0] => Equal9.IN7
+bcd[1] => Equal0.IN6
+bcd[1] => Equal1.IN6
+bcd[1] => Equal2.IN6
+bcd[1] => Equal3.IN6
+bcd[1] => Equal4.IN6
+bcd[1] => Equal5.IN6
+bcd[1] => Equal6.IN6
+bcd[1] => Equal7.IN6
+bcd[1] => Equal8.IN6
+bcd[1] => Equal9.IN6
+bcd[2] => Equal0.IN5
+bcd[2] => Equal1.IN5
+bcd[2] => Equal2.IN5
+bcd[2] => Equal3.IN5
+bcd[2] => Equal4.IN5
+bcd[2] => Equal5.IN5
+bcd[2] => Equal6.IN5
+bcd[2] => Equal7.IN5
+bcd[2] => Equal8.IN5
+bcd[2] => Equal9.IN5
+bcd[3] => Equal0.IN4
+bcd[3] => Equal1.IN4
+bcd[3] => Equal2.IN4
+bcd[3] => Equal3.IN4
+bcd[3] => Equal4.IN4
+bcd[3] => Equal5.IN4
+bcd[3] => Equal6.IN4
+bcd[3] => Equal7.IN4
+bcd[3] => Equal8.IN4
+bcd[3] => Equal9.IN4
+segmentos[0] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|decodificador_bcd:bcd_uni_min
+bcd[0] => Equal0.IN7
+bcd[0] => Equal1.IN7
+bcd[0] => Equal2.IN7
+bcd[0] => Equal3.IN7
+bcd[0] => Equal4.IN7
+bcd[0] => Equal5.IN7
+bcd[0] => Equal6.IN7
+bcd[0] => Equal7.IN7
+bcd[0] => Equal8.IN7
+bcd[0] => Equal9.IN7
+bcd[1] => Equal0.IN6
+bcd[1] => Equal1.IN6
+bcd[1] => Equal2.IN6
+bcd[1] => Equal3.IN6
+bcd[1] => Equal4.IN6
+bcd[1] => Equal5.IN6
+bcd[1] => Equal6.IN6
+bcd[1] => Equal7.IN6
+bcd[1] => Equal8.IN6
+bcd[1] => Equal9.IN6
+bcd[2] => Equal0.IN5
+bcd[2] => Equal1.IN5
+bcd[2] => Equal2.IN5
+bcd[2] => Equal3.IN5
+bcd[2] => Equal4.IN5
+bcd[2] => Equal5.IN5
+bcd[2] => Equal6.IN5
+bcd[2] => Equal7.IN5
+bcd[2] => Equal8.IN5
+bcd[2] => Equal9.IN5
+bcd[3] => Equal0.IN4
+bcd[3] => Equal1.IN4
+bcd[3] => Equal2.IN4
+bcd[3] => Equal3.IN4
+bcd[3] => Equal4.IN4
+bcd[3] => Equal5.IN4
+bcd[3] => Equal6.IN4
+bcd[3] => Equal7.IN4
+bcd[3] => Equal8.IN4
+bcd[3] => Equal9.IN4
+segmentos[0] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|decodificador_bcd:bcd_dez_seg
+bcd[0] => Equal0.IN7
+bcd[0] => Equal1.IN7
+bcd[0] => Equal2.IN7
+bcd[0] => Equal3.IN7
+bcd[0] => Equal4.IN7
+bcd[0] => Equal5.IN7
+bcd[0] => Equal6.IN7
+bcd[0] => Equal7.IN7
+bcd[0] => Equal8.IN7
+bcd[0] => Equal9.IN7
+bcd[1] => Equal0.IN6
+bcd[1] => Equal1.IN6
+bcd[1] => Equal2.IN6
+bcd[1] => Equal3.IN6
+bcd[1] => Equal4.IN6
+bcd[1] => Equal5.IN6
+bcd[1] => Equal6.IN6
+bcd[1] => Equal7.IN6
+bcd[1] => Equal8.IN6
+bcd[1] => Equal9.IN6
+bcd[2] => Equal0.IN5
+bcd[2] => Equal1.IN5
+bcd[2] => Equal2.IN5
+bcd[2] => Equal3.IN5
+bcd[2] => Equal4.IN5
+bcd[2] => Equal5.IN5
+bcd[2] => Equal6.IN5
+bcd[2] => Equal7.IN5
+bcd[2] => Equal8.IN5
+bcd[2] => Equal9.IN5
+bcd[3] => Equal0.IN4
+bcd[3] => Equal1.IN4
+bcd[3] => Equal2.IN4
+bcd[3] => Equal3.IN4
+bcd[3] => Equal4.IN4
+bcd[3] => Equal5.IN4
+bcd[3] => Equal6.IN4
+bcd[3] => Equal7.IN4
+bcd[3] => Equal8.IN4
+bcd[3] => Equal9.IN4
+segmentos[0] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio_digital|decodificador_bcd:bcd_uni_seg
+bcd[0] => Equal0.IN7
+bcd[0] => Equal1.IN7
+bcd[0] => Equal2.IN7
+bcd[0] => Equal3.IN7
+bcd[0] => Equal4.IN7
+bcd[0] => Equal5.IN7
+bcd[0] => Equal6.IN7
+bcd[0] => Equal7.IN7
+bcd[0] => Equal8.IN7
+bcd[0] => Equal9.IN7
+bcd[1] => Equal0.IN6
+bcd[1] => Equal1.IN6
+bcd[1] => Equal2.IN6
+bcd[1] => Equal3.IN6
+bcd[1] => Equal4.IN6
+bcd[1] => Equal5.IN6
+bcd[1] => Equal6.IN6
+bcd[1] => Equal7.IN6
+bcd[1] => Equal8.IN6
+bcd[1] => Equal9.IN6
+bcd[2] => Equal0.IN5
+bcd[2] => Equal1.IN5
+bcd[2] => Equal2.IN5
+bcd[2] => Equal3.IN5
+bcd[2] => Equal4.IN5
+bcd[2] => Equal5.IN5
+bcd[2] => Equal6.IN5
+bcd[2] => Equal7.IN5
+bcd[2] => Equal8.IN5
+bcd[2] => Equal9.IN5
+bcd[3] => Equal0.IN4
+bcd[3] => Equal1.IN4
+bcd[3] => Equal2.IN4
+bcd[3] => Equal3.IN4
+bcd[3] => Equal4.IN4
+bcd[3] => Equal5.IN4
+bcd[3] => Equal6.IN4
+bcd[3] => Equal7.IN4
+bcd[3] => Equal8.IN4
+bcd[3] => Equal9.IN4
+segmentos[0] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= segmentos.DB_MAX_OUTPUT_PORT_TYPE
+
+

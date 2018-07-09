@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.000 ns
+From           : entrada
+To             : contador_mod10:unidades_segundos|ffjk_bdc:ffjk0|qtemp
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 32.500 ns
+From           : contador_mod6:dezenas_minutos|ffjk_bdc:ffjk1|qtemp
+To             : dez_min[5]
+From Clock     : clock
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 22.000 ns
+From           : entrada
+To             : contador_mod6:dezenas_minutos|ffjk_bdc:ffjk0|qtemp
+From Clock     : --
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 125.00 MHz ( period = 8.000 ns )
+From           : contador_mod6:dezenas_minutos|ffjk_bdc:ffjk1|qtemp
+To             : contador_mod6:dezenas_minutos|ffjk_bdc:ffjk1|qtemp
+From Clock     : clock
+To Clock       : clock
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

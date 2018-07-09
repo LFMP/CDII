@@ -1,0 +1,346 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+33
+2062
+OFF
+OFF
+OFF
+ON
+ON
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+mentor.lmf
+-- Start Library Paths --
+incremental_db|
+contador_mod10|
+contador_mod6|
+
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+contador_mod10
+# storage
+db|relogio_digital.(1).cnf
+db|relogio_digital.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+contador_mod10|contador_mod10.vhd
+84c0d942fcbe561ce1592c5eb4493de
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(saidas)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(saidasbarra)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+ffjk_bdc.vhd
+911e936efd0e54ed7d663d0e1b7b69f
+and_3.vhd
+a1e3b5d9648710f34dda70a156e87c65
+and_2.vhd
+94c5457505c6beebfd54873d1ebb534
+}
+# hierarchies {
+contador_mod10:unidades_segundos
+contador_mod10:unidades_minutos
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+ffjk_bdc
+# storage
+db|relogio_digital.(2).cnf
+db|relogio_digital.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+ffjk_bdc.vhd
+911e936efd0e54ed7d663d0e1b7b69f
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+contador_mod10:unidades_segundos|ffjk_bdc:ffjk0
+contador_mod10:unidades_segundos|ffjk_bdc:ffjk1
+contador_mod10:unidades_segundos|ffjk_bdc:ffjk2
+contador_mod10:unidades_segundos|ffjk_bdc:ffjk3
+contador_mod6:dezenas_segundos|ffjk_bdc:ffjk0
+contador_mod6:dezenas_segundos|ffjk_bdc:ffjk1
+contador_mod6:dezenas_segundos|ffjk_bdc:ffjk2
+contador_mod10:unidades_minutos|ffjk_bdc:ffjk0
+contador_mod10:unidades_minutos|ffjk_bdc:ffjk1
+contador_mod10:unidades_minutos|ffjk_bdc:ffjk2
+contador_mod10:unidades_minutos|ffjk_bdc:ffjk3
+contador_mod6:dezenas_minutos|ffjk_bdc:ffjk0
+contador_mod6:dezenas_minutos|ffjk_bdc:ffjk1
+contador_mod6:dezenas_minutos|ffjk_bdc:ffjk2
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+and_2
+# storage
+db|relogio_digital.(3).cnf
+db|relogio_digital.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+and_2.vhd
+94c5457505c6beebfd54873d1ebb534
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+contador_mod10:unidades_segundos|and_2:and_j1
+contador_mod10:unidades_segundos|and_2:and_j2
+and_2:clock_dezenas_segundos
+contador_mod6:dezenas_segundos|and_2:and_j1
+contador_mod6:dezenas_segundos|and_2:and_j2
+contador_mod10:unidades_minutos|and_2:and_j1
+contador_mod10:unidades_minutos|and_2:and_j2
+and_2:clock_dezenas_minutos
+contador_mod6:dezenas_minutos|and_2:and_j1
+contador_mod6:dezenas_minutos|and_2:and_j2
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+and_3
+# storage
+db|relogio_digital.(4).cnf
+db|relogio_digital.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+and_3.vhd
+a1e3b5d9648710f34dda70a156e87c65
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+contador_mod10:unidades_segundos|and_3:and_j3
+contador_mod10:unidades_minutos|and_3:and_j3
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+contador_mod6
+# storage
+db|relogio_digital.(5).cnf
+db|relogio_digital.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+contador_mod6|contador_mod6.vhd
+868d8d95504d598e889ba7bd440f017
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(saidas)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(saidasbarra)
+2 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+ffjk_bdc.vhd
+911e936efd0e54ed7d663d0e1b7b69f
+and_3.vhd
+a1e3b5d9648710f34dda70a156e87c65
+and_2.vhd
+94c5457505c6beebfd54873d1ebb534
+}
+# hierarchies {
+contador_mod6:dezenas_segundos
+contador_mod6:dezenas_minutos
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+decodificador_bcd
+# storage
+db|relogio_digital.(6).cnf
+db|relogio_digital.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+decodificador_bcd|decodificador_bcd.vhd
+26b1eaa85fde1a8bcccfdd322b82e37
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(bcd)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(segmentos)
+6 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+decodificador_bcd:bcd_dez_min
+decodificador_bcd:bcd_uni_min
+decodificador_bcd:bcd_dez_seg
+decodificador_bcd:bcd_uni_seg
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+relogio_digital
+# storage
+db|relogio_digital.(0).cnf
+db|relogio_digital.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+relogio_digital.vhd
+90e635818edb549a10953e202803f5a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+and_2.vhd
+94c5457505c6beebfd54873d1ebb534
+and_3.vhd
+a1e3b5d9648710f34dda70a156e87c65
+contador_mod10|contador_mod10.vhd
+84c0d942fcbe561ce1592c5eb4493de
+ffjk_bdc.vhd
+911e936efd0e54ed7d663d0e1b7b69f
+contador_mod6|contador_mod6.vhd
+868d8d95504d598e889ba7bd440f017
+decodificador_bcd|decodificador_bcd.vhd
+26b1eaa85fde1a8bcccfdd322b82e37
+}
+# hierarchies {
+|
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# complete
+

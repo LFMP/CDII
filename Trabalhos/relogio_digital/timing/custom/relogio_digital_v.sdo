@@ -1,0 +1,1359 @@
+// Copyright (C) 1991-2010 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+
+// 
+// Device: Altera EPM7064SLC44-7 Package PLCC44
+// 
+
+// 
+// This SDF file should be used for Custom Verilog HDL only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "relogio_digital")
+  (DATE "07/09/2018 12:58:02")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus II")
+  (VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition")
+  (DIVIDER .)
+  (TIMESCALE 1 ps)
+
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE clock\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1500:1500:1500) (1500:1500:1500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE clear\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1500:1500:1500) (1500:1500:1500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE entrada\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1500:1500:1500) (1500:1500:1500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE unidades_segundos\|ffjk0\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE unidades_segundos\|ffjk0\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT clk (0:0:0) (0:0:0))
+        (PORT pena[0] (3000:3000:3000) (3000:3000:3000))
+        (IOPATH (posedge clk) regout (1000:1000:1000) (1000:1000:1000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (3000:3000:3000))
+      (SETUP pena[0] (posedge clk) (3000:3000:3000))
+      (HOLD datain (posedge clk) (2000:2000:2000))
+      (HOLD pena[0] (posedge clk) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE unidades_segundos\|ffjk2\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE unidades_segundos\|ffjk2\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT clk (0:0:0) (0:0:0))
+        (PORT pena[0] (4000:4000:4000) (4000:4000:4000))
+        (PORT pena[1] (4000:4000:4000) (4000:4000:4000))
+        (IOPATH (posedge clk) regout (1000:1000:1000) (1000:1000:1000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (3000:3000:3000))
+      (SETUP pena[0] (posedge clk) (3000:3000:3000))
+      (SETUP pena[1] (posedge clk) (3000:3000:3000))
+      (HOLD datain (posedge clk) (2000:2000:2000))
+      (HOLD pena[0] (posedge clk) (2000:2000:2000))
+      (HOLD pena[1] (posedge clk) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE unidades_segundos\|ffjk3\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[2] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE unidades_segundos\|ffjk3\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT clk (0:0:0) (0:0:0))
+        (IOPATH (posedge clk) regout (1000:1000:1000) (1000:1000:1000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (3000:3000:3000))
+      (HOLD datain (posedge clk) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE unidades_segundos\|ffjk1\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE unidades_segundos\|ffjk1\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT clk (0:0:0) (0:0:0))
+        (IOPATH (posedge clk) regout (1000:1000:1000) (1000:1000:1000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (3000:3000:3000))
+      (HOLD datain (posedge clk) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_seg\|segmentos\[5\]\~21.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_seg\|segmentos\~27.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_seg\|segmentos\[2\]\~32.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[2] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_seg\|Equal9\~10.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[3] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[3] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_seg\|segmentos\~36.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_seg\|segmentos\~43.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm0[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm0[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[2] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_seg\|segmentos\[0\]\~49.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[2] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_sexp")
+    (INSTANCE clock_dezenas_segundos\|z\~3.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH datain[0] dataout (4000:4000:4000) (4000:4000:4000))
+        (PORT datain[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH datain[1] dataout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE dezenas_segundos\|ffjk0\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE dezenas_segundos\|ffjk0\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT pclk[0] (3000:3000:3000) (3000:3000:3000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+        (IOPATH (posedge pclk[0]) regout (1000:1000:1000) (1000:1000:1000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge pclk[0]) (3000:3000:3000))
+      (HOLD datain (posedge pclk[0]) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE dezenas_segundos\|ffjk1\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE dezenas_segundos\|ffjk1\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT pclk[0] (3000:3000:3000) (3000:3000:3000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+        (IOPATH (posedge pclk[0]) regout (1000:1000:1000) (1000:1000:1000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge pclk[0]) (3000:3000:3000))
+      (HOLD datain (posedge pclk[0]) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE dezenas_segundos\|ffjk2\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE dezenas_segundos\|ffjk2\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT pclk[0] (3000:3000:3000) (3000:3000:3000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+        (IOPATH (posedge pclk[0]) regout (1000:1000:1000) (1000:1000:1000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge pclk[0]) (3000:3000:3000))
+      (HOLD datain (posedge pclk[0]) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_seg\|segmentos\~19.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_seg\|segmentos\[3\]\~25.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[1] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_seg\|Equal9\~3.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_seg\|segmentos\~28.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[2] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_seg\|segmentos\[0\]\~33.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_seg\|segmentos\[1\]\~41.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_seg\|segmentos\[2\]\~35.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE unidades_minutos\|ffjk0\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE unidades_minutos\|ffjk0\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT pclk[0] (4000:4000:4000) (4000:4000:4000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+        (IOPATH (posedge pclk[0]) regout (1000:1000:1000) (1000:1000:1000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge pclk[0]) (3000:3000:3000))
+      (HOLD datain (posedge pclk[0]) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE unidades_minutos\|ffjk2\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE unidades_minutos\|ffjk2\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT pclk[0] (4000:4000:4000) (4000:4000:4000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+        (IOPATH (posedge pclk[0]) regout (1000:1000:1000) (1000:1000:1000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge pclk[0]) (3000:3000:3000))
+      (HOLD datain (posedge pclk[0]) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE unidades_minutos\|ffjk3\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[2] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE unidades_minutos\|ffjk3\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT pclk[0] (4000:4000:4000) (4000:4000:4000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+        (IOPATH (posedge pclk[0]) regout (1000:1000:1000) (1000:1000:1000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge pclk[0]) (3000:3000:3000))
+      (HOLD datain (posedge pclk[0]) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE unidades_minutos\|ffjk1\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE unidades_minutos\|ffjk1\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT pclk[0] (4000:4000:4000) (4000:4000:4000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+        (IOPATH (posedge pclk[0]) regout (1000:1000:1000) (1000:1000:1000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge pclk[0]) (3000:3000:3000))
+      (HOLD datain (posedge pclk[0]) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_min\|segmentos\[5\]\~21.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_min\|segmentos\~27.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_min\|segmentos\[2\]\~32.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[2] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_min\|Equal9\~10.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[3] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[3] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_min\|segmentos\~36.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_min\|segmentos\~43.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm0[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm0[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[2] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_uni_min\|segmentos\[0\]\~49.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[2] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_sexp")
+    (INSTANCE clock_dezenas_minutos\|z\~3.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT datain[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH datain[0] dataout (4000:4000:4000) (4000:4000:4000))
+        (PORT datain[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH datain[1] dataout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE dezenas_minutos\|ffjk0\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE dezenas_minutos\|ffjk0\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT pclk[0] (3000:3000:3000) (3000:3000:3000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+        (IOPATH (posedge pclk[0]) regout (1000:1000:1000) (1000:1000:1000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge pclk[0]) (3000:3000:3000))
+      (HOLD datain (posedge pclk[0]) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE dezenas_minutos\|ffjk1\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE dezenas_minutos\|ffjk1\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT pclk[0] (3000:3000:3000) (3000:3000:3000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+        (IOPATH (posedge pclk[0]) regout (1000:1000:1000) (1000:1000:1000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge pclk[0]) (3000:3000:3000))
+      (HOLD datain (posedge pclk[0]) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE dezenas_minutos\|ffjk2\|qtemp.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm1[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[0] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH pterm2[1] regin (3000:3000:3000) (3000:3000:3000))
+        (IOPATH fbkin regin (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE dezenas_minutos\|ffjk2\|qtemp.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (0:0:0) (0:0:0))
+        (PORT pclk[0] (3000:3000:3000) (3000:3000:3000))
+        (IOPATH (posedge aclr) regout (2000:2000:2000) (2000:2000:2000))
+        (IOPATH (posedge pclk[0]) regout (1000:1000:1000) (1000:1000:1000))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge pclk[0]) (3000:3000:3000))
+      (HOLD datain (posedge pclk[0]) (2000:2000:2000))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_min\|segmentos\~19.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[2] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_min\|segmentos\~23.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_min\|segmentos\[2\]\~26.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_min\|segmentos\[3\]\~33.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[2] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm4[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[2] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm4[1] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_min\|Equal9\~3.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[2] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[2] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_min\|segmentos\[0\]\~37.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE bcd_dez_min\|segmentos\[1\]\~41.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pterm1[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm1[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm2[1] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[0] (1000:1000:1000) (1000:1000:1000))
+        (PORT pterm3[1] (1000:1000:1000) (1000:1000:1000))
+        (IOPATH pterm1[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm1[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm2[1] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[0] combout (4000:4000:4000) (4000:4000:4000))
+        (IOPATH pterm3[1] combout (4000:4000:4000) (4000:4000:4000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_sec\[5\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_sec\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_sec\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_sec\[4\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_sec\[6\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_sec\[3\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_sec\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_sec\[6\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_sec\[3\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_sec\[4\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_sec\[5\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_sec\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_sec\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_sec\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_min\[5\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_min\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_min\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_min\[4\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_min\[6\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_min\[3\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE uni_min\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_min\[5\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_min\[6\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_min\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_min\[3\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_min\[4\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_min\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE dez_min\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (2000:2000:2000) (2000:2000:2000))
+      )
+    )
+  )
+)

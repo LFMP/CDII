@@ -1,0 +1,1658 @@
+// Copyright (C) 1991-2010 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II"
+// VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition"
+
+// DATE "07/09/2018 12:58:01"
+
+// 
+// Device: Altera EPM7064SLC44-7 Package PLCC44
+// 
+
+// 
+// This Verilog file should be used for Custom Verilog HDL only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module relogio_digital (
+	entrada,
+	clock,
+	clear,
+	dez_min,
+	uni_min,
+	dez_sec,
+	uni_sec);
+input 	entrada;
+input 	clock;
+input 	clear;
+output 	[6:0] dez_min;
+output 	[6:0] uni_min;
+output 	[6:0] dez_sec;
+output 	[6:0] uni_sec;
+
+// Design Ports Information
+// entrada	=>  Location: PIN_2
+// clock	=>  Location: PIN_43
+// clear	=>  Location: PIN_1
+// uni_sec[5]	=>  Location: PIN_25
+// uni_sec[1]	=>  Location: PIN_27
+// uni_sec[2]	=>  Location: PIN_24
+// uni_sec[4]	=>  Location: PIN_26
+// uni_sec[6]	=>  Location: PIN_28
+// uni_sec[3]	=>  Location: PIN_29
+// uni_sec[0]	=>  Location: PIN_31
+// dez_sec[6]	=>  Location: PIN_11
+// dez_sec[3]	=>  Location: PIN_9
+// dez_sec[4]	=>  Location: PIN_12
+// dez_sec[5]	=>  Location: PIN_8
+// dez_sec[0]	=>  Location: PIN_6
+// dez_sec[1]	=>  Location: PIN_4
+// dez_sec[2]	=>  Location: PIN_5
+// uni_min[5]	=>  Location: PIN_37
+// uni_min[1]	=>  Location: PIN_40
+// uni_min[2]	=>  Location: PIN_41
+// uni_min[4]	=>  Location: PIN_39
+// uni_min[6]	=>  Location: PIN_33
+// uni_min[3]	=>  Location: PIN_34
+// uni_min[0]	=>  Location: PIN_36
+// dez_min[5]	=>  Location: PIN_21
+// dez_min[6]	=>  Location: PIN_20
+// dez_min[2]	=>  Location: PIN_18
+// dez_min[3]	=>  Location: PIN_17
+// dez_min[4]	=>  Location: PIN_19
+// dez_min[0]	=>  Location: PIN_16
+// dez_min[1]	=>  Location: PIN_14
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+// synopsys translate_off
+initial $sdf_annotate("relogio_digital_v.sdo");
+// synopsys translate_on
+
+wire \clock~dataout ;
+wire \clear~dataout ;
+wire \entrada~dataout ;
+wire \unidades_segundos|ffjk0|qtemp~dataout ;
+wire \unidades_segundos|ffjk2|qtemp~dataout ;
+wire \unidades_segundos|ffjk3|qtemp~dataout ;
+wire \unidades_segundos|ffjk1|qtemp~dataout ;
+wire \bcd_uni_seg|segmentos[5]~21_dataout ;
+wire \bcd_uni_seg|segmentos~27_dataout ;
+wire \bcd_uni_seg|segmentos[2]~32_dataout ;
+wire \bcd_uni_seg|Equal9~10_dataout ;
+wire \bcd_uni_seg|segmentos~36_dataout ;
+wire \bcd_uni_seg|segmentos~43_dataout ;
+wire \bcd_uni_seg|segmentos[0]~49_dataout ;
+wire \clock_dezenas_segundos|z~3_dataout ;
+wire \dezenas_segundos|ffjk0|qtemp~dataout ;
+wire \dezenas_segundos|ffjk1|qtemp~dataout ;
+wire \dezenas_segundos|ffjk2|qtemp~dataout ;
+wire \bcd_dez_seg|segmentos~19_dataout ;
+wire \bcd_dez_seg|segmentos[3]~25_dataout ;
+wire \bcd_dez_seg|Equal9~3_dataout ;
+wire \bcd_dez_seg|segmentos~28_dataout ;
+wire \bcd_dez_seg|segmentos[0]~33_dataout ;
+wire \bcd_dez_seg|segmentos[1]~41_dataout ;
+wire \bcd_dez_seg|segmentos[2]~35_dataout ;
+wire \unidades_minutos|ffjk0|qtemp~dataout ;
+wire \unidades_minutos|ffjk2|qtemp~dataout ;
+wire \unidades_minutos|ffjk3|qtemp~dataout ;
+wire \unidades_minutos|ffjk1|qtemp~dataout ;
+wire \bcd_uni_min|segmentos[5]~21_dataout ;
+wire \bcd_uni_min|segmentos~27_dataout ;
+wire \bcd_uni_min|segmentos[2]~32_dataout ;
+wire \bcd_uni_min|Equal9~10_dataout ;
+wire \bcd_uni_min|segmentos~36_dataout ;
+wire \bcd_uni_min|segmentos~43_dataout ;
+wire \bcd_uni_min|segmentos[0]~49_dataout ;
+wire \clock_dezenas_minutos|z~3_dataout ;
+wire \dezenas_minutos|ffjk0|qtemp~dataout ;
+wire \dezenas_minutos|ffjk1|qtemp~dataout ;
+wire \dezenas_minutos|ffjk2|qtemp~dataout ;
+wire \bcd_dez_min|segmentos~19_dataout ;
+wire \bcd_dez_min|segmentos~23_dataout ;
+wire \bcd_dez_min|segmentos[2]~26_dataout ;
+wire \bcd_dez_min|segmentos[3]~33_dataout ;
+wire \bcd_dez_min|Equal9~3_dataout ;
+wire \bcd_dez_min|segmentos[0]~37_dataout ;
+wire \bcd_dez_min|segmentos[1]~41_dataout ;
+
+
+// Location: PIN_43
+max_io \clock~I (
+	.datain(gnd),
+	.oe(gnd),
+	.dataout(\clock~dataout ),
+	.padio(clock));
+// synopsys translate_off
+defparam \clock~I .bus_hold = "false";
+defparam \clock~I .open_drain_output = "false";
+defparam \clock~I .operation_mode = "input";
+defparam \clock~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_1
+max_io \clear~I (
+	.datain(gnd),
+	.oe(gnd),
+	.dataout(\clear~dataout ),
+	.padio(clear));
+// synopsys translate_off
+defparam \clear~I .bus_hold = "false";
+defparam \clear~I .open_drain_output = "false";
+defparam \clear~I .operation_mode = "input";
+defparam \clear~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_2
+max_io \entrada~I (
+	.datain(gnd),
+	.oe(gnd),
+	.dataout(\entrada~dataout ),
+	.padio(entrada));
+// synopsys translate_off
+defparam \entrada~I .bus_hold = "false";
+defparam \entrada~I .open_drain_output = "false";
+defparam \entrada~I .operation_mode = "input";
+defparam \entrada~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: LC10
+max_mcell \unidades_segundos|ffjk0|qtemp (
+	.clk(!\clock~dataout ),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm2({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\entrada~dataout }),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\unidades_segundos|ffjk0|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \unidades_segundos|ffjk0|qtemp .operation_mode = "vcc";
+defparam \unidades_segundos|ffjk0|qtemp .output_mode = "reg";
+defparam \unidades_segundos|ffjk0|qtemp .pexp_mode = "on";
+defparam \unidades_segundos|ffjk0|qtemp .power_up = "low";
+defparam \unidades_segundos|ffjk0|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC6
+max_mcell \unidades_segundos|ffjk2|qtemp (
+	.clk(!\clock~dataout ),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm2({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk1|qtemp~dataout ,\unidades_segundos|ffjk0|qtemp~dataout }),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\unidades_segundos|ffjk2|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \unidades_segundos|ffjk2|qtemp .operation_mode = "vcc";
+defparam \unidades_segundos|ffjk2|qtemp .output_mode = "reg";
+defparam \unidades_segundos|ffjk2|qtemp .pexp_mode = "on";
+defparam \unidades_segundos|ffjk2|qtemp .power_up = "low";
+defparam \unidades_segundos|ffjk2|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC38
+max_mcell \unidades_segundos|ffjk3|qtemp (
+	.clk(!\clock~dataout ),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk3|qtemp~dataout ,\unidades_segundos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk2|qtemp~dataout ,\unidades_segundos|ffjk1|qtemp~dataout ,
+\unidades_segundos|ffjk0|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\unidades_segundos|ffjk3|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \unidades_segundos|ffjk3|qtemp .operation_mode = "normal";
+defparam \unidades_segundos|ffjk3|qtemp .output_mode = "reg";
+defparam \unidades_segundos|ffjk3|qtemp .pexp_mode = "off";
+defparam \unidades_segundos|ffjk3|qtemp .power_up = "low";
+defparam \unidades_segundos|ffjk3|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC2
+max_mcell \unidades_segundos|ffjk1|qtemp (
+	.clk(!\clock~dataout ),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk1|qtemp~dataout ,\unidades_segundos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk3|qtemp~dataout ,\unidades_segundos|ffjk0|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\unidades_segundos|ffjk1|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \unidades_segundos|ffjk1|qtemp .operation_mode = "normal";
+defparam \unidades_segundos|ffjk1|qtemp .output_mode = "reg";
+defparam \unidades_segundos|ffjk1|qtemp .pexp_mode = "off";
+defparam \unidades_segundos|ffjk1|qtemp .power_up = "low";
+defparam \unidades_segundos|ffjk1|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC35
+max_mcell \bcd_uni_seg|segmentos[5]~21 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk1|qtemp~dataout ,\unidades_segundos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk1|qtemp~dataout ,!\unidades_segundos|ffjk0|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk2|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk3|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_seg|segmentos[5]~21_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_seg|segmentos[5]~21 .operation_mode = "normal";
+defparam \bcd_uni_seg|segmentos[5]~21 .output_mode = "comb";
+defparam \bcd_uni_seg|segmentos[5]~21 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC37
+max_mcell \bcd_uni_seg|segmentos~27 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk1|qtemp~dataout ,\unidades_segundos|ffjk2|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk0|qtemp~dataout ,\unidades_segundos|ffjk2|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk0|qtemp~dataout ,!\unidades_segundos|ffjk1|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk3|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_seg|segmentos~27_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_seg|segmentos~27 .operation_mode = "normal";
+defparam \bcd_uni_seg|segmentos~27 .output_mode = "comb";
+defparam \bcd_uni_seg|segmentos~27 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC33
+max_mcell \bcd_uni_seg|segmentos[2]~32 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk2|qtemp~dataout ,!\unidades_segundos|ffjk1|qtemp~dataout ,!
+\unidades_segundos|ffjk3|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk0|qtemp~dataout ,!\unidades_segundos|ffjk3|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk0|qtemp~dataout ,!\unidades_segundos|ffjk2|qtemp~dataout ,!
+\unidades_segundos|ffjk1|qtemp~dataout }),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_seg|segmentos[2]~32_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_seg|segmentos[2]~32 .operation_mode = "invert";
+defparam \bcd_uni_seg|segmentos[2]~32 .output_mode = "comb";
+defparam \bcd_uni_seg|segmentos[2]~32 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC36
+max_mcell \bcd_uni_seg|Equal9~10 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk3|qtemp~dataout ,\unidades_segundos|ffjk1|qtemp~dataout ,!
+\unidades_segundos|ffjk2|qtemp~dataout ,!\unidades_segundos|ffjk0|qtemp~dataout }),
+	.pterm2({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_seg|Equal9~10_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_seg|Equal9~10 .operation_mode = "invert";
+defparam \bcd_uni_seg|Equal9~10 .output_mode = "comb";
+defparam \bcd_uni_seg|Equal9~10 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC40
+max_mcell \bcd_uni_seg|segmentos~36 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk0|qtemp~dataout ,!\unidades_segundos|ffjk2|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk0|qtemp~dataout ,\unidades_segundos|ffjk2|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk3|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk1|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_seg|segmentos~36_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_seg|segmentos~36 .operation_mode = "normal";
+defparam \bcd_uni_seg|segmentos~36 .output_mode = "comb";
+defparam \bcd_uni_seg|segmentos~36 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC41
+max_mcell \bcd_uni_seg|segmentos~43 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk3|qtemp~dataout }),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk2|qtemp~dataout ,\unidades_segundos|ffjk1|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk0|qtemp~dataout ,\unidades_segundos|ffjk1|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk0|qtemp~dataout ,!\unidades_segundos|ffjk2|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk0|qtemp~dataout ,\unidades_segundos|ffjk2|qtemp~dataout ,!
+\unidades_segundos|ffjk1|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_seg|segmentos~43_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_seg|segmentos~43 .operation_mode = "normal";
+defparam \bcd_uni_seg|segmentos~43 .output_mode = "comb";
+defparam \bcd_uni_seg|segmentos~43 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC46
+max_mcell \bcd_uni_seg|segmentos[0]~49 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk3|qtemp~dataout ,!\unidades_segundos|ffjk2|qtemp~dataout ,!
+\unidades_segundos|ffjk1|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk3|qtemp~dataout ,!\unidades_segundos|ffjk2|qtemp~dataout ,
+\unidades_segundos|ffjk1|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk0|qtemp~dataout ,!\unidades_segundos|ffjk3|qtemp~dataout ,
+\unidades_segundos|ffjk2|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_segundos|ffjk3|qtemp~dataout ,\unidades_segundos|ffjk2|qtemp~dataout ,!
+\unidades_segundos|ffjk1|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_seg|segmentos[0]~49_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_seg|segmentos[0]~49 .operation_mode = "normal";
+defparam \bcd_uni_seg|segmentos[0]~49 .output_mode = "comb";
+defparam \bcd_uni_seg|segmentos[0]~49 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: SEXP1
+max_sexp \clock_dezenas_segundos|z~3 (
+	.datain({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_segundos|ffjk3|qtemp~dataout ,\unidades_segundos|ffjk0|qtemp~dataout }),
+	.dataout(\clock_dezenas_segundos|z~3_dataout ));
+
+// Location: LC9
+max_mcell \dezenas_segundos|ffjk0|qtemp (
+	.clk(gnd),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\entrada~dataout }),
+	.pterm2({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\clock_dezenas_segundos|z~3_dataout }),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\dezenas_segundos|ffjk0|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \dezenas_segundos|ffjk0|qtemp .operation_mode = "normal";
+defparam \dezenas_segundos|ffjk0|qtemp .output_mode = "reg";
+defparam \dezenas_segundos|ffjk0|qtemp .pexp_mode = "off";
+defparam \dezenas_segundos|ffjk0|qtemp .power_up = "low";
+defparam \dezenas_segundos|ffjk0|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC12
+max_mcell \dezenas_segundos|ffjk1|qtemp (
+	.clk(gnd),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk1|qtemp~dataout ,\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk2|qtemp~dataout ,\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\clock_dezenas_segundos|z~3_dataout }),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\dezenas_segundos|ffjk1|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \dezenas_segundos|ffjk1|qtemp .operation_mode = "normal";
+defparam \dezenas_segundos|ffjk1|qtemp .output_mode = "reg";
+defparam \dezenas_segundos|ffjk1|qtemp .pexp_mode = "off";
+defparam \dezenas_segundos|ffjk1|qtemp .power_up = "low";
+defparam \dezenas_segundos|ffjk1|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC7
+max_mcell \dezenas_segundos|ffjk2|qtemp (
+	.clk(gnd),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk2|qtemp~dataout ,\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk1|qtemp~dataout ,\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\clock_dezenas_segundos|z~3_dataout }),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\dezenas_segundos|ffjk2|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \dezenas_segundos|ffjk2|qtemp .operation_mode = "normal";
+defparam \dezenas_segundos|ffjk2|qtemp .output_mode = "reg";
+defparam \dezenas_segundos|ffjk2|qtemp .pexp_mode = "off";
+defparam \dezenas_segundos|ffjk2|qtemp .power_up = "low";
+defparam \dezenas_segundos|ffjk2|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC3
+max_mcell \bcd_dez_seg|segmentos~19 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk2|qtemp~dataout ,!\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk2|qtemp~dataout ,\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk1|qtemp~dataout }),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_seg|segmentos~19_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_seg|segmentos~19 .operation_mode = "normal";
+defparam \bcd_dez_seg|segmentos~19 .output_mode = "comb";
+defparam \bcd_dez_seg|segmentos~19 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC4
+max_mcell \bcd_dez_seg|segmentos[3]~25 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk2|qtemp~dataout ,!\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk1|qtemp~dataout ,\dezenas_segundos|ffjk2|qtemp~dataout ,
+\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk1|qtemp~dataout ,!\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk1|qtemp~dataout ,!\dezenas_segundos|ffjk2|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_seg|segmentos[3]~25_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_seg|segmentos[3]~25 .operation_mode = "normal";
+defparam \bcd_dez_seg|segmentos[3]~25 .output_mode = "comb";
+defparam \bcd_dez_seg|segmentos[3]~25 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC1
+max_mcell \bcd_dez_seg|Equal9~3 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk1|qtemp~dataout ,!\dezenas_segundos|ffjk0|qtemp~dataout ,!
+\dezenas_segundos|ffjk2|qtemp~dataout }),
+	.pterm2({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_seg|Equal9~3_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_seg|Equal9~3 .operation_mode = "invert";
+defparam \bcd_dez_seg|Equal9~3 .output_mode = "comb";
+defparam \bcd_dez_seg|Equal9~3 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC5
+max_mcell \bcd_dez_seg|segmentos~28 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk1|qtemp~dataout ,\dezenas_segundos|ffjk0|qtemp~dataout ,
+\dezenas_segundos|ffjk2|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk1|qtemp~dataout ,!\dezenas_segundos|ffjk0|qtemp~dataout ,
+\dezenas_segundos|ffjk2|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_seg|segmentos~28_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_seg|segmentos~28 .operation_mode = "invert";
+defparam \bcd_dez_seg|segmentos~28 .output_mode = "comb";
+defparam \bcd_dez_seg|segmentos~28 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC11
+max_mcell \bcd_dez_seg|segmentos[0]~33 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk1|qtemp~dataout ,!\dezenas_segundos|ffjk2|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk1|qtemp~dataout ,\dezenas_segundos|ffjk2|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk0|qtemp~dataout ,\dezenas_segundos|ffjk1|qtemp~dataout }),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_seg|segmentos[0]~33_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_seg|segmentos[0]~33 .operation_mode = "normal";
+defparam \bcd_dez_seg|segmentos[0]~33 .output_mode = "comb";
+defparam \bcd_dez_seg|segmentos[0]~33 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC16
+max_mcell \bcd_dez_seg|segmentos[1]~41 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk1|qtemp~dataout ,!\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk2|qtemp~dataout ,!\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk2|qtemp~dataout ,!\dezenas_segundos|ffjk1|qtemp~dataout }),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_seg|segmentos[1]~41_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_seg|segmentos[1]~41 .operation_mode = "normal";
+defparam \bcd_dez_seg|segmentos[1]~41 .output_mode = "comb";
+defparam \bcd_dez_seg|segmentos[1]~41 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC14
+max_mcell \bcd_dez_seg|segmentos[2]~35 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk2|qtemp~dataout ,!\dezenas_segundos|ffjk1|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_segundos|ffjk0|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_seg|segmentos[2]~35_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_seg|segmentos[2]~35 .operation_mode = "invert";
+defparam \bcd_dez_seg|segmentos[2]~35 .output_mode = "comb";
+defparam \bcd_dez_seg|segmentos[2]~35 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC8
+max_mcell \unidades_minutos|ffjk0|qtemp (
+	.clk(gnd),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\entrada~dataout }),
+	.pterm2({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk2|qtemp~dataout }),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\unidades_minutos|ffjk0|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \unidades_minutos|ffjk0|qtemp .operation_mode = "normal";
+defparam \unidades_minutos|ffjk0|qtemp .output_mode = "reg";
+defparam \unidades_minutos|ffjk0|qtemp .pexp_mode = "off";
+defparam \unidades_minutos|ffjk0|qtemp .power_up = "low";
+defparam \unidades_minutos|ffjk0|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC23
+max_mcell \unidades_minutos|ffjk2|qtemp (
+	.clk(gnd),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk1|qtemp~dataout ,\unidades_minutos|ffjk0|qtemp~dataout }),
+	.pterm2({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk2|qtemp~dataout }),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\unidades_minutos|ffjk2|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \unidades_minutos|ffjk2|qtemp .operation_mode = "normal";
+defparam \unidades_minutos|ffjk2|qtemp .output_mode = "reg";
+defparam \unidades_minutos|ffjk2|qtemp .pexp_mode = "off";
+defparam \unidades_minutos|ffjk2|qtemp .power_up = "low";
+defparam \unidades_minutos|ffjk2|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC28
+max_mcell \unidades_minutos|ffjk3|qtemp (
+	.clk(gnd),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk3|qtemp~dataout ,\unidades_minutos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk2|qtemp~dataout ,\unidades_minutos|ffjk1|qtemp~dataout ,
+\unidades_minutos|ffjk0|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk2|qtemp~dataout }),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\unidades_minutos|ffjk3|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \unidades_minutos|ffjk3|qtemp .operation_mode = "normal";
+defparam \unidades_minutos|ffjk3|qtemp .output_mode = "reg";
+defparam \unidades_minutos|ffjk3|qtemp .pexp_mode = "off";
+defparam \unidades_minutos|ffjk3|qtemp .power_up = "low";
+defparam \unidades_minutos|ffjk3|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC18
+max_mcell \unidades_minutos|ffjk1|qtemp (
+	.clk(gnd),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk1|qtemp~dataout ,\unidades_minutos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk3|qtemp~dataout ,\unidades_minutos|ffjk0|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_segundos|ffjk2|qtemp~dataout }),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\unidades_minutos|ffjk1|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \unidades_minutos|ffjk1|qtemp .operation_mode = "normal";
+defparam \unidades_minutos|ffjk1|qtemp .output_mode = "reg";
+defparam \unidades_minutos|ffjk1|qtemp .pexp_mode = "off";
+defparam \unidades_minutos|ffjk1|qtemp .power_up = "low";
+defparam \unidades_minutos|ffjk1|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC53
+max_mcell \bcd_uni_min|segmentos[5]~21 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk1|qtemp~dataout ,\unidades_minutos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk1|qtemp~dataout ,!\unidades_minutos|ffjk0|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk2|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk3|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_min|segmentos[5]~21_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_min|segmentos[5]~21 .operation_mode = "normal";
+defparam \bcd_uni_min|segmentos[5]~21 .output_mode = "comb";
+defparam \bcd_uni_min|segmentos[5]~21 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC62
+max_mcell \bcd_uni_min|segmentos~27 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk1|qtemp~dataout ,\unidades_minutos|ffjk2|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk0|qtemp~dataout ,\unidades_minutos|ffjk2|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk0|qtemp~dataout ,!\unidades_minutos|ffjk1|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk3|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_min|segmentos~27_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_min|segmentos~27 .operation_mode = "normal";
+defparam \bcd_uni_min|segmentos~27 .output_mode = "comb";
+defparam \bcd_uni_min|segmentos~27 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC64
+max_mcell \bcd_uni_min|segmentos[2]~32 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk2|qtemp~dataout ,!\unidades_minutos|ffjk1|qtemp~dataout ,!
+\unidades_minutos|ffjk3|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk0|qtemp~dataout ,!\unidades_minutos|ffjk3|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk0|qtemp~dataout ,!\unidades_minutos|ffjk2|qtemp~dataout ,!
+\unidades_minutos|ffjk1|qtemp~dataout }),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_min|segmentos[2]~32_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_min|segmentos[2]~32 .operation_mode = "invert";
+defparam \bcd_uni_min|segmentos[2]~32 .output_mode = "comb";
+defparam \bcd_uni_min|segmentos[2]~32 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC57
+max_mcell \bcd_uni_min|Equal9~10 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk3|qtemp~dataout ,\unidades_minutos|ffjk1|qtemp~dataout ,!
+\unidades_minutos|ffjk2|qtemp~dataout ,!\unidades_minutos|ffjk0|qtemp~dataout }),
+	.pterm2({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_min|Equal9~10_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_min|Equal9~10 .operation_mode = "invert";
+defparam \bcd_uni_min|Equal9~10 .output_mode = "comb";
+defparam \bcd_uni_min|Equal9~10 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC49
+max_mcell \bcd_uni_min|segmentos~36 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk0|qtemp~dataout ,!\unidades_minutos|ffjk2|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk0|qtemp~dataout ,\unidades_minutos|ffjk2|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk3|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk1|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_min|segmentos~36_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_min|segmentos~36 .operation_mode = "normal";
+defparam \bcd_uni_min|segmentos~36 .output_mode = "comb";
+defparam \bcd_uni_min|segmentos~36 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC51
+max_mcell \bcd_uni_min|segmentos~43 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk3|qtemp~dataout }),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk2|qtemp~dataout ,\unidades_minutos|ffjk1|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk0|qtemp~dataout ,\unidades_minutos|ffjk1|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk0|qtemp~dataout ,!\unidades_minutos|ffjk2|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk0|qtemp~dataout ,\unidades_minutos|ffjk2|qtemp~dataout ,!
+\unidades_minutos|ffjk1|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_min|segmentos~43_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_min|segmentos~43 .operation_mode = "normal";
+defparam \bcd_uni_min|segmentos~43 .output_mode = "comb";
+defparam \bcd_uni_min|segmentos~43 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC52
+max_mcell \bcd_uni_min|segmentos[0]~49 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk3|qtemp~dataout ,!\unidades_minutos|ffjk2|qtemp~dataout ,!
+\unidades_minutos|ffjk1|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk3|qtemp~dataout ,!\unidades_minutos|ffjk2|qtemp~dataout ,
+\unidades_minutos|ffjk1|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk0|qtemp~dataout ,!\unidades_minutos|ffjk3|qtemp~dataout ,
+\unidades_minutos|ffjk2|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\unidades_minutos|ffjk3|qtemp~dataout ,\unidades_minutos|ffjk2|qtemp~dataout ,!
+\unidades_minutos|ffjk1|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_uni_min|segmentos[0]~49_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_uni_min|segmentos[0]~49 .operation_mode = "normal";
+defparam \bcd_uni_min|segmentos[0]~49 .output_mode = "comb";
+defparam \bcd_uni_min|segmentos[0]~49 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: SEXP17
+max_sexp \clock_dezenas_minutos|z~3 (
+	.datain({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\unidades_minutos|ffjk3|qtemp~dataout ,\unidades_minutos|ffjk0|qtemp~dataout }),
+	.dataout(\clock_dezenas_minutos|z~3_dataout ));
+
+// Location: LC29
+max_mcell \dezenas_minutos|ffjk0|qtemp (
+	.clk(gnd),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\entrada~dataout }),
+	.pterm2({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\clock_dezenas_minutos|z~3_dataout }),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\dezenas_minutos|ffjk0|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \dezenas_minutos|ffjk0|qtemp .operation_mode = "normal";
+defparam \dezenas_minutos|ffjk0|qtemp .output_mode = "reg";
+defparam \dezenas_minutos|ffjk0|qtemp .pexp_mode = "off";
+defparam \dezenas_minutos|ffjk0|qtemp .power_up = "low";
+defparam \dezenas_minutos|ffjk0|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC26
+max_mcell \dezenas_minutos|ffjk1|qtemp (
+	.clk(gnd),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk1|qtemp~dataout ,\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_minutos|ffjk2|qtemp~dataout ,\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\clock_dezenas_minutos|z~3_dataout }),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\dezenas_minutos|ffjk1|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \dezenas_minutos|ffjk1|qtemp .operation_mode = "normal";
+defparam \dezenas_minutos|ffjk1|qtemp .output_mode = "reg";
+defparam \dezenas_minutos|ffjk1|qtemp .pexp_mode = "off";
+defparam \dezenas_minutos|ffjk1|qtemp .power_up = "low";
+defparam \dezenas_minutos|ffjk1|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC27
+max_mcell \dezenas_minutos|ffjk2|qtemp (
+	.clk(gnd),
+	.aclr(!\clear~dataout ),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk2|qtemp~dataout ,\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk1|qtemp~dataout ,\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\clock_dezenas_minutos|z~3_dataout }),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\dezenas_minutos|ffjk2|qtemp~dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \dezenas_minutos|ffjk2|qtemp .operation_mode = "normal";
+defparam \dezenas_minutos|ffjk2|qtemp .output_mode = "reg";
+defparam \dezenas_minutos|ffjk2|qtemp .pexp_mode = "off";
+defparam \dezenas_minutos|ffjk2|qtemp .power_up = "low";
+defparam \dezenas_minutos|ffjk2|qtemp .register_mode = "tff";
+// synopsys translate_on
+
+// Location: LC17
+max_mcell \bcd_dez_min|segmentos~19 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_minutos|ffjk1|qtemp~dataout ,\dezenas_minutos|ffjk0|qtemp~dataout ,
+\dezenas_minutos|ffjk2|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk1|qtemp~dataout ,!\dezenas_minutos|ffjk0|qtemp~dataout ,
+\dezenas_minutos|ffjk2|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_min|segmentos~19_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_min|segmentos~19 .operation_mode = "invert";
+defparam \bcd_dez_min|segmentos~19 .output_mode = "comb";
+defparam \bcd_dez_min|segmentos~19 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC19
+max_mcell \bcd_dez_min|segmentos~23 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_minutos|ffjk2|qtemp~dataout ,!\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk2|qtemp~dataout ,\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk1|qtemp~dataout }),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_min|segmentos~23_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_min|segmentos~23 .operation_mode = "normal";
+defparam \bcd_dez_min|segmentos~23 .output_mode = "comb";
+defparam \bcd_dez_min|segmentos~23 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC21
+max_mcell \bcd_dez_min|segmentos[2]~26 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk2|qtemp~dataout ,!\dezenas_minutos|ffjk1|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_min|segmentos[2]~26_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_min|segmentos[2]~26 .operation_mode = "invert";
+defparam \bcd_dez_min|segmentos[2]~26 .output_mode = "comb";
+defparam \bcd_dez_min|segmentos[2]~26 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC24
+max_mcell \bcd_dez_min|segmentos[3]~33 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_minutos|ffjk2|qtemp~dataout ,!\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_minutos|ffjk1|qtemp~dataout ,\dezenas_minutos|ffjk2|qtemp~dataout ,
+\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk1|qtemp~dataout ,!\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm4({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk1|qtemp~dataout ,!\dezenas_minutos|ffjk2|qtemp~dataout }),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_min|segmentos[3]~33_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_min|segmentos[3]~33 .operation_mode = "normal";
+defparam \bcd_dez_min|segmentos[3]~33 .output_mode = "comb";
+defparam \bcd_dez_min|segmentos[3]~33 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC20
+max_mcell \bcd_dez_min|Equal9~3 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk1|qtemp~dataout ,!\dezenas_minutos|ffjk0|qtemp~dataout ,!
+\dezenas_minutos|ffjk2|qtemp~dataout }),
+	.pterm2({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm3({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_min|Equal9~3_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_min|Equal9~3 .operation_mode = "invert";
+defparam \bcd_dez_min|Equal9~3 .output_mode = "comb";
+defparam \bcd_dez_min|Equal9~3 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC25
+max_mcell \bcd_dez_min|segmentos[0]~37 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk1|qtemp~dataout ,!\dezenas_minutos|ffjk2|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_minutos|ffjk1|qtemp~dataout ,\dezenas_minutos|ffjk2|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_minutos|ffjk0|qtemp~dataout ,\dezenas_minutos|ffjk1|qtemp~dataout }),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_min|segmentos[0]~37_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_min|segmentos[0]~37 .operation_mode = "normal";
+defparam \bcd_dez_min|segmentos[0]~37 .output_mode = "comb";
+defparam \bcd_dez_min|segmentos[0]~37 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: LC30
+max_mcell \bcd_dez_min|segmentos[1]~41 (
+	.clk(gnd),
+	.aclr(gnd),
+	.pexpin(gnd),
+	.fpin(vcc),
+	.pterm0({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm1({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,!\dezenas_minutos|ffjk1|qtemp~dataout ,!\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm2({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk2|qtemp~dataout ,!\dezenas_minutos|ffjk0|qtemp~dataout }),
+	.pterm3({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,\dezenas_minutos|ffjk2|qtemp~dataout ,!\dezenas_minutos|ffjk1|qtemp~dataout }),
+	.pterm4({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pterm5({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pxor({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pclk({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.pena({vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc,vcc}),
+	.paclr({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.papre({gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd,gnd}),
+	.dataout(\bcd_dez_min|segmentos[1]~41_dataout ),
+	.pexpout());
+// synopsys translate_off
+defparam \bcd_dez_min|segmentos[1]~41 .operation_mode = "normal";
+defparam \bcd_dez_min|segmentos[1]~41 .output_mode = "comb";
+defparam \bcd_dez_min|segmentos[1]~41 .pexp_mode = "off";
+// synopsys translate_on
+
+// Location: PIN_25
+max_io \uni_sec[5]~I (
+	.datain(\bcd_uni_seg|segmentos[5]~21_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_sec[5]));
+// synopsys translate_off
+defparam \uni_sec[5]~I .bus_hold = "false";
+defparam \uni_sec[5]~I .open_drain_output = "false";
+defparam \uni_sec[5]~I .operation_mode = "output";
+defparam \uni_sec[5]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_27
+max_io \uni_sec[1]~I (
+	.datain(\bcd_uni_seg|segmentos~27_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_sec[1]));
+// synopsys translate_off
+defparam \uni_sec[1]~I .bus_hold = "false";
+defparam \uni_sec[1]~I .open_drain_output = "false";
+defparam \uni_sec[1]~I .operation_mode = "output";
+defparam \uni_sec[1]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_24
+max_io \uni_sec[2]~I (
+	.datain(\bcd_uni_seg|segmentos[2]~32_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_sec[2]));
+// synopsys translate_off
+defparam \uni_sec[2]~I .bus_hold = "false";
+defparam \uni_sec[2]~I .open_drain_output = "false";
+defparam \uni_sec[2]~I .operation_mode = "output";
+defparam \uni_sec[2]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_26
+max_io \uni_sec[4]~I (
+	.datain(\bcd_uni_seg|Equal9~10_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_sec[4]));
+// synopsys translate_off
+defparam \uni_sec[4]~I .bus_hold = "false";
+defparam \uni_sec[4]~I .open_drain_output = "false";
+defparam \uni_sec[4]~I .operation_mode = "output";
+defparam \uni_sec[4]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_28
+max_io \uni_sec[6]~I (
+	.datain(\bcd_uni_seg|segmentos~36_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_sec[6]));
+// synopsys translate_off
+defparam \uni_sec[6]~I .bus_hold = "false";
+defparam \uni_sec[6]~I .open_drain_output = "false";
+defparam \uni_sec[6]~I .operation_mode = "output";
+defparam \uni_sec[6]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_29
+max_io \uni_sec[3]~I (
+	.datain(\bcd_uni_seg|segmentos~43_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_sec[3]));
+// synopsys translate_off
+defparam \uni_sec[3]~I .bus_hold = "false";
+defparam \uni_sec[3]~I .open_drain_output = "false";
+defparam \uni_sec[3]~I .operation_mode = "output";
+defparam \uni_sec[3]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_31
+max_io \uni_sec[0]~I (
+	.datain(\bcd_uni_seg|segmentos[0]~49_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_sec[0]));
+// synopsys translate_off
+defparam \uni_sec[0]~I .bus_hold = "false";
+defparam \uni_sec[0]~I .open_drain_output = "false";
+defparam \uni_sec[0]~I .operation_mode = "output";
+defparam \uni_sec[0]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_11
+max_io \dez_sec[6]~I (
+	.datain(\bcd_dez_seg|segmentos~19_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_sec[6]));
+// synopsys translate_off
+defparam \dez_sec[6]~I .bus_hold = "false";
+defparam \dez_sec[6]~I .open_drain_output = "false";
+defparam \dez_sec[6]~I .operation_mode = "output";
+defparam \dez_sec[6]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_9
+max_io \dez_sec[3]~I (
+	.datain(\bcd_dez_seg|segmentos[3]~25_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_sec[3]));
+// synopsys translate_off
+defparam \dez_sec[3]~I .bus_hold = "false";
+defparam \dez_sec[3]~I .open_drain_output = "false";
+defparam \dez_sec[3]~I .operation_mode = "output";
+defparam \dez_sec[3]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_12
+max_io \dez_sec[4]~I (
+	.datain(\bcd_dez_seg|Equal9~3_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_sec[4]));
+// synopsys translate_off
+defparam \dez_sec[4]~I .bus_hold = "false";
+defparam \dez_sec[4]~I .open_drain_output = "false";
+defparam \dez_sec[4]~I .operation_mode = "output";
+defparam \dez_sec[4]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_8
+max_io \dez_sec[5]~I (
+	.datain(\bcd_dez_seg|segmentos~28_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_sec[5]));
+// synopsys translate_off
+defparam \dez_sec[5]~I .bus_hold = "false";
+defparam \dez_sec[5]~I .open_drain_output = "false";
+defparam \dez_sec[5]~I .operation_mode = "output";
+defparam \dez_sec[5]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_6
+max_io \dez_sec[0]~I (
+	.datain(\bcd_dez_seg|segmentos[0]~33_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_sec[0]));
+// synopsys translate_off
+defparam \dez_sec[0]~I .bus_hold = "false";
+defparam \dez_sec[0]~I .open_drain_output = "false";
+defparam \dez_sec[0]~I .operation_mode = "output";
+defparam \dez_sec[0]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_4
+max_io \dez_sec[1]~I (
+	.datain(\bcd_dez_seg|segmentos[1]~41_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_sec[1]));
+// synopsys translate_off
+defparam \dez_sec[1]~I .bus_hold = "false";
+defparam \dez_sec[1]~I .open_drain_output = "false";
+defparam \dez_sec[1]~I .operation_mode = "output";
+defparam \dez_sec[1]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_5
+max_io \dez_sec[2]~I (
+	.datain(\bcd_dez_seg|segmentos[2]~35_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_sec[2]));
+// synopsys translate_off
+defparam \dez_sec[2]~I .bus_hold = "false";
+defparam \dez_sec[2]~I .open_drain_output = "false";
+defparam \dez_sec[2]~I .operation_mode = "output";
+defparam \dez_sec[2]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_37
+max_io \uni_min[5]~I (
+	.datain(\bcd_uni_min|segmentos[5]~21_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_min[5]));
+// synopsys translate_off
+defparam \uni_min[5]~I .bus_hold = "false";
+defparam \uni_min[5]~I .open_drain_output = "false";
+defparam \uni_min[5]~I .operation_mode = "output";
+defparam \uni_min[5]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_40
+max_io \uni_min[1]~I (
+	.datain(\bcd_uni_min|segmentos~27_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_min[1]));
+// synopsys translate_off
+defparam \uni_min[1]~I .bus_hold = "false";
+defparam \uni_min[1]~I .open_drain_output = "false";
+defparam \uni_min[1]~I .operation_mode = "output";
+defparam \uni_min[1]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_41
+max_io \uni_min[2]~I (
+	.datain(\bcd_uni_min|segmentos[2]~32_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_min[2]));
+// synopsys translate_off
+defparam \uni_min[2]~I .bus_hold = "false";
+defparam \uni_min[2]~I .open_drain_output = "false";
+defparam \uni_min[2]~I .operation_mode = "output";
+defparam \uni_min[2]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_39
+max_io \uni_min[4]~I (
+	.datain(\bcd_uni_min|Equal9~10_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_min[4]));
+// synopsys translate_off
+defparam \uni_min[4]~I .bus_hold = "false";
+defparam \uni_min[4]~I .open_drain_output = "false";
+defparam \uni_min[4]~I .operation_mode = "output";
+defparam \uni_min[4]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_33
+max_io \uni_min[6]~I (
+	.datain(\bcd_uni_min|segmentos~36_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_min[6]));
+// synopsys translate_off
+defparam \uni_min[6]~I .bus_hold = "false";
+defparam \uni_min[6]~I .open_drain_output = "false";
+defparam \uni_min[6]~I .operation_mode = "output";
+defparam \uni_min[6]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_34
+max_io \uni_min[3]~I (
+	.datain(\bcd_uni_min|segmentos~43_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_min[3]));
+// synopsys translate_off
+defparam \uni_min[3]~I .bus_hold = "false";
+defparam \uni_min[3]~I .open_drain_output = "false";
+defparam \uni_min[3]~I .operation_mode = "output";
+defparam \uni_min[3]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_36
+max_io \uni_min[0]~I (
+	.datain(\bcd_uni_min|segmentos[0]~49_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(uni_min[0]));
+// synopsys translate_off
+defparam \uni_min[0]~I .bus_hold = "false";
+defparam \uni_min[0]~I .open_drain_output = "false";
+defparam \uni_min[0]~I .operation_mode = "output";
+defparam \uni_min[0]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_21
+max_io \dez_min[5]~I (
+	.datain(\bcd_dez_min|segmentos~19_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_min[5]));
+// synopsys translate_off
+defparam \dez_min[5]~I .bus_hold = "false";
+defparam \dez_min[5]~I .open_drain_output = "false";
+defparam \dez_min[5]~I .operation_mode = "output";
+defparam \dez_min[5]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_20
+max_io \dez_min[6]~I (
+	.datain(\bcd_dez_min|segmentos~23_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_min[6]));
+// synopsys translate_off
+defparam \dez_min[6]~I .bus_hold = "false";
+defparam \dez_min[6]~I .open_drain_output = "false";
+defparam \dez_min[6]~I .operation_mode = "output";
+defparam \dez_min[6]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_18
+max_io \dez_min[2]~I (
+	.datain(\bcd_dez_min|segmentos[2]~26_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_min[2]));
+// synopsys translate_off
+defparam \dez_min[2]~I .bus_hold = "false";
+defparam \dez_min[2]~I .open_drain_output = "false";
+defparam \dez_min[2]~I .operation_mode = "output";
+defparam \dez_min[2]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_17
+max_io \dez_min[3]~I (
+	.datain(\bcd_dez_min|segmentos[3]~33_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_min[3]));
+// synopsys translate_off
+defparam \dez_min[3]~I .bus_hold = "false";
+defparam \dez_min[3]~I .open_drain_output = "false";
+defparam \dez_min[3]~I .operation_mode = "output";
+defparam \dez_min[3]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_19
+max_io \dez_min[4]~I (
+	.datain(\bcd_dez_min|Equal9~3_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_min[4]));
+// synopsys translate_off
+defparam \dez_min[4]~I .bus_hold = "false";
+defparam \dez_min[4]~I .open_drain_output = "false";
+defparam \dez_min[4]~I .operation_mode = "output";
+defparam \dez_min[4]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_16
+max_io \dez_min[0]~I (
+	.datain(\bcd_dez_min|segmentos[0]~37_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_min[0]));
+// synopsys translate_off
+defparam \dez_min[0]~I .bus_hold = "false";
+defparam \dez_min[0]~I .open_drain_output = "false";
+defparam \dez_min[0]~I .operation_mode = "output";
+defparam \dez_min[0]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+// Location: PIN_14
+max_io \dez_min[1]~I (
+	.datain(\bcd_dez_min|segmentos[1]~41_dataout ),
+	.oe(vcc),
+	.dataout(),
+	.padio(dez_min[1]));
+// synopsys translate_off
+defparam \dez_min[1]~I .bus_hold = "false";
+defparam \dez_min[1]~I .open_drain_output = "false";
+defparam \dez_min[1]~I .operation_mode = "output";
+defparam \dez_min[1]~I .weak_pull_up = "false";
+// synopsys translate_on
+
+endmodule
